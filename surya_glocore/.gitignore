@@ -1,0 +1,6 @@
+
+# Large media files
+wp-content/uploads/*.mp4
+wp-content/uploads/*.mov
+wp-content/uploads/*.avi
+img/logo/*_backup.png

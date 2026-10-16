@@ -1,0 +1,548 @@
+/* Solaris Services Core - scoped Elementor widget */
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core-box {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core {
+  --mtfe-sc-ease-soft: cubic-bezier(0.25, 1, 0.5, 1);
+  --mtfe-sc-bg-main: #faf8f2;
+  --mtfe-sc-text-primary: #0f1417;
+  --mtfe-sc-text-secondary: #3a4a46;
+  --mtfe-sc-green-primary: #0f2e28;
+  --mtfe-sc-green-secondary: #1a3f38;
+  --mtfe-sc-gold-primary: #d4b45f;
+  --mtfe-sc-gold-hover: #c9a94d;
+  --mtfe-sc-accent-soft: #5f868c;
+  --mtfe-sc-shell-gradient-1: rgba(15, 46, 40, 0.44);
+  --mtfe-sc-shell-gradient-2: rgba(26, 63, 56, 0.3);
+  --mtfe-sc-shell-gradient-3: rgba(95, 134, 140, 0.16);
+  --mtfe-sc-shell-gradient-4: rgba(250, 248, 242, 0.98);
+  --mtfe-sc-card-bg-from: rgba(255, 255, 255, 0.82);
+  --mtfe-sc-card-bg-to: rgba(255, 255, 255, 0.68);
+  --mtfe-sc-card-hover-bg-from: rgba(255, 255, 255, 0.92);
+  --mtfe-sc-card-hover-bg-to: rgba(255, 255, 255, 0.8);
+  --mtfe-sc-circle-border: rgba(95, 134, 140, 0.7);
+  --mtfe-sc-circle-bg-from: rgba(15, 46, 40, 0.94);
+  --mtfe-sc-circle-bg-to: rgba(26, 63, 56, 0.9);
+  --mtfe-sc-circle-text: #faf8f2;
+  --mtfe-sc-circle-hover-bg-from: rgba(244, 234, 201, 0.95);
+  --mtfe-sc-circle-hover-bg-to: rgba(232, 214, 164, 0.86);
+  --mtfe-sc-circle-hover-text: #0f1417;
+  --mtfe-sc-circle-hover-border: rgba(212, 180, 95, 0.7);
+  --mtfe-sc-badge-color: #d4b45f;
+  --mtfe-sc-badge-dot-color: #d4b45f;
+  --mtfe-sc-section-pt: clamp(4rem, 7vw, 7rem);
+  --mtfe-sc-section-pr: 0;
+  --mtfe-sc-section-pb: clamp(4rem, 7vw, 7rem);
+  --mtfe-sc-section-pl: 0;
+  --mtfe-sc-desktop-outer-pad: clamp(0.9rem, 1.5vw, 1.4rem);
+  --mtfe-sc-desktop-outer-pad-x: 0;
+  --mtfe-sc-desktop-extra-span: clamp(3rem, 5vw, 6.5rem);
+  --mtfe-sc-shell-pt: clamp(1.2rem, 3vw, 2.2rem);
+  --mtfe-sc-shell-pr: 0;
+  --mtfe-sc-shell-pb: clamp(1.2rem, 3vw, 2.2rem);
+  --mtfe-sc-shell-pl: 0;
+  --mtfe-sc-shell-radius: 24px;
+  --mtfe-sc-shell-max-w: 1880px;
+  --mtfe-sc-cards-max-w: 1720px;
+  --mtfe-sc-header-pt: clamp(2rem, 4vw, 3.5rem);
+  --mtfe-sc-header-max-w: 900px;
+  --mtfe-sc-header-px: clamp(0.85rem, 2vw, 1.5rem);
+  --mtfe-sc-title-max-w: 100%;
+  --mtfe-sc-title-mb: clamp(0.28rem, 0.5vw, 0.4rem);
+  --mtfe-sc-lead-max-w: 58ch;
+  --mtfe-sc-lead-mb: var(--mtfe-sc-footer-mt);
+  --mtfe-sc-badge-gap: 0.5rem;
+  --mtfe-sc-badge-dot-size: 7px;
+  --mtfe-sc-grid-gap: clamp(1rem, 1.4vw, 1.375rem);
+  --mtfe-sc-card-pt: 0.9rem;
+  --mtfe-sc-card-pr: 0.9rem;
+  --mtfe-sc-card-pb: 0;
+  --mtfe-sc-card-pl: 0.9rem;
+  --mtfe-sc-card-gap: 0.64rem;
+  --mtfe-sc-card-figure-mt: 0.8rem;
+  --mtfe-sc-figure-py: 0;
+  --mtfe-sc-card-radius: 24px;
+  --mtfe-sc-shape-r: 24px;
+  --mtfe-sc-shape-s: 40px;
+  --mtfe-sc-card-circle-size: 58px;
+  --mtfe-sc-circle-top: 0.18rem;
+  --mtfe-sc-circle-right: 0.14rem;
+  --mtfe-sc-card-title-offset-y: -13px;
+  --mtfe-sc-figure-radius: 16px;
+  --mtfe-sc-image-fit: cover;
+  --mtfe-sc-image-position: center center;
+  --mtfe-sc-image-hover-scale: 1.045;
+  --mtfe-sc-card-hover-translate-y: 0px;
+  --mtfe-sc-card-hover-shadow: 0 24px 38px -34px rgba(15, 20, 23, 0.45);
+  --mtfe-sc-footer-mt: clamp(0.6rem, 1.4vw, 1rem);
+  --mtfe-sc-title-highlight-weight: 800;
+  --mtfe-sc-title-highlight-color: #0f1417;
+  --mtfe-sc-tablet-card-width: clamp(16.5rem, 44vw, 20rem);
+  --mtfe-sc-mobile-card-width: clamp(15rem, 82vw, 19rem);
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  padding: var(--mtfe-sc-section-pt) var(--mtfe-sc-section-pr) var(--mtfe-sc-section-pb) var(--mtfe-sc-section-pl);
+  color: var(--mtfe-sc-text-primary);
+  background: transparent;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core *,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core *::before,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core *::after {
+  box-sizing: border-box;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__shell {
+  width: 100%;
+  max-width: var(--mtfe-sc-shell-max-w);
+  margin: 0 auto;
+  border-radius: var(--mtfe-sc-shell-radius);
+  padding: var(--mtfe-sc-shell-pt) var(--mtfe-sc-shell-pr) var(--mtfe-sc-shell-pb) var(--mtfe-sc-shell-pl);
+  border: 0;
+  background: linear-gradient(
+    180deg,
+    var(--mtfe-sc-shell-gradient-1) 0%,
+    var(--mtfe-sc-shell-gradient-2) 36%,
+    var(--mtfe-sc-shell-gradient-3) 56%,
+    var(--mtfe-sc-shell-gradient-4) 74%,
+    var(--mtfe-sc-bg-main) 100%
+  );
+  box-shadow: none;
+  overflow: visible;
+}
+
+@media (min-width: 1025px) {
+  .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core {
+    padding-top: var(--mtfe-sc-desktop-outer-pad);
+    padding-right: var(--mtfe-sc-desktop-outer-pad-x);
+    padding-bottom: var(--mtfe-sc-desktop-outer-pad);
+    padding-left: var(--mtfe-sc-desktop-outer-pad-x);
+  }
+
+  .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__shell {
+    width: min(
+      1920px,
+      calc(100% - (var(--mtfe-sc-desktop-outer-pad-x) * 2) + var(--mtfe-sc-desktop-extra-span)),
+      100%
+    );
+    max-width: min(
+      1920px,
+      calc(100% - (var(--mtfe-sc-desktop-outer-pad-x) * 2) + var(--mtfe-sc-desktop-extra-span)),
+      100%
+    );
+    margin-inline: auto;
+    transform: none;
+    transition:
+      width 0.38s var(--mtfe-sc-ease-soft),
+      max-width 0.38s var(--mtfe-sc-ease-soft);
+  }
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__header {
+  display: block;
+  max-width: var(--mtfe-sc-header-max-w);
+  margin-inline: auto;
+  padding-top: var(--mtfe-sc-header-pt);
+  padding-inline: var(--mtfe-sc-header-px);
+  text-align: center;
+  transform: translate(var(--mtfe-solaris-tune-header-ox, 0px), var(--mtfe-solaris-tune-header-oy, 0px));
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 8px;
+  color: var(--mtfe-sc-badge-color);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Services Core keeps its own badge-dot span, so disable dual-header pseudo-dot. */
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__badge.mtfe-dual-header-subtitle::before {
+  content: none !important;
+  display: none !important;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__badge-dot {
+  width: var(--mtfe-sc-badge-dot-size);
+  height: var(--mtfe-sc-badge-dot-size);
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: var(--mtfe-sc-badge-dot-color);
+  opacity: 1;
+  animation: mtfe-dual-header-pulse 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__title {
+  margin: 0 0 var(--mtfe-sc-title-mb);
+  max-width: var(--mtfe-sc-title-max-w);
+  margin-inline: auto;
+  color: var(--mtfe-sc-text-primary);
+  font-size: calc(clamp(2rem, 4vw, 3.5rem) * var(--mtfe-solaris-tune-title-scale, 1));
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  transform: translate(var(--mtfe-solaris-tune-title-ox, 0px), var(--mtfe-solaris-tune-title-oy, 0px));
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__title-highlight {
+  font-weight: var(--mtfe-sc-title-highlight-weight);
+  color: var(--mtfe-sc-title-highlight-color);
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__lead {
+  margin: 0 0 var(--mtfe-sc-lead-mb);
+  max-width: var(--mtfe-sc-lead-max-w);
+  margin-inline: auto;
+  color: var(--mtfe-sc-text-secondary);
+  font-size: calc(clamp(0.95rem, 1.1vw, 1.12rem) * var(--mtfe-solaris-tune-lead-scale, 1));
+  line-height: 1.62;
+  transform: translate(var(--mtfe-solaris-tune-lead-ox, 0px), var(--mtfe-solaris-tune-lead-oy, 0px));
+}
+
+/* Dual-header-style pulse for the Services Core badge dot. */
+@keyframes mtfe-dual-header-pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__slider-wrap {
+  margin-top: 0;
+  width: 100%;
+  max-width: var(--mtfe-sc-cards-max-w);
+  margin-inline: auto;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__swiper {
+  width: 100%;
+  overflow: visible;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Legacy/non-swiper row layouts (e.g. CPT related sections): keep true 20px edge spacing. */
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__shell > .row {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: var(--mtfe-sc-cards-max-w);
+  margin-inline: auto;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__swiper .swiper-slide {
+  height: auto;
+  box-sizing: border-box;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__swiper .swiper-slide > .mtfe-solaris-services-core__card-wrap {
+  min-height: 100%;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__pagination.swiper-pagination {
+  position: static;
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 !important;
+  border-radius: 999px;
+  opacity: 1;
+  background: color-mix(in srgb, var(--mtfe-sc-accent-soft) 50%, var(--mtfe-sc-bg-main));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--mtfe-sc-green-primary) 12%, transparent);
+  transition:
+    transform 0.25s var(--mtfe-sc-ease-soft),
+    background-color 0.25s var(--mtfe-sc-ease-soft),
+    box-shadow 0.25s var(--mtfe-sc-ease-soft);
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__pagination .swiper-pagination-bullet-active {
+  background: var(--mtfe-sc-gold-primary);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--mtfe-sc-gold-primary) 45%, transparent);
+  transform: scale(1.18);
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__pagination.swiper-pagination-lock {
+  display: none;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__swiper .swiper-wrapper {
+  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--mtfe-sc-grid-gap);
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__swiper .swiper-slide {
+  width: auto !important;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__pagination {
+  display: none !important;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:focus-visible {
+  outline: none;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card {
+  flex: 1 1 auto;
+  min-height: 0;
+  border-radius: var(--mtfe-sc-card-radius);
+  border: 0;
+  background: linear-gradient(160deg, var(--mtfe-sc-card-bg-from) 0%, var(--mtfe-sc-card-bg-to) 100%);
+  padding: var(--mtfe-sc-card-pt) var(--mtfe-sc-card-pr) var(--mtfe-sc-card-pb) var(--mtfe-sc-card-pl);
+  padding-top: calc(var(--mtfe-sc-card-circle-size) * 0.52 + 0.64rem);
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--mtfe-sc-card-figure-mt);
+  text-align: left;
+  overflow: hidden;
+  transition:
+    transform 0.3s var(--mtfe-sc-ease-soft),
+    box-shadow 0.3s var(--mtfe-sc-ease-soft),
+    background-color 0.3s var(--mtfe-sc-ease-soft);
+  transform: translateY(0);
+}
+
+@supports (clip-path: shape(from 0 0, move to 0 0)) {
+  .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card {
+    --mtfe-sc-shape-r-used: var(--mtfe-sc-shape-r);
+    --mtfe-sc-shape-s-used: var(--mtfe-sc-shape-s);
+    border-radius: var(--mtfe-sc-shape-r-used);
+    clip-path: shape(
+      from 0 0,
+      hline to calc(100% - var(--mtfe-sc-shape-s-used) - 2 * var(--mtfe-sc-shape-r-used)),
+      arc by var(--mtfe-sc-shape-r-used) var(--mtfe-sc-shape-r-used) of var(--mtfe-sc-shape-r-used) cw,
+      arc by var(--mtfe-sc-shape-s-used) var(--mtfe-sc-shape-s-used) of var(--mtfe-sc-shape-s-used),
+      arc by var(--mtfe-sc-shape-r-used) var(--mtfe-sc-shape-r-used) of var(--mtfe-sc-shape-r-used) cw,
+      vline to 100%,
+      hline to 0
+    );
+  }
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__circle {
+  width: var(--mtfe-sc-card-circle-size);
+  height: var(--mtfe-sc-card-circle-size);
+  position: absolute;
+  top: var(--mtfe-sc-circle-top);
+  right: var(--mtfe-sc-circle-right);
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--mtfe-sc-circle-border);
+  background: linear-gradient(155deg, var(--mtfe-sc-circle-bg-from) 0%, var(--mtfe-sc-circle-bg-to) 100%);
+  color: var(--mtfe-sc-circle-text);
+  overflow: hidden;
+  transition:
+    background 0.46s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.46s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 2;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__circle::before {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0) 56%);
+  opacity: 0;
+  transition: opacity 0.42s var(--mtfe-sc-ease-soft);
+  pointer-events: none;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__circle svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  z-index: 1;
+  transition: color 0.42s var(--mtfe-sc-ease-soft);
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-copy {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: stretch;
+  width: 100%;
+  padding-left: 20px;
+  gap: var(--mtfe-sc-card-gap);
+  text-align: left;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-title {
+  margin: 0;
+  padding-right: calc(var(--mtfe-sc-card-circle-size) + 0.35rem);
+  color: var(--mtfe-sc-text-primary);
+  font-size: calc(clamp(1.1rem, 1.4vw, 1.35rem) * var(--mtfe-solaris-tune-card-title-scale, 1));
+  line-height: 1.2;
+  text-transform: none;
+  transform: translateY(var(--mtfe-sc-card-title-offset-y));
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-desc {
+  margin: 0;
+  padding-right: calc(var(--mtfe-sc-card-circle-size) + 0.25rem);
+  color: var(--mtfe-sc-text-secondary);
+  font-size: calc(clamp(0.82rem, 1.05vw, 0.92rem));
+  line-height: 1.58;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__figure {
+  width: 100%;
+  margin: 0;
+  margin-top: auto;
+  margin-top: var(--mtfe-sc-card-figure-mt);
+  margin-inline: 10px;
+  flex-shrink: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-inline: 0;
+  border-radius: var(--mtfe-sc-figure-radius);
+  overflow: hidden;
+  border: 0;
+  background: rgba(255, 255, 255, 0.4);
+  aspect-ratio: 16 / 9;
+  box-sizing: border-box;
+  margin-bottom: -10px;
+  transform: translateY(10px);
+}
+
+@media (max-width: 1024px) {
+  .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__swiper .swiper-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__swiper .swiper-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__img {
+  width: 100%;
+  height: 100%;
+  object-fit: var(--mtfe-sc-image-fit);
+  object-position: var(--mtfe-sc-image-position);
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:hover .mtfe-solaris-services-core__card,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:focus-visible .mtfe-solaris-services-core__card,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:focus-within .mtfe-solaris-services-core__card,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap[data-active="true"] .mtfe-solaris-services-core__card {
+  box-shadow: var(--mtfe-sc-card-hover-shadow);
+  transform: translateY(var(--mtfe-sc-card-hover-translate-y));
+  background: linear-gradient(160deg, var(--mtfe-sc-card-hover-bg-from) 0%, var(--mtfe-sc-card-hover-bg-to) 100%);
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:hover .mtfe-solaris-services-core__circle,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:focus-visible .mtfe-solaris-services-core__circle,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:focus-within .mtfe-solaris-services-core__circle,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap[data-active="true"] .mtfe-solaris-services-core__circle {
+  background: linear-gradient(160deg, var(--mtfe-sc-circle-hover-bg-from) 0%, var(--mtfe-sc-circle-hover-bg-to) 100%);
+  color: var(--mtfe-sc-circle-hover-text);
+  border-color: var(--mtfe-sc-circle-hover-border);
+  box-shadow: 0 8px 20px rgba(212, 180, 95, 0.24);
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:hover .mtfe-solaris-services-core__circle::before,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:focus-visible .mtfe-solaris-services-core__circle::before,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:focus-within .mtfe-solaris-services-core__circle::before,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap[data-active="true"] .mtfe-solaris-services-core__circle::before {
+  opacity: 1;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:hover .mtfe-solaris-services-core__img,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:focus-visible .mtfe-solaris-services-core__img,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap:focus-within .mtfe-solaris-services-core__img,
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap[data-active="true"] .mtfe-solaris-services-core__img {
+  transform: scale(var(--mtfe-sc-image-hover-scale));
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap--linked .mtfe-solaris-services-core__card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: var(--mtfe-sc-card-radius);
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-link:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--mtfe-sc-gold-primary) 78%, #fff);
+  outline-offset: 2px;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-anim-root--in-view .mtfe-solaris-services-core__title.mtfe-solaris-anim-item {
+  transform: translate(var(--mtfe-solaris-tune-title-ox, 0px), var(--mtfe-solaris-tune-title-oy, 0px)) !important;
+}
+
+.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-anim-root--in-view .mtfe-solaris-services-core__lead.mtfe-solaris-anim-item {
+  transform: translate(var(--mtfe-solaris-tune-lead-ox, 0px), var(--mtfe-solaris-tune-lead-oy, 0px)) !important;
+}
+
+@media (max-width: 767px) {
+  .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-title {
+    font-size: calc(clamp(0.92rem, 3.4vw, 1.05rem) * var(--mtfe-solaris-tune-card-title-scale, 1));
+  }
+
+  .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-desc {
+    font-size: calc(clamp(0.78rem, 3.1vw, 0.88rem));
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card-wrap,
+  .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__card,
+  .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__circle,
+  .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__pagination .swiper-pagination-bullet {
+    transition: none !important;
+    animation: none !important;
+  }
+}

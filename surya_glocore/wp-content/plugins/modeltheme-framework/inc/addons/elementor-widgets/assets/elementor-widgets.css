@@ -1,0 +1,1755 @@
+/* ========================================
+   MT Breadcrumbs Widget Styles
+   ======================================== */
+
+.mtfe-breadcrumbs-container {
+    display: block;
+    width: 100%;
+}
+
+.mtfe-breadcrumbs-wrapper span.mtfe-current {
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+.mtfe-breadcrumbs-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    line-height: 1.5;
+}
+
+.mtfe-breadcrumbs-wrapper a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mtfe-breadcrumbs-wrapper .mtfe-current {
+    font-weight: 500;
+}
+
+.mtfe-breadcrumbs-wrapper .mtfe-separator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+    opacity: 0.6;
+}
+
+.mtfe-breadcrumbs-wrapper .mtfe-separator i,
+.mtfe-breadcrumbs-wrapper .mtfe-separator svg {
+    display: block;
+    line-height: 1;
+}
+
+.mtfe-breadcrumbs-wrapper .mtfe-separator svg {
+    width: 1em;
+    height: 1em;
+}
+
+/* Page Title Styles */
+.mtfe-page-title {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    line-height: 1.2;
+    word-wrap: break-word;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .mtfe-breadcrumbs-wrapper {
+        font-size: 14px;
+    }
+    
+    .mtfe-breadcrumbs-wrapper .mtfe-separator {
+        margin: 0 6px;
+    }
+    
+    .mtfe-page-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mtfe-breadcrumbs-wrapper {
+        font-size: 13px;
+    }
+    
+    .mtfe-breadcrumbs-wrapper .mtfe-separator {
+        margin: 0 4px;
+    }
+    
+    .mtfe-page-title {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .elementor-element .mtfe-nav-mobile-burger{
+        display: block;
+    }
+}
+
+/* ========================================
+   MT Cart Widget Styles
+   ======================================== */
+
+.mtfe-cart-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.mtfe-cart-container {
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+.mtfe-cart-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.mtfe-cart-icon {
+    display: inline-flex;
+    line-height: 1;
+    font-size: 24px; /* Default size */
+    color: #333; /* Default color */
+    min-width: 24px;
+    min-height: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mtfe-cart-icon i {
+    display: block !important;
+}
+
+.mtfe-cart-icon svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+.mtfe-cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0 4px;
+}
+
+/* Mini Cart Container */
+.mtfe-mini-cart-container {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ffffff;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 25px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 320px;
+}
+
+.elementor-widget-mtfe-cart.mtfe-nav-align-left .mtfe-mini-cart-container {
+    right: auto;
+    left: 0;
+}
+
+/* Show on hover */
+.mtfe-cart-container:hover .mtfe-mini-cart-container {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* WooCommerce Mini Cart Overrides */
+.mtfe-mini-cart-container .widget_shopping_cart_content .cart_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.mtfe-mini-cart-container .widget_shopping_cart_content .cart_list li {
+    padding: 15px 0 15px 25px; /* Added left padding for remove button space */
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    text-align: left;
+}
+
+.mtfe-mini-cart-container .widget_shopping_cart_content .cart_list li:last-child {
+    border-bottom: none;
+}
+
+/* Remove button */
+.mtfe-mini-cart-container .widget_shopping_cart_content .cart_list li .remove {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 50%;
+    background: #f5f5f5;
+    color: #999 !important;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    z-index: 2;
+}
+
+.mtfe-mini-cart-container .widget_shopping_cart_content .cart_list li .remove:hover {
+    background: #ff0000;
+    color: #fff !important;
+}
+
+/* Group image and text */
+.mtfe-mini-cart-container .widget_shopping_cart_content .cart_list li img {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+/* Make sure title and quantity are stacked */
+.mtfe-mini-cart-container .widget_shopping_cart_content .cart_list li .quantity {
+    display: block;
+    margin-top: -10px;
+}
+
+/* Product Info */
+.mtfe-mini-cart-container .widget_shopping_cart_content .cart_list li a:not(.remove) {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.mtfe-mini-cart-container .widget_shopping_cart_content .cart_list li .quantity {
+    display: block;
+    color: #777;
+    font-size: 14px;
+    margin-left: auto;
+}
+
+.mtfe-mini-cart-container .widget_shopping_cart_content .cart_list li .quantity .amount {
+    color: #333;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+/* Subtotal */
+.mtfe-mini-cart-container .widget_shopping_cart_content .total {
+    margin-top: 15px;
+    padding: 15px 0;
+    border-top: 2px solid #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    font-size: 16px;
+}
+
+.mtfe-mini-cart-container .widget_shopping_cart_content .total strong {
+    font-weight: 700;
+}
+
+.mtfe-mini-cart-container .widget_shopping_cart_content .total .amount {
+    font-weight: 800;
+    color: #333;
+}
+
+/* Buttons */
+.mtfe-mini-cart-container .widget_shopping_cart_content .buttons {
+    display: flex;
+    margin-bottom: 0px;
+}
+
+.mtfe-mini-cart-container .widget_shopping_cart_content .buttons a {
+    flex: 1;
+    text-align: center;
+    margin: 0 5px;
+    padding: 14px 10px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mtfe-mini-cart-container .widget_shopping_cart_content .buttons a.button.wc-forward:not(.checkout) {
+    background: #333;
+    color: #fff;
+}
+
+.mtfe-mini-cart-container .widget_shopping_cart_content .buttons a.button.checkout {
+    background: #ff0000;
+    color: #fff;
+}
+
+.mtfe-mini-cart-container .widget_shopping_cart_content .buttons a:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ========================================
+   MT Icon with Text Widget Styles
+   ======================================== */
+
+.mtfe-icon-text-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.mtfe-icon-text-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+.mtfe-icon-text-link:hover {
+    opacity: 0.8;
+}
+
+.mtfe-icon-text-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.mtfe-icon-text-icon i,
+.mtfe-icon-text-icon svg {
+    display: inline-block;
+    line-height: 1;
+    width: 1em;
+    height: 1em;
+}
+
+.mtfe-icon-text-icon img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.mtfe-icon-text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.mtfe-icon-text-title {
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+}
+
+.mtfe-icon-text-subtitle {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .mtfe-icon-text-wrapper {
+        gap: 10px;
+    }
+}
+
+/* ========================================
+   MT Logo Styles
+   ======================================== */
+.mtfe-logo-wrapper h1 {
+    font-size: 35px !important;
+    margin-top: 5px;
+}
+
+/* ========================================
+   MT Navigation Widget Styles
+   ======================================== */
+
+.elementor-widget-mtfe-navigation.mtfe-nav-align-left .mtfe-navigation-wrapper,
+.elementor-widget-mtfe-navigation.mtfe-nav-align-left .mtfe-navigation-container,
+.elementor-widget-mtfe-navigation.mtfe-nav-align-left .mtfe-nav-overflow-wrapper {
+    justify-content: flex-start !important;
+}
+
+.elementor-widget-mtfe-navigation.mtfe-nav-align-center .mtfe-navigation-wrapper,
+.elementor-widget-mtfe-navigation.mtfe-nav-align-center .mtfe-navigation-container,
+.elementor-widget-mtfe-navigation.mtfe-nav-align-center .mtfe-nav-overflow-wrapper {
+    justify-content: center !important;
+}
+
+.elementor-widget-mtfe-navigation.mtfe-nav-align-right .mtfe-navigation-wrapper,
+.elementor-widget-mtfe-navigation.mtfe-nav-align-right .mtfe-navigation-container,
+.elementor-widget-mtfe-navigation.mtfe-nav-align-right .mtfe-nav-overflow-wrapper {
+    justify-content: flex-end !important;
+}
+
+.elementor-widget-mtfe-navigation.mtfe-nav-align-justify .mtfe-navigation-wrapper,
+.elementor-widget-mtfe-navigation.mtfe-nav-align-justify .mtfe-navigation-container,
+.elementor-widget-mtfe-navigation.mtfe-nav-align-justify .mtfe-nav-overflow-wrapper {
+    justify-content: space-between !important;
+}
+
+/* Menu alignment */
+.elementor-widget-mtfe-navigation.mtfe-nav-align-left .nav-menu {
+    justify-content: flex-start !important;
+}
+
+.elementor-widget-mtfe-navigation.mtfe-nav-align-center .nav-menu{
+    justify-content: center !important;
+}
+
+.elementor-widget-mtfe-navigation.mtfe-nav-align-right .nav-menu{
+    justify-content: flex-end !important;
+}
+
+.elementor-widget-mtfe-navigation.mtfe-nav-align-justify .nav-menu{
+    justify-content: space-between !important;
+}
+
+/* Dropdown icon (::after) on parent menu items - visibility controlled by widget "Show Dropdown Icon" */
+.elementor-widget-mtfe-navigation .mtfe-navigation-menu .menu-item-has-children > a::after {
+    content: "\f107";
+    font-family: FontAwesome;
+    padding-left: 5px;
+    font-size: 15px;
+    position: relative;
+    bottom: 1px;
+    font-weight: 100;
+    display: none;
+}
+
+/* ========================================
+   MT Navigation Overflow Menu Styles
+   ======================================== */
+
+/* Overflow wrapper - contains menu and more button */
+.mtfe-nav-overflow-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    min-width: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.mtfe-nav-overflow-wrapper.mtfe-nav-ready {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Disable overflow wrapper styles on mobile/tablet breakpoints where burger is active */
+@media (max-width: 1024px) {
+    .mtfe-nav-breakpoint-tablet .mtfe-nav-overflow-wrapper {
+        display: block !important;
+    }
+    .elementor-widget-mtfe-navigation .mtfe-navigation-menu .menu-item-has-children > a::after{
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .mtfe-nav-breakpoint-mobile .mtfe-nav-overflow-wrapper {
+        display: block !important;
+    }
+}
+
+/* Ensure menu can shrink and doesn't force width */
+.mtfe-nav-overflow-wrapper .nav-menu{
+    flex: 0 1 auto;
+    min-width: 0;
+}
+
+/* Hide menu items that overflow */
+.mtfe-navigation-menu>li.mtfe-nav-hidden {
+    display: none !important;
+}
+
+/* More button wrapper */
+.mtfe-nav-more-wrapper {
+    position: relative !important;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-left: 5px;
+    min-width: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+/* CSS hover fallback - show dropdown on wrapper hover */
+.mtfe-nav-more-wrapper:hover .mtfe-nav-more-dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+    display: block !important;
+}
+
+/* More button */
+.mtfe-nav-more-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    white-space: nowrap;
+    box-sizing: border-box;
+    z-index: 1001;
+}
+
+.mtfe-nav-more-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+}
+
+.mtfe-nav-more-icon i {
+    display: block;
+    line-height: 1;
+}
+
+/* Inherit menu item colors for more button */
+.elementor-widget-mtfe-navigation .mtfe-nav-more-button {
+    color: inherit;
+}
+
+.elementor-widget-mtfe-navigation .mtfe-nav-more-button:hover {
+    color: inherit;
+}
+
+.mtfe-nav-more-icon {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1;
+}
+
+.mtfe-nav-more-dropdown {
+    position: absolute;
+    top: 100%;
+    min-width: 220px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mtfe-nav-more-dropdown.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+/* Ensure dropdown items are properly styled */
+.mtfe-nav-more-dropdown>li {
+    display: block !important;
+    width: 100%;
+    float: none !important;
+}
+
+.mtfe-nav-more-dropdown>li>a {
+    display: block !important;
+    padding: 10px 20px !important;
+    color: #333333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+/* Ensure dropdown doesn't go off-screen based on alignment */
+.mtfe-nav-align-left .mtfe-nav-more-dropdown {
+    right: auto;
+    left: 0;
+}
+
+/* Submenus in dropdown */
+
+.mtfe-nav-more-dropdown>li:hover>.sub-menu {
+    display: block !important;
+}
+.mtfe-nav-more-dropdown>li>.sub-menu {
+    padding: 10px 0px;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Global header navigation dropdowns (theme site-navigation) */
+#site-navigation .sub-menu,
+#site-navigation ul ul,
+#site-navigation .cf-mega-menu.sub-menu {
+    background: #F2F0EA !important;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+    z-index: 2147483000 !important;
+    position: absolute;
+    pointer-events: auto !important;
+}
+
+#site-navigation li:hover > .sub-menu,
+#site-navigation li:focus-within > .sub-menu,
+#site-navigation .menu-item-has-children:hover > ul,
+#site-navigation .menu-item-has-children:focus-within > ul {
+    z-index: 2147483001 !important;
+    pointer-events: auto !important;
+}
+
+/* ========================================
+   MT Search Widget Styles
+   ======================================== */
+
+.mtfe-search-wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+.mtfe-search-icon {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.mtfe-search-icon:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mtfe-search-icon i,
+.mtfe-search-icon svg {
+    transition: all 0.3s ease;
+}
+
+.mtfe-search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #000000;
+    z-index: 99999;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mtfe-search-overlay.is-active {
+    height: 60vh;
+    overflow: visible;
+}
+
+.mtfe-search-overlay-inner {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 40px;
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.mtfe-search-overlay.is-active .mtfe-search-overlay-inner {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mtfe-search-close {
+    position: fixed;
+    top: 0px;
+    right: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 100000;
+}
+
+.mtfe-search-close:hover {
+    color: #000;
+    background: #fff;
+    transform: rotate(90deg);
+}
+
+.mtfe-search-header {
+    text-align: left;
+    margin-bottom: 40px;
+    animation: fadeInDown 0.6s ease-out 0.2s both;
+}
+
+.mtfe-search-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.mtfe-search-subtitle {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    font-weight: 400;
+}
+
+.mtfe-search-form-container {
+    width: 100%;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mtfe-search-form {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.mtfe-search-form input[type="search"] {
+    flex: 1;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.mtfe-search-form input[type="search"]::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.mtfe-search-form input[type="search"]:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.mtfe-search-form button[type="submit"] {
+    padding: 15px 50px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mtfe-search-form button[type="submit"]:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .mtfe-search-overlay.is-active {
+        height: 100%;
+    }
+
+    .mtfe-search-overlay-inner {
+        padding: 0 25px;
+    }
+
+    .mtfe-search-header {
+        margin-bottom: 30px;
+    }
+
+    .mtfe-search-title {
+        font-size: 1.8em !important;
+        line-height: 1.2 !important;
+    }
+
+    .mtfe-search-subtitle {
+        font-size: 1em;
+    }
+
+    .mtfe-search-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .mtfe-search-form input[type="search"] {
+        font-size: 1.1em;
+        padding: 18px 25px;
+    }
+
+    .mtfe-search-form button[type="submit"] {
+        width: 100%;
+        font-size: 1em;
+        padding: 18px 30px;
+    }
+
+    .mtfe-search-close {
+        top: -80px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .mtfe-search-overlay-inner {
+        max-width: 750px;
+        padding: 0 30px;
+    }
+
+    .mt-search-title {
+        font-size: 2.2em;
+    }
+
+    .mt-search-form input[type="search"] {
+        font-size: 1.3em;
+    }
+}
+
+/* ========================================
+   MT My Account Widget Styles
+   ======================================== */
+   
+.mtfe-account-wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+.mtfe-account-icon {
+    display: inline-flex;
+    line-height: 1;
+    color: #333;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0 0 0;
+    transition: all 0.3s ease;
+}
+
+.mtfe-account-icon i {
+    display: block !important;
+    font-size: inherit;
+}
+
+.mtfe-account-icon svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+.mtfe-account-container {
+    position: relative;
+}
+
+.mtfe-account-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Add invisible bridge to maintain hover when moving from icon to dropdown */
+.mtfe-account-has-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    height: 10px;
+    background: transparent;
+    z-index: 99998;
+}
+
+.mtfe-account-icon-wrapper {
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.mtfe-account-icon-wrapper:hover {
+    opacity: 0.8;
+}
+
+/* Dropdown Menu */
+.mtfe-account-dropdown {
+    position: absolute;
+    top: calc(100% + 2px);
+    right: -30px;
+    min-width: 220px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3px);
+    transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.15s ease;
+    z-index: 99999;
+    pointer-events: none;
+    overflow: visible;
+}
+
+/* Show dropdown when hovering over container */
+.mtfe-account-has-dropdown:hover .mtfe-account-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Keep dropdown visible when hovering directly over it - important for maintaining hover */
+.mtfe-account-dropdown:hover {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+}
+
+.mtfe-account-dropdown-menu {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.mtfe-account-dropdown-item {
+    margin: 0;
+    padding: 0;
+}
+
+.mtfe-account-dropdown-link {
+    display: block;
+    padding: 8px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+    border-left: 3px solid transparent;
+}
+
+.mtfe-account-dropdown-link:hover {
+    color: #000;
+    border-left-color: #333;
+    padding-left: 22px;
+}
+
+.mtfe-account-dropdown-item.is-active .mtfe-account-dropdown-link {
+    background: #f8f9fa;
+    color: #000;
+    font-weight: 600;
+    border-left-color: #333;
+}
+
+.mtfe-account-dropdown-divider {
+    height: 1px;
+    background: #f0f0f0;
+    margin: 8px 0;
+    padding: 0;
+}
+
+.mtfe-account-dropdown-divider::before {
+    display: none;
+}
+
+.mtfe-account-logout {
+    color: #e74c3c;
+}
+
+.mtfe-account-logout:hover {
+    color: #c33;
+    border-left-color: #e74c3c;
+}
+
+/* Modal Overlay */
+.mtfe-account-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 100000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mtfe-account-modal.is-active {
+    display: flex;
+    opacity: 1;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.mtfe-account-modal-inner {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    position: relative;
+}
+
+.mtfe-account-modal-content {
+    background: #ffffff;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .mtfe-account-dropdown{
+        display: none;
+    }
+}
+
+/* Close Button */
+.mtfe-account-modal-content .mt-search-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    border: none;
+    padding: 0;
+    color: #666;
+    font-size: 18px;
+}
+
+.mtfe-account-modal-content .mt-search-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+    transform: rotate(90deg);
+}
+
+.mtfe-account-modal-content .mt-search-close i {
+    line-height: 1;
+}
+
+/* Form Container */
+.mtfe-account-forms {
+    padding: 70px 40px 40px;
+}
+
+/* Tabs - Equal Width Design */
+.mtfe-account-form-tabs {
+    display: flex;
+    margin: 0 0 35px 0;
+    border-bottom: 2px solid #f0f0f0;
+    gap: 0;
+    background: #fafafa;
+}
+
+.mtfe-account-form-tabs button {
+    flex: 1 1 50%;
+    background: transparent;
+    border: none;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border-radius: 8px;
+    text-transform: none;
+    letter-spacing: 0.3px;
+}
+
+.mtfe-account-form-tabs button::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.mtfe-account-form-tabs button:hover {
+    color: #333;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.mtfe-account-form-tabs button.active {
+    color: #333;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.mtfe-account-form-tabs button.active::after {
+    background: #333;
+}
+
+/* Tab Content */
+.mtfe-account-tab-content {
+    display: none;
+    animation: fadeInContent 0.3s ease;
+}
+
+.mtfe-account-tab-content.active {
+    display: block;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form Styles */
+.mtfe-account-modal-content .woocommerce-form-login,
+.mtfe-account-modal-content .woocommerce-form-register {
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
+.mtfe-account-modal-content .form-row {
+    margin-bottom: 24px;
+}
+
+.mtfe-account-modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    letter-spacing: 0.2px;
+}
+
+.mtfe-account-modal-content label .required {
+    color: #e74c3c;
+    margin-left: 3px;
+}
+
+.mtfe-account-modal-content input[type="text"],
+.mtfe-account-modal-content input[type="password"],
+.mtfe-account-modal-content input[type="email"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e8e8e8;
+    margin-bottom: 0;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.mtfe-account-modal-content input[type="text"]:focus,
+.mtfe-account-modal-content input[type="password"]:focus,
+.mtfe-account-modal-content input[type="email"]:focus {
+    outline: none;
+    border-color: #333;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.mtfe-account-modal-content input[type="text"]::placeholder,
+.mtfe-account-modal-content input[type="password"]::placeholder,
+.mtfe-account-modal-content input[type="email"]::placeholder {
+    color: #999;
+}
+
+/* Remember Me Checkbox */
+.mtfe-account-modal-content .woocommerce-form-login__rememberme {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mtfe-account-modal-content .woocommerce-form-login__rememberme input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #333;
+}
+
+.mtfe-account-modal-content .woocommerce-form-login__rememberme label {
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* Submit Button */
+.mtfe-account-modal-content button[type="submit"],
+.mtfe-account-modal-content .woocommerce-Button {
+    width: 100%;
+    padding: 16px 24px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 8px;
+}
+
+.mtfe-account-modal-content button[type="submit"]:hover,
+.mtfe-account-modal-content .woocommerce-Button:hover {
+    background: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mtfe-account-modal-content button[type="submit"]:active,
+.mtfe-account-modal-content .woocommerce-Button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Lost Password Link */
+.mtfe-account-modal-content .woocommerce-LostPassword {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.mtfe-account-modal-content .woocommerce-LostPassword a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.mtfe-account-modal-content .woocommerce-LostPassword a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Form Messages */
+.mtfe-account-modal-content .woocommerce-error,
+.mtfe-account-modal-content .woocommerce-message,
+.mtfe-account-modal-content .woocommerce-info {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mtfe-account-modal-content .woocommerce-error {
+    background: #fee;
+    border-left: 4px solid #e74c3c;
+    color: #c33;
+}
+
+.mtfe-account-modal-content .woocommerce-message {
+    background: #efe;
+    border-left: 4px solid #27ae60;
+    color: #2d7a4f;
+}
+
+/* Registration Password Message */
+.mtfe-account-modal-content .woocommerce-form-register p:not(.form-row) {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #666;
+    border-left: 3px solid #333;
+}
+
+/* Responsive Design */
+
+/* Tablet and below (1024px) */
+@media (max-width: 1024px) {
+    .mtfe-account-modal-inner {
+        max-width: 550px;
+    }
+    
+    .mtfe-account-forms {
+        padding: 45px 35px 35px;
+    }
+}
+
+/* Tablet portrait (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .mtfe-account-modal-inner {
+        max-width: 500px;
+        padding: 20px;
+    }
+}
+
+/* Dropdown Responsive Styles */
+@media (max-width: 767px) {
+    .mtfe-account-dropdown {
+        min-width: 200px;
+        right: -10px;
+        margin-top: 10px;
+    }
+    
+    /* Mobile: Show dropdown on click (via JavaScript) */
+    .mtfe-account-dropdown.is-active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+    
+    .mtfe-account-dropdown-link {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+    
+    .mtfe-account-dropdown::before {
+        right: 15px;
+    }
+}
+
+/* Mobile landscape and tablet portrait (768px) */
+@media (max-width: 767px) {
+    .mtfe-account-modal {
+        padding: 20px 15px;
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+    
+    .mtfe-account-modal-inner {
+        max-width: 100%;
+        padding: 0;
+        margin: auto;
+    }
+    
+    .mtfe-account-modal-content {
+        border-radius: 16px;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .mtfe-account-forms {
+        padding: 40px 28px 32px;
+    }
+    
+    .mtfe-account-form-tabs {
+        margin-bottom: 28px;
+        padding: 3px;
+    }
+    
+    .mtfe-account-form-tabs button {
+        padding: 15px 18px;
+        font-size: 15px;
+        min-height: 48px; /* Better touch target */
+    }
+    
+    .mtfe-account-modal-content .mt-search-close {
+        top: 18px;
+        right: 18px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        min-width: 44px; /* Better touch target */
+        min-height: 44px;
+    }
+    
+    .mtfe-account-modal-content .form-row {
+        margin-bottom: 22px;
+    }
+    
+    .mtfe-account-modal-content label {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .mtfe-account-modal-content input[type="text"],
+    .mtfe-account-modal-content input[type="password"],
+    .mtfe-account-modal-content input[type="email"] {
+        padding: 14px 18px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        border-radius: 12px;
+        min-height: 48px; /* Better touch target */
+    }
+    
+    .mtfe-account-modal-content button[type="submit"],
+    .mtfe-account-modal-content .woocommerce-Button {
+        padding: 16px 24px;
+        font-size: 16px;
+        min-height: 52px; /* Better touch target */
+        border-radius: 12px;
+    }
+    
+    .mtfe-account-modal-content .woocommerce-LostPassword {
+        margin-top: 24px;
+        padding-top: 24px;
+    }
+    
+    .mtfe-account-modal-content .woocommerce-LostPassword a {
+        font-size: 15px;
+        padding: 8px 0; /* Better touch target */
+        display: inline-block;
+    }
+}
+
+/* Mobile portrait (480px - 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+    .mtfe-account-modal-inner {
+        max-width: 90%;
+    }
+    
+    .mtfe-account-forms {
+        padding: 38px 30px 30px;
+    }
+}
+
+/* Small mobile (480px and below) */
+@media (max-width: 480px) {
+    .mtfe-account-modal {
+        padding: 15px 10px;
+        padding-top: 30px;
+    }
+    
+    .mtfe-account-modal-inner {
+        max-width: 100%;
+    }
+    
+    .mtfe-account-modal-content {
+        border-radius: 12px;
+        max-height: calc(100vh - 60px);
+    }
+    
+    .mtfe-account-forms {
+        padding: 35px 22px 28px;
+    }
+    
+    .mtfe-account-form-tabs {
+        margin-bottom: 25px;
+        padding: 2px;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .mtfe-account-form-tabs button {
+        padding: 14px 16px;
+        font-size: 14px;
+        min-height: 46px;
+    }
+    
+    .mtfe-account-modal-content .mt-search-close {
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .mtfe-account-modal-content .form-row {
+        margin-bottom: 20px;
+    }
+    
+    .mtfe-account-modal-content input[type="text"],
+    .mtfe-account-modal-content input[type="password"],
+    .mtfe-account-modal-content input[type="email"] {
+        padding: 13px 16px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+    
+    .mtfe-account-modal-content button[type="submit"],
+    .mtfe-account-modal-content .woocommerce-Button {
+        padding: 15px 20px;
+        font-size: 15px;
+    }
+    
+    .mtfe-account-modal-content .woocommerce-LostPassword {
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+}
+
+/* Extra small mobile (360px and below) */
+@media (max-width: 360px) {
+    .mtfe-account-modal {
+        padding: 10px 8px;
+        padding-top: 25px;
+    }
+    
+    .mtfe-account-modal-content {
+        border-radius: 10px;
+        max-height: calc(100vh - 50px);
+    }
+    
+    .mtfe-account-forms {
+        padding: 30px 18px 25px;
+    }
+    
+    .mtfe-account-form-tabs {
+        margin-bottom: 22px;
+    }
+    
+    .mtfe-account-form-tabs button {
+        padding: 12px 14px;
+        font-size: 13px;
+        min-height: 44px;
+    }
+    
+    .mtfe-account-modal-content .mt-search-close {
+        top: 10px;
+        right: 10px;
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+    
+    .mtfe-account-modal-content input[type="text"],
+    .mtfe-account-modal-content input[type="password"],
+    .mtfe-account-modal-content input[type="email"] {
+        padding: 12px 14px;
+        font-size: 16px;
+    }
+    
+    .mtfe-account-modal-content button[type="submit"],
+    .mtfe-account-modal-content .woocommerce-Button {
+        padding: 14px 18px;
+        font-size: 14px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+    .mtfe-account-modal {
+        padding: 15px;
+        align-items: center;
+    }
+    
+    .mtfe-account-modal-content {
+        max-height: calc(100vh - 30px);
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .mtfe-account-forms {
+        padding: 30px 25px 25px;
+    }
+    
+    .mtfe-account-form-tabs {
+        margin-bottom: 20px;
+    }
+    
+    .mtfe-account-form-tabs button {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    .mtfe-account-modal-content .form-row {
+        margin-bottom: 18px;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .mtfe-account-modal-content {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* Prevent body scroll when modal is open on mobile */
+body.mtfe-off-canvas-active {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/* Improve scrolling on iOS */
+.mtfe-account-modal-content {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Better focus states for keyboard navigation */
+@media (min-width: 768px) {
+    .mtfe-account-form-tabs button:focus-visible,
+    .mtfe-account-modal-content input:focus-visible,
+    .mtfe-account-modal-content button:focus-visible {
+        outline: 2px solid #333;
+        outline-offset: 2px;
+    }
+}
+
+.mtfe-off-canvas-panel.mtfe-burger-widget {
+    z-index: 1000000;
+    isolation: isolate;
+}
+
+.mtfe-off-canvas-panel.mtfe-burger-widget .mtfe-off-canvas-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10 !important;
+}
+
+/* Drawer above dimmer; burger trigger floated between overlay and drawer (see elementor-widgets.js). */
+.mtfe-off-canvas-panel.mtfe-burger-widget > .mtfe-burger-menu-wrapper.mtfe-burger-menu-wrapper--floated {
+    z-index: 30 !important;
+    pointer-events: auto;
+}
+
+.mtfe-off-canvas-panel.mtfe-burger-widget.is-active .mtfe-off-canvas-content {
+    transform: translateX(0);
+}
+
+.mtfe-burger-widget .mtfe-off-canvas-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    z-index: 20 !important;
+    height: 100%;
+    width: 300px;
+    max-width: 90%;
+    background: #111;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    transform: translateX(100%);
+    padding: 30px;
+    padding-top: 70px;
+    overflow-y: auto;
+    color: #fff;
+}

@@ -1,0 +1,63 @@
+/**
+ * Pristine off-canvas: body.mtfe-off-canvas-active (see theme custom.js / elementor-widgets.js).
+ * Same black scrim as .mtfe-off-canvas-overlay (rgba(0, 0, 0, 0.85)).
+ *
+ * Hero: scrim only on .mtfe-solaris-hero__main so the desktop sidebar column stays clear.
+ * Off-canvas drawer: no scrim on Solaris widgets inside .mtfe-off-canvas-panel.
+ */
+body.mtfe-off-canvas-active .elementor-widget[class*="elementor-widget-mtfe-solaris"]:not(.elementor-widget-mtfe-solaris-hero) {
+	position: relative;
+}
+
+body.mtfe-off-canvas-active .elementor-widget[class*="elementor-widget-mtfe-solaris"]:not(.elementor-widget-mtfe-solaris-hero)::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.85);
+	pointer-events: none;
+	z-index: 99990;
+	opacity: 1;
+	transition: opacity 0.4s ease;
+}
+
+body.mtfe-off-canvas-active .elementor-widget-mtfe-solaris-hero .mtfe-solaris-hero__main {
+	position: relative;
+}
+
+body.mtfe-off-canvas-active .elementor-widget-mtfe-solaris-hero .mtfe-solaris-hero__main::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.85);
+	pointer-events: none;
+	z-index: 99990;
+	opacity: 1;
+	transition: opacity 0.4s ease;
+}
+
+body.mtfe-off-canvas-active .mtfe-off-canvas-panel .elementor-widget[class*="elementor-widget-mtfe-solaris"] {
+	position: static;
+}
+
+body.mtfe-off-canvas-active .mtfe-off-canvas-panel .elementor-widget[class*="elementor-widget-mtfe-solaris"]::after,
+body.mtfe-off-canvas-active .mtfe-off-canvas-panel .elementor-widget-mtfe-solaris-hero .mtfe-solaris-hero__main::after {
+	content: none;
+	display: none;
+}
+
+/*
+ * Solaris widget dim layer uses z-index 99990. Keep the whole off-canvas stack above it so
+ * .mtfe-off-canvas-content (drawer) stays visible and clickable when open.
+ */
+body.mtfe-off-canvas-active .mtfe-off-canvas-panel {
+	z-index: 1000000 !important;
+	isolation: isolate;
+}
+
+body.mtfe-off-canvas-active .mtfe-off-canvas-panel .mtfe-off-canvas-overlay {
+	z-index: 1;
+}
+
+body.mtfe-off-canvas-active .mtfe-off-canvas-panel .mtfe-off-canvas-content {
+	z-index: 2;
+}

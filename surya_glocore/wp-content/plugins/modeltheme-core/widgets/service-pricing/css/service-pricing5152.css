@@ -1,0 +1,174 @@
+/* MT Service Pricing Grid */
+:root {
+    --mtfe-sp-border: rgba(15, 20, 23, 0.12);
+}
+
+.mtfe-service-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    row-gap: 24px;
+}
+
+/* MT Service Pricing Card */
+.mtfe-service-pricing-card {
+    max-width: 100%;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mtfe-service-pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.mtfe-service-pricing-image-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 65%;
+    overflow: hidden;
+}
+
+.mtfe-service-pricing-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.4s ease;
+}
+
+.mtfe-service-pricing-card:hover .mtfe-service-pricing-image {
+    transform: scale(1.05);
+}
+
+.mtfe-service-pricing-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    line-height: 1.2;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.mtfe-service-pricing-badge:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+.mtfe-service-pricing-body {
+    display: block;
+}
+
+.mtfe-service-pricing-rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.mtfe-rating-star {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.mtfe-rating-number {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.mtfe-rating-reviews {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.mtfe-service-pricing-title {
+    margin: 0 0 14px 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.mtfe-service-pricing-features {
+    list-style: none;
+    margin: 0 0 16px 0;
+    padding: 0;
+}
+
+.mtfe-service-pricing-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.mtfe-service-pricing-feature:last-child {
+    margin-bottom: 0;
+}
+
+.mtfe-service-pricing-feature i {
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.mtfe-service-pricing-feature-text {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.mtfe-service-pricing-separator {
+    border-top: 1px solid var(--mtfe-sp-border);
+    margin: 16px 0;
+}
+
+.mtfe-service-pricing-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.mtfe-service-pricing-price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.mtfe-service-pricing-label {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.mtfe-service-pricing-value {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.mtfe-service-pricing-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.25s ease, background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.mtfe-service-pricing-btn:hover {
+    opacity: 0.92;
+    transform: translateY(-2px);
+}

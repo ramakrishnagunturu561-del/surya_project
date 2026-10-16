@@ -1,0 +1,45 @@
+/*
+ * Pre-hide animated elements to prevent FOUC (flash of unstyled content).
+ * GSAP's autoAlpha controls visibility + opacity via inline styles.
+ * After animation, inline visibility:visible stays and overrides these rules.
+ *
+ * Fallback: if GSAP never loads (CDN failure, JS error), the CSS animation
+ * kicks in after 3s and makes elements visible so content isn't lost.
+ */
+
+@keyframes mtAnimFallback {
+    to { visibility: visible; opacity: 1; }
+}
+
+/* Only pre-hide on desktop – animations are disabled on mobile */
+@media (min-width: 992px) {
+    /* Sections that animate as a whole unit */
+    [data-mt-anim-section]:not([data-mt-section-children]) {
+        visibility: hidden;
+        opacity: 0;
+        animation: mtAnimFallback 0s 3s forwards;
+    }
+
+    /* Grid items */
+    [data-mt-anim-grid] > .mt-service-grid-item,
+    [data-mt-anim-grid] > .mt-team-grid-item,
+    [data-mt-anim-grid] > .mt-portfolio-grid-item,
+    [data-mt-anim-grid] > .mt-events-grid-item,
+    [data-mt-anim-grid] > .mt-careers-grid-item {
+        visibility: hidden;
+        opacity: 0;
+        animation: mtAnimFallback 0s 3s forwards;
+    }
+}
+
+/* Sticky sidebar on single CPT pages (desktop only) */
+@media (min-width: 992px) {
+    .mt-service-sidebar,
+    .mt-team-profile-card,
+    .mt-portfolio-sidebar,
+    .mt-events-sidebar,
+    .mt-careers-sidebar {
+        position: sticky;
+        top: 50px;
+    }
+}

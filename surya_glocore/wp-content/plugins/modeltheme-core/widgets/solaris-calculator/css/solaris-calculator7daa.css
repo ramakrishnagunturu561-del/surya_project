@@ -1,0 +1,1504 @@
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator *,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator *::before,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator *::after {
+  box-sizing: border-box;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator {
+  --mtfe-scalc-bg-main: var(--bg-main, #faf8f2);
+  --mtfe-scalc-text-primary: var(--text-primary, #0f1417);
+  --mtfe-scalc-text-secondary: var(--text-secondary, #3a4a46);
+  --mtfe-scalc-green-primary: var(--green-primary, #0f2e28);
+  --mtfe-scalc-green-secondary: var(--green-secondary, #1a3f38);
+  --mtfe-scalc-gold-primary: var(--gold-primary, #d4b45f);
+  --mtfe-scalc-gold-hover: var(--gold-hover, #c9a94d);
+  --mtfe-scalc-accent-soft: var(--accent-soft, #5f868c);
+  --mtfe-scalc-gray-line: #e5e7eb;
+  --mtfe-scalc-gray-muted: #d1d5db;
+  --mtfe-scalc-option-border: #e5e7eb;
+  --mtfe-scalc-option-bg: #ffffff;
+  --mtfe-scalc-btn-disabled-bg: #e5e7eb;
+  --mtfe-scalc-btn-disabled-text: #9ca3af;
+  --mtfe-scalc-ease-premium: cubic-bezier(0.65, 0, 0.05, 1);
+  --mtfe-scalc-ui-pad: 2rem;
+  --mtfe-scalc-roof-icon-default: var(--mtfe-scalc-text-secondary, #3a4a46);
+  --mtfe-scalc-roof-icon-active: var(--mtfe-scalc-gold-primary, #d4b45f);
+  /* Body: Customizer “Body Font family”, fallback Inter (see mtfe-site-typography-vars.php) */
+  --mtfe-scalc-font-sans: var(--mtfe-site-font-body, "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100dvh;
+  font-family: var(--mtfe-scalc-font-sans);
+  color: var(--mtfe-scalc-text-primary);
+  -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
+  box-shadow: var(--mtfe-scalc-shell-shadow);
+}
+
+/* Headings use Customize → Site Typography (Pristine): same vars as theme h2–h5 */
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator h2 {
+  font-family: var(--mtfe-site-font-h2, var(--mtfe-scalc-font-sans));
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator h3 {
+  font-family: var(--mtfe-site-font-h3, var(--mtfe-scalc-font-sans));
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator h4 {
+  font-family: var(--mtfe-site-font-h4, var(--mtfe-scalc-font-sans));
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator h5 {
+  font-family: var(--mtfe-site-font-h5, var(--mtfe-scalc-font-sans));
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100dvh;
+  background: var(--mtfe-scalc-bg-main);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right {
+    min-height: 100vh;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__header-row {
+    margin-bottom: 1rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__header-meta {
+    font-size: 0.72rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__progress-track {
+    height: 10px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__progress-line {
+    height: 1.25px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__progress-fill {
+    height: 2px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__node {
+    width: 7px;
+    height: 7px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__node.is-active::after {
+    width: 16px;
+    height: 16px;
+  }
+
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__step-heading {
+    font-size: clamp(1.75rem, 2.5vw, 2.125rem);
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__step-desc {
+    margin-bottom: 1.5rem;
+    max-width: 46rem;
+    font-size: clamp(0.95rem, 1.1vw, 1.12rem);
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__grid {
+    gap: 0.75rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__grid--spend,
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__grid--roof,
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__grid--shade {
+    gap: 0.875rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__grid--spend .mtfe-solaris-calculator__option-btn {
+    padding: 0.9375rem 1rem;
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__roof-btn {
+    padding: 1.125rem 0.625rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__roof-label {
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__roof-img {
+    width: 2.375rem;
+    height: 2.375rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__roof-ico {
+    font-size: 1.75rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__roof-svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__roof-icon-el {
+    font-size: 1.75rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__shade-btn {
+    padding: 1.25rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__shade-ico-wrap {
+    padding: 0.625rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__shade-icon-el {
+    font-size: 1.25rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__shade-img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__shade-label {
+    font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__shade-desc {
+    font-size: clamp(0.6875rem, 1.5vw, 0.8125rem);
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight {
+    margin-top: 1.5rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight--1 {
+    gap: 1rem;
+    padding: 1.125rem 1.125rem 1.125rem 1rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight--1 .mtfe-solaris-calculator__insight-ico {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight-label {
+    font-size: 1rem;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight-body {
+    font-size: clamp(0.8125rem, 1.05vw, 0.9375rem);
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight--2 {
+    gap: 0.875rem;
+    padding: 1.125rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight-ico-wrap {
+    padding: 0.625rem;
+    font-size: 1.125rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight-icon-el,
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight-inline-ico {
+    font-size: 16px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight--3 {
+    gap: 0.875rem;
+    padding: 0.9375rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight-ico-round {
+    padding: 0.625rem;
+    font-size: 16px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight--4 {
+    padding: 1.125rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight-deco-el {
+    font-size: 2.25rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__insight-deco-lg {
+    font-size: 2.25rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__field-block {
+    max-width: 26rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__label {
+    margin-bottom: 0.625rem;
+    font-size: 12px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__input {
+    padding: 0.875rem 1.125rem;
+    font-size: 0.9375rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__btn-detect {
+    padding: 0.875rem 1.375rem;
+    font-size: 0.8125rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__loc-result {
+    font-size: 12px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__loc-ico {
+    font-size: 14px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__fineprint {
+    font-size: clamp(0.6875rem, 1.5vw, 0.75rem);
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__fineprint-ico {
+    font-size: 16px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__success {
+    padding: 1.75rem 0;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__success-svg-wrap {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__success-img {
+    width: 5.5rem;
+    height: 5.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__success-title {
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__success-body {
+    max-width: 26rem;
+    font-size: clamp(0.95rem, 1.1vw, 1.12rem);
+  }
+
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__nav-back {
+    font-size: 13px;
+    gap: 0.5rem;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__nav-back-ico {
+    width: 9px;
+    height: 9px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__nav-next {
+    min-width: 155px;
+    padding: 0.875rem 1.75rem;
+    font-size: 14px;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right .mtfe-solaris-calculator__nav-next-ico {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  max-width: min(100%, 72rem);
+  margin: 0 auto;
+  position: relative;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__header {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 4;
+  padding: var(--mtfe-scalc-ui-pad) var(--mtfe-scalc-ui-pad) 0.75rem;
+  background: var(--mtfe-scalc-bg-main);
+  transition: opacity 0.5s ease;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__header-meta {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mtfe-scalc-text-secondary);
+  opacity: 0.8;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__header-step {
+  color: var(--mtfe-scalc-gold-primary);
+  transition: all 0.3s ease;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__progress-track {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__progress-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--mtfe-scalc-gray-line);
+  border-radius: 999px;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__progress-fill {
+  position: absolute;
+  left: 0;
+  height: 1.5px;
+  width: 0%;
+  background: var(--mtfe-scalc-gold-primary);
+  border-radius: 999px;
+  transition: width 0.7s var(--mtfe-scalc-ease-premium);
+}
+
+@keyframes mtfe-scalc-glow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1.35);
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__progress-nodes {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1px;
+  z-index: 2;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__node {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mtfe-scalc-gray-muted);
+  box-shadow: 0 0 0 3px var(--mtfe-scalc-bg-main);
+  opacity: 0.5;
+  transform: scale(0.75);
+  transition: all 0.7s var(--mtfe-scalc-ease-premium);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__node.is-past {
+  background: var(--mtfe-scalc-gold-primary);
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 0 0 3px var(--mtfe-scalc-bg-main);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__node.is-active {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  background: var(--mtfe-scalc-gold-primary);
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 0 0 3px var(--mtfe-scalc-bg-main), 0 0 6px color-mix(in srgb, var(--mtfe-scalc-gold-primary) 60%, transparent);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__node.is-active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  background: var(--mtfe-scalc-gold-primary);
+  border-radius: 50%;
+  filter: blur(5px);
+  pointer-events: none;
+  z-index: -1;
+  animation: mtfe-scalc-glow 2s ease-in-out infinite;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__node.is-inactive {
+  background: var(--mtfe-scalc-gray-muted);
+  opacity: 0.5;
+  transform: scale(0.75);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__scroll {
+  flex: 1;
+  position: relative;
+  z-index: 3;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1rem var(--mtfe-scalc-ui-pad);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--mtfe-scalc-text-primary) 10%, transparent) transparent;
+}
+
+@media (min-width: 768px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__scroll {
+    overflow-y: hidden;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--mtfe-scalc-text-primary) 10%, transparent);
+  border-radius: 10px;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__step {
+  display: none;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s var(--mtfe-scalc-ease-premium), transform 0.6s var(--mtfe-scalc-ease-premium);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__step.is-active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__step-heading {
+  margin: 0 0 0.25rem;
+  font-family: inherit;
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--mtfe-scalc-text-primary);
+}
+
+@media (min-width: 768px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__step-heading {
+    font-size: clamp(1.5rem, 2.2vw, 1.875rem);
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__hl-gold {
+  color: var(--mtfe-scalc-gold-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__hl-accent {
+  color: var(--mtfe-scalc-accent-soft);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__step-desc {
+  margin: 0 0 1.25rem;
+  max-width: 42rem;
+  font-size: clamp(0.95rem, 1.1vw, 1.12rem);
+  font-weight: 500;
+  line-height: 1.62;
+  color: var(--mtfe-scalc-text-secondary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__grid {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__grid--spend {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__grid--spend {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.625rem;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__grid--roof {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__grid--roof {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.625rem;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__grid--shade {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__grid--shade {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.625rem;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__option-btn {
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+  border: 1px solid var(--mtfe-scalc-option-border);
+  background: var(--mtfe-scalc-option-bg);
+  color: var(--mtfe-scalc-text-secondary);
+  border-radius: 10px;
+  transition: border-color 0.3s var(--mtfe-scalc-ease-premium), background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.15s, opacity 0.3s, filter 0.3s;
+  transform-origin: center;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__option-btn:active {
+  transform: scale(0.97);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__grid--spend .mtfe-solaris-calculator__option-btn {
+  padding: 0.75rem;
+  font-size: clamp(0.8125rem, 2vw, 0.875rem);
+  font-weight: 500;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__grid--spend .mtfe-solaris-calculator__option-btn:hover {
+  border-color: var(--mtfe-scalc-gold-primary);
+  color: var(--mtfe-scalc-text-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__option-btn.is-selected {
+  border-color: var(--mtfe-scalc-gold-primary);
+  background: #fff;
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--mtfe-scalc-gold-primary) 15%, transparent);
+  transform: translateY(-2px);
+  color: var(--mtfe-scalc-text-primary);
+  opacity: 1;
+  filter: none;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__option-btn.is-dim {
+  opacity: 0.5;
+  filter: grayscale(30%);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__roof-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__roof-svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-bottom: 0.5rem;
+  stroke: var(--mtfe-scalc-roof-icon-default);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.3s;
+}
+
+@media (min-width: 768px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__roof-svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__roof-btn.is-selected .mtfe-solaris-calculator__roof-svg {
+  stroke: var(--mtfe-scalc-roof-icon-active);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__roof-img {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+  object-fit: contain;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__roof-ico {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--mtfe-scalc-roof-icon-default);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__roof-btn.is-selected .mtfe-solaris-calculator__roof-ico {
+  color: var(--mtfe-scalc-roof-icon-active);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__roof-label {
+  font-size: clamp(0.6875rem, 2vw, 0.75rem);
+  font-weight: 500;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__roof-btn:hover {
+  border-color: var(--mtfe-scalc-gold-primary);
+  color: var(--mtfe-scalc-text-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-btn {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 0;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-ico-wrap {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0.5rem;
+  border-radius: 999px;
+  background: var(--mtfe-scalc-bg-main);
+  color: var(--mtfe-scalc-text-primary);
+  transition: background 0.3s, color 0.3s;
+}
+
+@media (min-width: 640px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-ico-wrap {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-btn:hover {
+  border-color: var(--mtfe-scalc-gold-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-btn.is-selected .mtfe-solaris-calculator__shade-ico-wrap {
+  background: #fff;
+  color: var(--mtfe-scalc-gold-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-btn.is-selected .mtfe-solaris-calculator__shade-label {
+  color: var(--mtfe-scalc-gold-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-img {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-label {
+  display: block;
+  font-size: clamp(0.8125rem, 2vw, 0.875rem);
+  font-weight: 500;
+  color: var(--mtfe-scalc-text-primary);
+  margin-bottom: 0.125rem;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-desc {
+  display: block;
+  font-size: clamp(0.625rem, 2vw, 0.6875rem);
+  font-weight: 400;
+  color: var(--mtfe-scalc-text-secondary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight {
+  margin-top: 1.25rem;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  padding: 1rem 1rem 1rem 0.875rem;
+  border-left: 3px solid var(--mtfe-scalc-gold-primary);
+  background: linear-gradient(135deg, #fffdf5 0%, #fff 100%);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--1 .mtfe-solaris-calculator__insight-ico {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--mtfe-scalc-gold-primary) 12%, transparent);
+  font-size: 0.875rem;
+  color: var(--mtfe-scalc-gold-primary);
+  margin-top: 1px;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-label {
+  margin: 0 0 0.25rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
+  line-height: 1.3;
+  color: var(--mtfe-scalc-text-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--2 .mtfe-solaris-calculator__insight-label {
+  color: var(--mtfe-scalc-gold-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-body {
+  margin: 0;
+  font-size: clamp(0.75rem, 2vw, 0.8125rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--mtfe-scalc-text-secondary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--mtfe-scalc-green-primary);
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--mtfe-scalc-green-primary) 10%, transparent);
+}
+
+@media (min-width: 640px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--2 {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--2 .mtfe-solaris-calculator__insight-body {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 400;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-ico-wrap {
+  flex-shrink: 0;
+  display: inline-flex;
+  padding: 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--mtfe-scalc-green-secondary) 50%, transparent);
+  color: var(--mtfe-scalc-gold-primary);
+  font-size: 1rem;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.02);
+  border: 1px solid color-mix(in srgb, var(--mtfe-scalc-green-primary) 5%, transparent);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-ico-round {
+  flex-shrink: 0;
+  padding: 0.5rem;
+  border-radius: 999px;
+  background: var(--mtfe-scalc-bg-main);
+  color: var(--mtfe-scalc-gold-primary);
+  font-size: 14px;
+  display: inline-flex;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--4 {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.5) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in srgb, var(--mtfe-scalc-gold-primary) 30%, transparent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--4-deco {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5rem;
+  height: 5rem;
+  background: var(--mtfe-scalc-gold-primary);
+  opacity: 0.1;
+  border-radius: 50%;
+  filter: blur(24px);
+  transform: translate(25%, -25%);
+  pointer-events: none;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--4 .mtfe-solaris-calculator__insight-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--mtfe-scalc-text-primary);
+  letter-spacing: 0.22em;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-inline-ico {
+  font-size: 14px;
+  color: var(--mtfe-scalc-accent-soft);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--4 .mtfe-solaris-calculator__insight-body {
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--5 {
+  margin-top: 1.5rem;
+  padding-top: 0.625rem;
+  border-top: 2px solid var(--mtfe-scalc-accent-soft);
+  background: transparent;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--5 .mtfe-solaris-calculator__insight-label {
+  letter-spacing: 0.22em;
+  color: var(--mtfe-scalc-text-primary);
+}
+
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-deco-lg {
+  display: none;
+  flex-shrink: 0;
+  font-size: 2rem;
+  color: var(--mtfe-scalc-accent-soft);
+  opacity: 0.2;
+}
+
+@media (min-width: 640px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-deco-lg {
+    display: block;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__field-block {
+  max-width: 24rem;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--mtfe-scalc-text-secondary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__zip-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+@media (min-width: 640px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__zip-row {
+    flex-direction: row;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__input {
+  width: 100%;
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--mtfe-scalc-option-border);
+  background: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--mtfe-scalc-text-primary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__input:focus {
+  outline: none;
+  border-color: var(--mtfe-scalc-gold-primary);
+  box-shadow: 0 0 0 1px var(--mtfe-scalc-gold-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__btn-detect {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--mtfe-scalc-green-primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__btn-detect {
+    min-width: 110px;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__btn-detect:hover {
+  background: var(--mtfe-scalc-green-secondary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__btn-detect:active {
+  transform: scale(0.95);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__btn-detect:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__spin {
+  display: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: mtfe-scalc-spin 0.8s linear infinite;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__btn-detect.is-loading .mtfe-solaris-calculator__spin {
+  display: block;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__btn-detect.is-loading [data-role="detect-text"] {
+  display: none;
+}
+
+@keyframes mtfe-scalc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__loc-result {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--mtfe-scalc-accent-soft);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__loc-result.is-visible {
+  opacity: 1;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__loc-ico {
+  flex-shrink: 0;
+  display: inline-flex;
+  font-size: 12px;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__fineprint {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+  font-size: clamp(0.625rem, 2vw, 0.6875rem);
+  font-weight: 400;
+  line-height: 1.625;
+  color: #9ca3af;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__fineprint-ico {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--mtfe-scalc-gold-primary);
+  font-size: 14px;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-svg-wrap {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-ring-bg {
+  stroke: var(--mtfe-scalc-gray-line);
+  fill: none;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-ring {
+  stroke: var(--mtfe-scalc-gold-primary);
+  fill: none;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-check {
+  stroke: var(--mtfe-scalc-text-primary);
+  fill: none;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__step.is-active .mtfe-solaris-calculator__success-ring {
+  animation: mtfe-scalc-draw-circle 0.8s var(--mtfe-scalc-ease-premium) forwards;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__step.is-active .mtfe-solaris-calculator__success-check {
+  animation: mtfe-scalc-draw-check 0.6s 0.5s var(--mtfe-scalc-ease-premium) forwards;
+}
+
+@keyframes mtfe-scalc-draw-circle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes mtfe-scalc-draw-check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-img {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1.5rem;
+  object-fit: contain;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-title {
+  margin: 0 0 0.75rem;
+  font-family: inherit;
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--mtfe-scalc-text-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-body {
+  margin: 0;
+  max-width: 24rem;
+  font-size: clamp(0.95rem, 1.1vw, 1.12rem);
+  font-weight: 500;
+  line-height: 1.62;
+  color: var(--mtfe-scalc-text-secondary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-email {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-weight: 700;
+  color: var(--mtfe-scalc-text-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__footer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 0.75rem var(--mtfe-scalc-ui-pad) calc(env(safe-area-inset-bottom, 0px) + var(--mtfe-scalc-ui-pad));
+  border-top: 1px solid color-mix(in srgb, var(--mtfe-scalc-gray-line) 50%, transparent);
+  background: color-mix(in srgb, var(--mtfe-scalc-bg-main) 95%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 4;
+  transition: opacity 0.5s ease;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  gap: 0.375rem;
+  padding: 0.25rem 0.25rem;
+  margin: 0;
+  border: none;
+  background: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.15s;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-back:hover {
+  color: var(--mtfe-scalc-text-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-back:active {
+  transform: scale(0.95);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-back.is-locked {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-back-ico {
+  width: 8px;
+  height: 8px;
+  border-left: 1.5px solid currentColor;
+  border-top: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  margin-right: 2px;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 140px;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.15s;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next-ico {
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid currentColor;
+  border-top: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 2px;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next.is-disabled {
+  background: var(--mtfe-scalc-btn-disabled-bg);
+  color: var(--mtfe-scalc-btn-disabled-text);
+  cursor: not-allowed;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next:not(.is-disabled) {
+  background: var(--mtfe-scalc-green-primary);
+  color: #fff;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next:not(.is-disabled):hover {
+  background: var(--mtfe-scalc-green-secondary);
+  box-shadow: 0 8px 20px rgba(15, 46, 40, 0.3);
+}
+
+@media (min-width: 768px) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next:not(.is-disabled):hover {
+    transform: translateY(-2px);
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-spin {
+  display: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: mtfe-scalc-spin 0.8s linear infinite;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-check {
+  display: none;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-check-path {
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next.is-loading .mtfe-solaris-calculator__nav-next-text,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next.is-loading .mtfe-solaris-calculator__nav-next-ico {
+  display: none;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next.is-loading .mtfe-solaris-calculator__nav-spin {
+  display: block;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next.is-success .mtfe-solaris-calculator__nav-next-text,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next.is-success .mtfe-solaris-calculator__nav-next-ico,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next.is-success .mtfe-solaris-calculator__nav-spin {
+  display: none;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next.is-success .mtfe-solaris-calculator__nav-check {
+  display: block;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-next.is-success .mtfe-solaris-calculator__nav-check-path {
+  animation: mtfe-scalc-draw-check-btn 0.5s var(--mtfe-scalc-ease-premium) forwards;
+}
+
+@keyframes mtfe-scalc-draw-check-btn {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__loader {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  background: color-mix(in srgb, var(--mtfe-scalc-bg-main) 80%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__loader.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__loader-ico {
+  margin-bottom: 1.25rem;
+  font-size: 2rem;
+  color: var(--mtfe-scalc-accent-soft);
+  opacity: 0.8;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__line-loader {
+  width: 100%;
+  max-width: 140px;
+  height: 2px;
+  margin-bottom: 1.25rem;
+  background: color-mix(in srgb, var(--mtfe-scalc-green-primary) 10%, transparent);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__line-loader-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 30%;
+  background: var(--mtfe-scalc-gold-primary);
+  animation: mtfe-scalc-line 1.5s infinite ease-in-out;
+}
+
+@keyframes mtfe-scalc-line {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__loader-title {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.1vw, 1.12rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--mtfe-scalc-text-primary);
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__loader-sub {
+  margin: 0.375rem 0 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-icon-el,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-icon-el,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__roof-icon-el,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-inline-ico,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-deco-el {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-style: normal;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-icon-el,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-inline-ico {
+  font-size: 14px;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__shade-icon-el {
+  font-size: 1rem;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight-deco-el {
+  font-size: 2rem;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__loader-icon-el {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 2rem;
+  font-style: normal;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator .fas,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator .fa-solid {
+  font-weight: 900;
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator i[class*="fa-"] {
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.mtfe-solaris-calculator__inner {
+    padding: 25px;
+}
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator svg.e-font-icon-svg,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator .e-font-icon-svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__right {
+    border-radius: 20px;
+}
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__insight--5 .mtfe-solaris-calculator__insight--5-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__badge-dot,
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__node.is-active::after,
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__line-loader-bar,
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-ring,
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-check,
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__nav-check-path {
+    animation: none !important;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__step {
+    transition: none;
+  }
+
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-ring,
+  .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__success-check {
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__header.is-hidden,
+.elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator__footer.is-hidden {
+  display: none;
+}

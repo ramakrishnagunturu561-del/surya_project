@@ -1,0 +1,585 @@
+/* =============================================================================
+   MT Why Us Widget — mtfe-wu prefix
+   ============================================================================= */
+
+/* ---------- KEYFRAMES ---------- */
+
+@keyframes mtfe-wu-pulseRing {
+    0%   { box-shadow: 0 0 0 0 rgba(244,193,61,0.55); }
+    70%  { box-shadow: 0 0 0 6px rgba(244,193,61,0); }
+    100% { box-shadow: 0 0 0 0 rgba(244,193,61,0); }
+}
+
+@keyframes mtfe-wu-fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes mtfe-wu-fadeLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes mtfe-wu-fadeRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes mtfe-wu-zoomFade {
+    from { opacity: 0; transform: scale(0.88); }
+    to   { opacity: 1; transform: scale(1); }
+}
+@keyframes mtfe-wu-sectionIn {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- REVEAL ---------- */
+
+.mtfe-why-us .reveal { opacity: 0; }
+
+.mtfe-why-us .reveal.up.in-view    { animation: mtfe-wu-fadeUp    0.9s cubic-bezier(.2,.7,.2,1) both; opacity: 1; }
+.mtfe-why-us .reveal.left.in-view  { animation: mtfe-wu-fadeLeft  0.9s cubic-bezier(.2,.7,.2,1) both; opacity: 1; }
+.mtfe-why-us .reveal.right.in-view { animation: mtfe-wu-fadeRight 0.9s cubic-bezier(.2,.7,.2,1) both; opacity: 1; }
+
+.mtfe-why-us .d-1.in-view { animation-delay: 0.10s; }
+.mtfe-why-us .d-2.in-view { animation-delay: 0.25s; }
+.mtfe-why-us .d-3.in-view { animation-delay: 0.40s; }
+.mtfe-why-us .d-4.in-view { animation-delay: 0.55s; }
+.mtfe-why-us .d-5.in-view { animation-delay: 0.70s; }
+.mtfe-why-us .d-6.in-view { animation-delay: 0.85s; }
+
+.elementor-element-edit-mode .mtfe-why-us .reveal,
+.elementor-element-edit-mode .mtfe-why-us .img-reveal {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+/* ---------- IMAGE REVEAL ---------- */
+
+.mtfe-why-us .img-reveal {
+    opacity: 0;
+}
+
+.mtfe-why-us .img-reveal.in-view {
+    animation: mtfe-wu-zoomFade 1.1s cubic-bezier(.2,.7,.2,1) both;
+    opacity: 1;
+}
+
+.mtfe-why-us .img-reveal.d-2.in-view { animation-delay: 0.25s; }
+.mtfe-why-us .img-reveal.d-4.in-view { animation-delay: 0.55s; }
+.mtfe-why-us .img-reveal.d-5.in-view { animation-delay: 0.70s; }
+
+/* ---------- SECTION ENTRANCE ---------- */
+
+.mtfe-why-us {
+    opacity: 0;
+    animation: mtfe-wu-sectionIn 0.8s cubic-bezier(.2,.7,.2,1) 0.05s both;
+}
+
+.elementor-element-edit-mode .mtfe-why-us {
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+/* ---------- WRAPPER ---------- */
+
+.mtfe-why-us {
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 64px;
+    align-items: stretch;
+}
+
+/* =============================================================================
+   LEFT COLUMN
+   ============================================================================= */
+
+/* ---------- PILL ---------- */
+
+.mtfe-wu__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    padding: 9px 18px 9px 14px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1E3935;
+    margin-bottom: 26px;
+    cursor: default;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 12px rgba(30,57,53,0.07);
+}
+
+.mtfe-wu__pill:hover {
+    transform: translateX(4px);
+}
+
+.mtfe-wu__pill::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #F4C13D;
+    flex-shrink: 0;
+    animation: mtfe-wu-pulseRing 2s ease-out infinite;
+}
+
+.mtfe-wu__heading {
+    font-size: 44px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #1E3935;
+    letter-spacing: -0.02em;
+    margin: 0 0 40px;
+}
+
+/* ---------- FEATURES ---------- */
+
+.mtfe-wu__features {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 44px;
+}
+
+.mtfe-wu__feature {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    align-items: start;
+    transition: transform 0.3s ease;
+}
+
+.mtfe-wu__feature:hover {
+    transform: translateX(6px);
+}
+
+.mtfe-wu__feature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(244,193,61,0.15);
+    border: 1px solid rgba(244,193,61,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1E3935;
+    flex-shrink: 0;
+    transition: background 0.35s ease,
+                transform 0.5s cubic-bezier(.34,1.56,.64,1),
+                box-shadow 0.4s ease;
+}
+
+.mtfe-wu__feature-icon svg,
+.mtfe-wu__feature-icon i {
+    width: 28px;
+    height: 28px;
+    font-size: 28px;
+    transition: transform 0.5s cubic-bezier(.34,1.56,.64,1);
+}
+
+.mtfe-wu__feature:hover .mtfe-wu__feature-icon {
+    background: #F4C13D;
+    transform: scale(1.05);
+    box-shadow: 0 10px 24px rgba(244,193,61,0.4);
+}
+
+.mtfe-wu__feature:hover .mtfe-wu__feature-icon svg,
+.mtfe-wu__feature:hover .mtfe-wu__feature-icon i {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.mtfe-wu__feature-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1E3935;
+    margin: 0 0 6px;
+    letter-spacing: -0.005em;
+}
+
+.mtfe-wu__feature-desc {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #6b7570;
+    margin: 0;
+}
+
+/* ---------- BUTTON ---------- */
+
+.mtfe-wu__btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: #F4C13D;
+    color: #1E3935;
+    border: none;
+    border-radius: 100px;
+    padding: 16px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.mtfe-wu__btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.55) 50%, transparent 70%);
+    background-size: 200% 100%;
+    transform: translateX(-100%);
+    transition: transform 0.7s ease;
+}
+
+.mtfe-wu__btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(244,193,61,0.45);
+    background: #ffd166;
+    color: #1E3935;
+}
+
+.mtfe-wu__btn:hover::before {
+    transform: translateX(100%);
+}
+
+.mtfe-wu__btn:active {
+    transform: translateY(0);
+}
+
+.mtfe-wu__btn-arrow {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
+}
+
+.mtfe-wu__btn:hover .mtfe-wu__btn-arrow {
+    transform: translate(4px, -4px) rotate(45deg);
+}
+
+/* =============================================================================
+   RIGHT COLUMN
+   ============================================================================= */
+
+.mtfe-wu__right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 20px;
+    height: 100%;
+}
+
+/* ---------- TOP IMAGE ---------- */
+
+.mtfe-wu__img-top {
+    grid-column: 1 / -1;
+    height: 100%;
+    min-height: 200px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #b8d4e8 0%, #4a7a98 100%);
+    position: relative;
+    transition: transform 0.6s cubic-bezier(.2,.7,.2,1), box-shadow 0.5s ease;
+}
+
+.mtfe-wu__img-top:hover {
+    transform: scale(1.005);
+    box-shadow: 0 24px 60px rgba(30,57,53,0.15);
+}
+
+.mtfe-wu__img-top img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------- CARD ---------- */
+
+.mtfe-wu__card {
+    height: 240px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #1E3935 0%, #142624 100%);
+    padding: 24px;
+    color: #FAF8F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(.2,.7,.2,1), box-shadow 0.5s ease;
+}
+
+.mtfe-wu__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(30,57,53,0.45);
+}
+
+.mtfe-wu__thumbs {
+    display: flex;
+    gap: 10px;
+}
+
+.mtfe-wu__thumb {
+    width: 100px;
+    height: 56px;
+    border-radius: 100px;
+    overflow: hidden;
+    background: rgba(244,193,61,0.18);
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
+}
+
+.mtfe-wu__thumb:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.mtfe-wu__thumb--small {
+    width: 56px;
+}
+
+.mtfe-wu__thumb img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mtfe-wu__card-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #FAF8F2;
+    margin: 0 0 8px;
+}
+
+.mtfe-wu__card-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(250,248,242,0.65);
+    margin: 0;
+    max-width: 240px;
+}
+
+/* ---------- BOTTOM IMAGE ---------- */
+
+.mtfe-wu__img-bottom {
+    height: 240px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #c8a878 0%, #6a4a2a 100%);
+    position: relative;
+    transition: transform 0.6s cubic-bezier(.2,.7,.2,1), box-shadow 0.5s ease;
+}
+
+.mtfe-wu__img-bottom:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(30,57,53,0.18);
+}
+
+.mtfe-wu__img-bottom img,
+.mtfe-wu__img-bottom video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: none;
+}
+
+.mtfe-wu__bg-video::-webkit-media-controls,
+.mtfe-wu__bg-video::-webkit-media-controls-enclosure,
+.mtfe-wu__bg-video::-webkit-media-controls-panel {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.mtfe-wu__img-bottom iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300%;
+    height: 300%;
+    border: none;
+    display: block;
+    pointer-events: none;
+}
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+
+@media (max-width: 1024px) {
+    .mtfe-why-us {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mtfe-wu__heading {
+        font-size: 30px;
+    }
+
+    .mtfe-wu__right {
+        grid-template-columns: 1fr;
+    }
+
+    .mtfe-wu__img-top,
+    .mtfe-wu__img-bottom,
+    .mtfe-wu__card {
+        height: 220px;
+    }
+}
+
+/* ---------- HEADING HIGHLIGHT ---------- */
+
+.mtfe-wu__heading-highlight {
+    color: #F4C13D;
+    position: relative;
+    display: inline-block;
+}
+
+/* ---------- STRONGER DEPTH ON IMAGES ---------- */
+
+.mtfe-wu__img-top,
+.mtfe-wu__img-bottom {
+    box-shadow: 0 8px 32px rgba(30,57,53,0.12);
+}
+
+.mtfe-wu__img-top:hover {
+    box-shadow: 0 28px 64px rgba(30,57,53,0.18);
+}
+
+.mtfe-wu__img-bottom:hover {
+    box-shadow: 0 24px 56px rgba(30,57,53,0.2);
+}
+
+/* ---------- CARD ACCENT LINE ---------- */
+
+@keyframes mtfe-wu-light-top {
+    0%   { background-position: -100% center; }
+    100% { background-position: 220% center; }
+}
+@keyframes mtfe-wu-light-sides {
+    0%   { background-position: left -100%, right -100%; }
+    100% { background-position: left 220%, right 220%; }
+}
+
+/* Top bar — static dim track + traveling gold light */
+.mtfe-wu__card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 22px 22px 0 0;
+    background-color: rgba(244,193,61,0.15);
+    background-image: linear-gradient(90deg,
+        transparent 0%,
+        rgba(244,193,61,0.5) 30%,
+        #F4C13D 50%,
+        rgba(244,193,61,0.5) 70%,
+        transparent 100%
+    );
+    background-size: 60% 100%;
+    background-repeat: no-repeat;
+    animation: mtfe-wu-light-top 2.8s ease-in-out infinite;
+}
+
+/* Side bars — left + right static dim track + traveling gold light */
+.mtfe-wu__card::after {
+    content: '';
+    position: absolute;
+    inset: 3px 0 0 0;
+    background-color: transparent;
+    background-image:
+        linear-gradient(180deg,
+            transparent 0%,
+            rgba(244,193,61,0.5) 30%,
+            #F4C13D 50%,
+            rgba(244,193,61,0.5) 70%,
+            transparent 100%
+        ),
+        linear-gradient(180deg,
+            transparent 0%,
+            rgba(244,193,61,0.35) 30%,
+            rgba(244,193,61,0.7) 50%,
+            rgba(244,193,61,0.35) 70%,
+            transparent 100%
+        );
+    background-size: 3px 50%, 3px 50%;
+    background-position: left -100%, right -100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    animation: mtfe-wu-light-sides 2.8s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+/* ---------- FEATURE ICON ACCENT RING ON HOVER ---------- */
+
+.mtfe-wu__feature-icon {
+    box-shadow: 0 0 0 0 rgba(244,193,61,0);
+    transition: background 0.35s ease,
+                transform 0.5s cubic-bezier(.34,1.56,.64,1),
+                box-shadow 0.4s ease;
+}
+
+.mtfe-wu__feature:hover .mtfe-wu__feature-icon {
+    box-shadow: 0 0 0 6px rgba(244,193,61,0.15), 0 10px 24px rgba(244,193,61,0.4);
+}
+
+/* =============================================================================
+   PREFERS REDUCED MOTION
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .mtfe-why-us,
+    .mtfe-why-us .reveal,
+    .mtfe-why-us .img-reveal,
+    .mtfe-wu__pill::before,
+    .mtfe-wu__feature,
+    .mtfe-wu__feature-icon,
+    .mtfe-wu__img-top,
+    .mtfe-wu__img-bottom,
+    .mtfe-wu__card,
+    .mtfe-wu__thumb,
+    .mtfe-wu__btn {
+        animation: none !important;
+        transition: none !important;
+    }
+    .mtfe-wu__card::before {
+        animation: none !important;
+        background-image: none !important;
+        background-color: rgba(244,193,61,0.4) !important;
+    }
+    .mtfe-wu__card::after {
+        animation: none !important;
+        background-image:
+            linear-gradient(180deg, #F4C13D 0%, rgba(244,193,61,0) 60%),
+            linear-gradient(180deg, rgba(244,193,61,0.6) 0%, rgba(244,193,61,0) 60%) !important;
+        background-position: left top, right top !important;
+    }
+    .mtfe-why-us,
+    .mtfe-why-us .reveal,
+    .mtfe-why-us .img-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

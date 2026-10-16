@@ -1,0 +1,79 @@
+/* ============================================================
+   MT Animated Progress – Elementor Widget
+   ============================================================ */
+
+.mtfe-ap-wrap {
+    width: 100%;
+}
+
+/* ---- List ---- */
+.mtfe-ap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- Single item ---- */
+.mtfe-ap-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ---- Header row (label + percentage) ---- */
+.mtfe-ap-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.mtfe-ap-label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.mtfe-ap-pct {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1a1a1a;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ---- Track ---- */
+.mtfe-ap-track {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: #e5e5e5;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+/* ---- Fill bar ---- */
+.mtfe-ap-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;                    /* starts at 0; JS animates to data-pct */
+    background-color: #c8e000;
+    border-radius: 100px;
+    will-change: width;
+    transition: none;             /* JS drives the animation */
+}
+
+/* ---- Animated state (added by JS) ---- */
+.mtfe-ap-fill.is-animating {
+    /* transition is set inline by JS for per-item control */
+}
+
+.mtfe-ap-fill.is-done {
+    /* nothing extra needed */
+}

@@ -1,0 +1,1551 @@
+/* ==========================================================================
+   MT Service - Styles
+   ========================================================================== */
+
+:root {
+    --mt-service-primary: #2563eb;
+    --mt-service-primary-hover: #1d4ed8;
+    --mt-service-text: #1A3F38;
+    --mt-service-text-light: #3A4A46;
+    --mt-service-bg-light: #FAF8F2;
+    --mt-service-border: #e5e7eb;
+    --mt-service-radius: 12px;
+    --mt-service-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --mt-service-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --mt-service-transition: all 0.3s ease;
+}
+
+/* Use global WP/Elementor heading font, never hardcoded */
+.mt-service-single .mt-service-title,
+.mt-service-single .mt-service-section-title,
+.mt-service-single .mt-service-highlight-title,
+.mt-service-single .mt-related-heading,
+.mt-service-single .mt-service-sidebar-card h3,
+.mt-service-single .mt-service-card-title,
+.mt-service-single .mt-service-card-title a {
+    font-family: var(--e-global-typography-primary-font-family, inherit) !important;
+}
+
+/* ==========================================================================
+   Single Service – Hero Banner
+   ========================================================================== */
+
+.mt-service-hero {
+    position: relative;
+    background-color: #0f172a;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0 60px;
+    overflow: hidden;
+}
+
+.mt-service-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.90) 100%);
+    z-index: 1;
+}
+
+.mt-service-hero--has-img .mt-service-hero-overlay {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.90) 0%, rgba(30, 41, 59, 0.82) 100%);
+}
+
+.mt-service-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.mt-service-hero-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.mt-service-hero-icon {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 30px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mt-service-hero-text {
+    flex: 1;
+}
+
+.mt-service-featured-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.mt-service-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+}
+
+.mt-service-short-desc {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 12px 0 0;
+    line-height: 1.6;
+    max-width: 560px;
+}
+
+.mt-service-hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.mt-service-hero-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 6px 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.mt-service-hero-turnaround {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.mt-service-hero-turnaround i {
+    font-size: 13px;
+}
+
+.mt-service-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--mt-service-primary);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: var(--mt-service-transition);
+}
+
+.mt-service-hero-btn:hover {
+    background: #f0f6ff;
+    color: var(--mt-service-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero – Contained (in container, above columns) */
+.mt-service-hero--contained {
+    border-radius: var(--mt-service-radius, 16px);
+    margin-bottom: 32px;
+    padding: 60px 40px;
+}
+
+.mt-service-hero--contained .mt-service-hero-overlay {
+    border-radius: var(--mt-service-radius, 16px);
+}
+
+/* Hero – Inline (inside content column) */
+.mt-service-hero--inline {
+    border-radius: var(--mt-service-radius, 16px);
+    margin-bottom: 28px;
+    padding: 48px 32px;
+}
+
+.mt-service-hero--inline .mt-service-hero-overlay {
+    border-radius: var(--mt-service-radius, 16px);
+}
+
+.mt-service-hero--contained .mt-service-hero-inner,
+.mt-service-hero--inline .mt-service-hero-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.mt-service-content {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--mt-service-text);
+    margin-bottom: 32px;
+}
+
+.mt-service-content p {
+    margin-bottom: 16px;
+}
+
+/* Content Sections (FAQ) */
+.mt-service-section {
+    margin-bottom: 40px;
+}
+
+.mt-service-section-title {
+    font-size: 22px !important;
+    font-weight: 700;
+    color: var(--mt-service-text);
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--mt-service-border);
+}
+
+/* Highlights: What's Included & Key Benefits – side by side */
+.mt-service-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .mt-service-highlights {
+        grid-template-columns: inherit;
+    }
+}
+
+.mt-service-highlight-box {
+    background: #fff;
+    border: 1px solid var(--mt-service-border);
+    border-radius: var(--mt-service-radius);
+    padding: 28px 24px;
+    box-shadow: var(--mt-service-shadow);
+    transition: var(--mt-service-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.mt-service-highlight-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.mt-service-highlight-box--included::before {
+    background: #1A3F38;
+}
+
+.mt-service-highlight-box--benefits::before {
+    background: #1A3F38;
+}
+
+.mt-service-highlight-box:hover {
+    box-shadow: var(--mt-service-shadow-lg);
+    transform: translateY(-2px);
+}
+
+.mt-service-highlight-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--mt-service-border);
+}
+
+.mt-service-highlight-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.mt-service-highlight-box--included .mt-service-highlight-icon {
+    background: #1A3F38;
+}
+
+.mt-service-highlight-box--benefits .mt-service-highlight-icon {
+    background: #1A3F38;
+}
+
+.mt-service-highlight-title {
+    font-size: 18px !important;
+    font-weight: 700;
+    color: var(--mt-service-text);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.mt-service-highlight-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mt-service-highlight-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 9px 0;
+    font-size: 16px;
+    color: var(--mt-service-text);
+    line-height: 1.5;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.mt-service-highlight-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.mt-service-highlight-list li i {
+    margin-top: 2px;
+    font-size: 14px;
+    min-width: 16px;
+}
+
+.mt-service-highlight-box--included .mt-service-highlight-list li i {
+    color: #1A3F38;
+}
+
+.mt-service-highlight-box--benefits .mt-service-highlight-list li i {
+    color: #3A4A46;
+}
+
+@media (max-width: 767px) {
+    .mt-service-highlights {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* FAQ */
+.mt-service-faq-list {
+    border: 1px solid var(--mt-service-border);
+    border-radius: var(--mt-service-radius);
+    overflow: hidden;
+}
+
+.mt-service-faq-item {
+    border-bottom: 1px solid var(--mt-service-border);
+}
+
+.mt-service-faq-item:last-child {
+    border-bottom: none;
+}
+
+.mt-service-faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--mt-service-bg-light);
+    border: none;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--mt-service-text);
+    cursor: pointer;
+    text-align: left;
+    transition: var(--mt-service-transition);
+    gap: 12px;
+}
+
+.mt-service-faq-question:hover {
+    background: #FFFFFF;
+}
+
+.mt-service-faq-question i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    min-width: 12px;
+}
+
+.mt-service-faq-item.active .mt-service-faq-question i {
+    transform: rotate(180deg);
+}
+
+.mt-service-faq-answer {
+    display: none;
+    padding: 16px 20px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--mt-service-text-light);
+    background: #fff;
+}
+
+.mt-service-faq-item.active .mt-service-faq-answer {
+    display: block;
+}
+
+.mt-service-faq-answer p {
+    margin: 0;
+}
+
+.mt-service-cta {
+    margin-bottom: 20px;
+}
+
+.mt-service-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--mt-service-primary);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: var(--mt-service-transition);
+}
+
+.mt-service-btn:hover {
+    background: var(--mt-service-primary-hover);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+/* Sidebar Pricing */
+.mt-service-sidebar-pricing {
+    text-align: center;
+}
+
+.mt-service-price-block {
+    margin-bottom: 16px;
+}
+
+.mt-service-price-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mt-service-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.mt-service-price-value {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--mt-service-text);
+    line-height: 1.2;
+}
+
+.mt-service-turnaround-block {
+    margin-bottom: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--mt-service-border);
+}
+
+.mt-service-turnaround-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mt-service-text-light);
+    margin-bottom: 4px;
+}
+
+.mt-service-turnaround-label i {
+    margin-right: 4px;
+}
+
+.mt-service-turnaround-value {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--mt-service-text);
+}
+
+.mt-service-btn--full {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.mt-service-btn.mt-service-btn--full:hover {
+    background: var(--mtfe-sidebar-grad-start, #1a3f38);
+    color: #fff;
+}
+
+/* Sidebar */
+.mt-service-sidebar-card {
+    background: #fff;
+    border: 1px solid var(--mt-service-border);
+    border-radius: var(--mt-service-radius);
+    padding: 24px;
+    box-shadow: var(--mt-service-shadow);
+    margin-bottom: 24px;
+}
+
+.mt-service-sidebar-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    margin: -24px -24px 20px;
+    padding: 18px 24px;
+    border-bottom: none;
+    background: #1A3F38;
+    border-radius: var(--mt-service-radius) var(--mt-service-radius) 0 0;
+}
+
+.mt-service-cat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mt-service-cat-list li {
+    margin-bottom: 0;
+}
+
+.mt-service-cat-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    color: var(--mt-service-text);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--mt-service-border);
+    transition: var(--mt-service-transition);
+}
+
+.mt-service-cat-list li:last-child a {
+    border-bottom: none;
+}
+
+.mt-service-cat-list a i {
+    font-size: 14px;
+    color: var(--mt-service-text);
+    transition: var(--mt-service-transition);
+}
+
+.mt-service-cat-list a:hover {
+    color: var(--mt-service-text);
+    text-decoration: underline;
+}
+
+.mt-service-cat-list a:hover i {
+    transform: translateX(3px);
+    color: var(--mt-service-text);
+}
+
+.mt-service-related-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mt-service-related-list li {
+    margin-bottom: 12px;
+}
+
+.mt-service-related-list li:last-child {
+    margin-bottom: 0;
+}
+
+.mt-service-related-list a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--mt-service-text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--mt-service-transition);
+}
+
+.mt-service-related-list a:hover {
+    color: var(--mt-service-text);
+    text-decoration: underline;
+}
+
+.mt-service-related-list img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   Service Archive / Taxonomy
+   ========================================================================== */
+
+.mt-service-archive .mt-archive-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.mt-service-archive .mt-archive-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--mt-service-text);
+    margin: 0 0 12px;
+}
+
+.mt-service-archive .mt-archive-description {
+    font-size: 16px;
+    color: var(--mt-service-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mt-service-grid-item {
+    margin-bottom: 30px;
+}
+
+.mt-service-card {
+    background: #fff;
+    border: 1px solid var(--mt-service-border);
+    border-radius: var(--mt-service-radius);
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: var(--mt-service-shadow);
+    transition: var(--mt-service-transition);
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.mt-service-card:hover {
+    box-shadow: var(--mt-service-shadow-lg);
+    transform: translateY(-4px);
+}
+
+.mt-service-card-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--mt-service-bg-light);
+    color: var(--mt-service-text);
+    font-size: 24px;
+    border-radius: 14px;
+    margin: 0 auto 20px;
+    transition: var(--mt-service-transition);
+}
+
+.mt-service-card:hover .mt-service-card-icon {
+    background: var(--mt-service-text);
+    color: #fff;
+}
+
+.mt-service-card-thumb {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.mt-service-card-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mt-service-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    line-height: 1.4;
+}
+
+.mt-service-card-title a {
+    color: var(--mt-service-text);
+    text-decoration: none;
+    transition: var(--mt-service-transition);
+}
+
+.mt-service-card-title a:hover {
+    color: var(--mt-service-text);
+    text-decoration: underline;
+}
+
+.mt-service-card-desc {
+    color: var(--mt-service-text-light);
+    line-height: 1.6;
+    margin: 0 0 16px;
+    flex-grow: 1;
+}
+
+/* Card Meta (Price & Turnaround on grid) */
+.mt-service-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px 0;
+    margin-bottom: 12px;
+    border-top: 1px solid var(--mt-service-border);
+    flex-wrap: wrap;
+}
+
+.mt-service-card-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--mt-service-text);
+}
+
+.mt-service-card-turnaround {
+    font-size: 13px;
+    color: var(--mt-service-text-light);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mt-service-card-turnaround i {
+    font-size: 12px;
+}
+
+.mt-service-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mt-service-text);
+    text-decoration: none;
+    transition: var(--mt-service-transition);
+}
+
+.mt-service-card-link:hover {
+    gap: 10px;
+    color: var(--mt-service-text);
+}
+
+/* Pagination */
+.mt-service-archive .mt-cpt-pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mt-service-archive .mt-cpt-pagination .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.mt-service-archive .mt-cpt-pagination .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 14px;
+    background: #fff;
+    border: 1px solid var(--mt-service-border);
+    border-radius: 8px;
+    color: var(--mt-service-text);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--mt-service-transition);
+}
+
+.mt-service-archive .mt-cpt-pagination .page-numbers:hover,
+.mt-service-archive .mt-cpt-pagination .page-numbers.current {
+    background: var(--mt-service-text);
+    border-color: var(--mt-service-text);
+    color: #fff;
+}
+
+.mt-service-archive .mt-no-posts {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--mt-service-text-light);
+    font-size: 16px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    .mt-service-sidebar {
+        margin-top: 30px;
+    }
+
+    .mt-service-hero-inner {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px) {
+    .mt-service-hero {
+        padding: 50px 0 40px;
+    }
+
+    .mt-service-hero--contained {
+        padding: 36px 20px;
+    }
+
+    .mt-service-hero--inline {
+        padding: 32px 20px;
+    }
+
+    .mt-service-title {
+        font-size: 26px;
+    }
+
+    .mt-service-hero-icon {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        font-size: 24px;
+        border-radius: 14px;
+    }
+
+    .mt-service-hero-meta {
+        gap: 12px;
+    }
+
+    .mt-service-archive .mt-archive-title {
+        font-size: 28px;
+    }
+}
+
+/* ==========================================================================
+   Related Section
+   ========================================================================== */
+
+.mt-service-single .mt-related-section {
+    background: var(--mt-service-bg-light);
+    padding: 60px 0;
+}
+
+/* Single Service: isolate Solaris-like "Other Services" visuals */
+.mt-service-single .mt-related-section.elementor-widget-mtfe-solaris-services-core {
+    background: transparent !important;
+}
+
+.mt-service-single .mt-related-section.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__shell {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.mt-service-single .mt-related-section.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core {
+    --mtfe-sc-image-position: center 30%;
+}
+
+.mt-service-single .mt-related-section.elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core__circle {
+    top: calc(var(--mtfe-sc-circle-top) - 3px) !important;
+    right: calc(var(--mtfe-sc-circle-right) - 3px) !important;
+}
+
+.mt-service-single .mt-related-heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--mt-service-text);
+    margin: 0 0 32px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   V1 – Dark Card Design
+   ========================================================================== */
+
+.mt-service-design-v1 .mt-service-card {
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 20px 20px 28px;
+    text-align: left;
+    box-shadow: none;
+}
+
+.mt-service-design-v1 .mt-service-card:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+.mt-service-design-v1 .mt-service-card-icon {
+    display: none;
+}
+
+.mt-service-design-v1 .mt-service-card-thumb {
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 22px;
+    aspect-ratio: var(--mt-service-aspect, 4 / 3);
+}
+
+.mt-service-design-v1 .mt-service-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.mt-service-design-v1 .mt-service-card:hover .mt-service-card-thumb img {
+    transform: scale(1.04);
+    filter: brightness(1.1);
+}
+
+.mt-service-design-v1 .mt-service-card-thumb a {
+    display: block;
+    height: 100%;
+}
+
+.mt-service-design-v1 .mt-service-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    line-height: 1.3;
+}
+
+.mt-service-design-v1 .mt-service-card-title a {
+    color: #f5f0e8;
+}
+
+.mt-service-design-v1 .mt-service-card-title a:hover {
+    color: #fff;
+}
+
+.mt-service-design-v1 .mt-service-card-desc {
+    font-size: 14px;
+    color: #9ca3af;
+    line-height: 1.65;
+    margin: 0 0 20px;
+}
+
+.mt-service-design-v1 .mt-service-card-meta {
+    border-top-color: rgba(255, 255, 255, 0.08);
+    justify-content: flex-start;
+}
+
+.mt-service-design-v1 .mt-service-card-price {
+    color: #f5f0e8;
+}
+
+.mt-service-design-v1 .mt-service-card-turnaround {
+    color: #3A4A46;
+}
+
+.mt-service-design-v1 .mt-service-card-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50px;
+    padding: 11px 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    letter-spacing: 0.2px;
+}
+
+.mt-service-design-v1 .mt-service-card-link i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.mt-service-design-v1 .mt-service-card-link:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+.mt-service-design-v1 .mt-service-card-link:hover i {
+    transform: translateX(3px);
+}
+
+/* ==========================================================================
+   V2 – Light Card / Dark Hover
+   ========================================================================== */
+
+.mt-service-design-v2 .mt-service-card {
+    background: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    padding: 32px 28px;
+    text-align: left;
+    box-shadow: none;
+    transition: background 0.35s ease, transform 0.35s ease;
+}
+
+.mt-service-design-v2 .mt-service-card:hover {
+    background: #111827;
+    box-shadow: none;
+    transform: rotate(-2deg);
+}
+
+.mt-service-design-v2 .mt-service-card-thumb {
+    display: none;
+}
+
+.mt-service-design-v2 .mt-service-card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #111827;
+    font-size: 28px;
+    border-radius: 0;
+    margin: 0 0 20px;
+    transition: color 0.35s ease;
+}
+
+.mt-service-design-v2 .mt-service-card:hover .mt-service-card-icon {
+    background: transparent;
+    color: #fff;
+}
+
+.mt-service-design-v2 .mt-service-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    line-height: 1.3;
+}
+
+.mt-service-design-v2 .mt-service-card-title a {
+    color: #111827;
+    transition: color 0.35s ease;
+}
+
+.mt-service-design-v2 .mt-service-card:hover .mt-service-card-title a {
+    color: #fff;
+}
+
+.mt-service-design-v2 .mt-service-card-desc {
+    font-size: 14px;
+    color: #3A4A46;
+    line-height: 1.65;
+    margin: 0 0 20px;
+    transition: color 0.35s ease;
+}
+
+.mt-service-design-v2 .mt-service-card:hover .mt-service-card-desc {
+    color: #9ca3af;
+}
+
+.mt-service-design-v2 .mt-service-card-meta {
+    border-top-color: #e5e7eb;
+    justify-content: flex-start;
+    transition: border-top-color 0.35s ease;
+}
+
+.mt-service-design-v2 .mt-service-card:hover .mt-service-card-meta {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.mt-service-design-v2 .mt-service-card-price {
+    color: #111827;
+    transition: color 0.35s ease;
+}
+
+.mt-service-design-v2 .mt-service-card:hover .mt-service-card-price {
+    color: #f5f0e8;
+}
+
+.mt-service-design-v2 .mt-service-card-turnaround {
+    transition: color 0.35s ease;
+}
+
+.mt-service-design-v2 .mt-service-card:hover .mt-service-card-turnaround {
+    color: #3A4A46;
+}
+
+.mt-service-design-v2 .mt-service-card-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: color 0.35s ease;
+    margin-top: auto;
+}
+
+.mt-service-design-v2 .mt-service-card-link i {
+    font-size: 12px;
+    transition: transform 0.3s ease, color 0.35s ease;
+}
+
+.mt-service-design-v2 .mt-service-card:hover .mt-service-card-link {
+    color: #34d399;
+}
+
+.mt-service-design-v2 .mt-service-card-link:hover {
+    background: transparent;
+    color: #34d399;
+}
+
+.mt-service-design-v2 .mt-service-card-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Arrow – hidden by default, shown in V3 */
+.mt-service-card-arrow {
+    display: none;
+}
+
+/* Number – hidden by default, shown in V4 */
+.mt-service-card-number {
+    display: none;
+}
+
+/* ==========================================================================
+   V3 – Vertical Image Card
+   ========================================================================== */
+
+.mt-service-design-v3 .mt-service-card {
+    background: transparent;
+    border: none;
+    border-radius: 18px;
+    padding: 0;
+    text-align: left;
+    box-shadow: none;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: var(--mt-service-aspect, 3 / 4);
+}
+
+.mt-service-design-v3 .mt-service-card:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+.mt-service-design-v3 .mt-service-card-icon {
+    display: none;
+}
+
+.mt-service-design-v3 .mt-service-card-thumb {
+    position: absolute;
+    inset: 0;
+    border-radius: 0;
+    margin: 0;
+    aspect-ratio: auto;
+}
+
+.mt-service-design-v3 .mt-service-card-thumb a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.mt-service-design-v3 .mt-service-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.mt-service-design-v3 .mt-service-card:hover .mt-service-card-thumb img {
+    transform: scale(1.05);
+}
+
+/* Gradient overlay */
+.mt-service-design-v3 .mt-service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.7) 15%, transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 18px;
+}
+
+/* Arrow button */
+.mt-service-design-v3 .mt-service-card-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    z-index: 3;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.mt-service-design-v3 .mt-service-card-arrow i {
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+}
+
+.mt-service-design-v3 .mt-service-card:hover .mt-service-card-arrow {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.mt-service-design-v3 .mt-service-card:hover .mt-service-card-arrow i {
+    transform: rotate(0deg);
+}
+
+/* Title over image */
+.mt-service-design-v3 .mt-service-card-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.mt-service-design-v3 .mt-service-card-title a {
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mt-service-design-v3 .mt-service-card-title a:hover {
+    color: #fff;
+}
+
+/* Hide everything else */
+.mt-service-design-v3 .mt-service-card-desc,
+.mt-service-design-v3 .mt-service-card-meta,
+.mt-service-design-v3 .mt-service-card-link {
+    display: none;
+}
+
+/* ==========================================================================
+   V4 – Numbered Cards
+   ========================================================================== */
+
+.mt-service-design-v4 .mt-service-card {
+    background: #f5f5f0;
+    border: none;
+    border-radius: 20px;
+    padding: 32px 28px;
+    text-align: left;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Background image + dark overlay via ::before */
+.mt-service-design-v4 .mt-service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--mt-service-card-bg) center / cover no-repeat;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -2;
+}
+
+.mt-service-design-v4 .mt-service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.mt-service-design-v4 .mt-service-card:hover::before,
+.mt-service-design-v4 .mt-service-card:hover::after {
+    opacity: 1;
+}
+
+.mt-service-design-v4 .mt-service-card:hover {
+    box-shadow: none;
+    transform: none;
+    background: transparent;
+}
+
+/* Hide thumb and arrow */
+.mt-service-design-v4 .mt-service-card-thumb,
+.mt-service-design-v4 .mt-service-card-arrow {
+    display: none;
+}
+
+/* Icon – lime circle */
+.mt-service-design-v4 .mt-service-card-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c8e636;
+    color: #1A3F38;
+    font-size: 24px;
+    border-radius: 50%;
+    margin: 0 0 24px;
+    transition: var(--mt-service-transition);
+}
+
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-icon {
+    background: #c8e636;
+    color: #1A3F38;
+}
+
+/* Counter number */
+.mt-service-design-v4 .mt-service-card-number {
+    display: block;
+    position: absolute;
+    top: 32px;
+    right: 28px;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--mt-service-text);
+    line-height: 1;
+    transition: color 0.4s ease;
+}
+
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-number {
+    color: #fff;
+}
+
+/* Title */
+.mt-service-design-v4 .mt-service-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    line-height: 1.3;
+}
+
+.mt-service-design-v4 .mt-service-card-title a {
+    color: var(--mt-service-text);
+    font-weight: bold;
+    transition: color 0.4s ease;
+}
+
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-title a {
+    color: #fff;
+}
+
+/* Description */
+.mt-service-design-v4 .mt-service-card-desc {
+    color: var(--mt-service-text-light);
+    line-height: 1.65;
+    margin: 0 0 24px;
+    transition: color 0.4s ease;
+}
+
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-desc {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Hide meta */
+.mt-service-design-v4 .mt-service-card-meta {
+    display: none;
+}
+
+/* Link – text + lime circle arrow */
+.mt-service-design-v4 .mt-service-card-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--mt-service-text);
+    text-decoration: none;
+    transition: color 0.4s ease, border-color 0.4s ease;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    width: 100%;
+}
+
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-link {
+    color: #fff;
+    border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+.mt-service-design-v4 .mt-service-card-link i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #c8e636;
+    color: #1A3F38;
+    font-size: 12px;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+    transform: rotate(-45deg);
+}
+
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-link i {
+    transform: rotate(0deg);
+}
+
+/* ==========================================================================
+   Post Navigation (Prev / Next)
+   ========================================================================== */
+
+.mt-post-nav {
+    padding: 0;
+}
+
+.mt-post-nav-inner {
+    display: flex;
+    gap: 24px;
+    padding: 40px 0;
+    border-top: 1px solid var(--mt-service-border, #e5e7eb);
+}
+
+a.mt-post-nav-link,
+span.mt-post-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 0;
+    padding: 24px 28px;
+    border-radius: 16px;
+    background: #f8fafc;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a.mt-post-nav-link:hover {
+    background: #fff;
+    border-color: #e5e7eb;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.mt-post-nav-next {
+    text-align: right;
+}
+
+.mt-post-nav-prev,
+.mt-post-nav-next {
+    background: #FAF8F2 !important;
+}
+
+.mt-post-nav-arrow {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #1A3F38;
+    border-radius: 50%;
+    font-size: 16px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a.mt-post-nav-link:hover .mt-post-nav-arrow {
+    background: #1A3F38;
+    border-color: #1A3F38;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.mt-post-nav-prev:hover .mt-post-nav-arrow {
+    transform: translateX(-4px);
+}
+
+.mt-post-nav-next:hover .mt-post-nav-arrow {
+    transform: translateX(4px);
+}
+
+.mt-post-nav-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    flex: 1;
+}
+
+.mt-post-nav-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+.mt-post-nav-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+a.mt-post-nav-link:hover .mt-post-nav-title {
+    color: #111827;
+}
+
+@media (max-width: 767.98px) {
+    .mt-post-nav-inner {
+        flex-direction: column;
+        gap: 12px;
+        padding: 24px 0;
+    }
+
+    a.mt-post-nav-link {
+        padding: 18px 20px;
+    }
+
+    .mt-post-nav-arrow {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        font-size: 14px;
+    }
+
+    .mt-post-nav-title {
+        font-size: 14px;
+    }
+}

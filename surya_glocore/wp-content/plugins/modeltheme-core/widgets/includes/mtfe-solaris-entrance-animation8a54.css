@@ -1,0 +1,59 @@
+/**
+ * Solaris entrance animation (MT How It Works pattern).
+ * Root: .mtfe-solaris-anim-root; items: .mtfe-solaris-anim-item; --mtfe-solaris-stagger per item.
+ */
+
+.mtfe-solaris-anim-root:not(.mtfe-solaris-anim-root--anim-none) .mtfe-solaris-anim-item {
+	opacity: 0;
+	transition-property: opacity, transform;
+	transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+	transition-delay: var(--mtfe-solaris-stagger, 0ms);
+}
+
+.mtfe-solaris-anim-root--anim-fade-up .mtfe-solaris-anim-item {
+	transform: translateY(32px);
+}
+
+.mtfe-solaris-anim-root--anim-fade-in .mtfe-solaris-anim-item {
+	transform: translateY(0);
+}
+
+.mtfe-solaris-anim-root--anim-slide-left .mtfe-solaris-anim-item {
+	transform: translateX(-40px);
+}
+
+.mtfe-solaris-anim-root--anim-zoom-in .mtfe-solaris-anim-item {
+	transform: scale(0.85);
+}
+
+.mtfe-solaris-anim-root--in-view .mtfe-solaris-anim-item,
+.elementor-element-edit-mode .mtfe-solaris-anim-root .mtfe-solaris-anim-item {
+	opacity: 1 !important;
+	transform: none !important;
+}
+
+.mtfe-solaris-anim-root--dur-fast .mtfe-solaris-anim-item {
+	transition-duration: 0.4s;
+}
+
+.mtfe-solaris-anim-root--dur-normal .mtfe-solaris-anim-item {
+	transition-duration: 0.6s;
+}
+
+.mtfe-solaris-anim-root--dur-slow .mtfe-solaris-anim-item {
+	transition-duration: 0.9s;
+}
+
+.mtfe-solaris-anim-root--in-view .mtfe-solaris-anim-item:hover,
+.elementor-element-edit-mode .mtfe-solaris-anim-root .mtfe-solaris-anim-item:hover {
+	transition-delay: 0ms !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.mtfe-solaris-anim-root .mtfe-solaris-anim-item {
+		opacity: 1 !important;
+		transform: none !important;
+		transition: none !important;
+		transition-delay: 0ms !important;
+	}
+}

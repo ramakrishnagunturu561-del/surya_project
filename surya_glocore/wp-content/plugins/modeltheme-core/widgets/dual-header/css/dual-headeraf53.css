@@ -1,0 +1,127 @@
+/* =============================================================================
+   MT - Dual Header Widget — mtfe-dual-header
+   ============================================================================= */
+
+.mtfe-dual-header-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+.mtfe-dual-header-text {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.mtfe-dual-header-highlight {
+    display: inline-block;
+    color: inherit !important;
+    font-weight: 800 !important;
+}
+
+/* ── Subtitle ─────────────────────────────────────────────────────────────── */
+
+.mtfe-dual-header-subtitle {
+    display: block;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.mtfe-dual-header--subtitle-before .mtfe-dual-header-subtitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.mtfe-dual-header--subtitle-before .mtfe-dual-header-text {
+    margin-top: 0;
+}
+
+.mtfe-dual-header--subtitle-before .mtfe-dual-header-subtitle::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold-primary, var(--sol-color-accent, #d4b45f));
+    flex: 0 0 7px;
+    animation: mtfe-dual-header-pulse 1.5s ease-in-out infinite;
+}
+
+.mtfe-dual-header-description {
+    margin: 14px 0 0;
+    max-width: min(700px, 100%);
+    margin-left: auto !important;
+    margin-right: auto !important;
+    line-height: 1.6;
+}
+
+@keyframes mtfe-dual-header-pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* =============================================================================
+   ENTRANCE ANIMATIONS
+   JS IntersectionObserver adds --in-view class to the wrapper.
+   ============================================================================= */
+
+/* ── reveal-ltr: clip-path wipe from left to right ───────────────────────── */
+
+.mtfe-dual-header--anim-reveal-ltr .mtfe-dual-header-text,
+.mtfe-dual-header--anim-reveal-ltr .mtfe-dual-header-subtitle {
+    opacity: 1;
+    clip-path: inset(0 100% 0 0);
+    transition:
+        clip-path var(--dh-duration, 0.8s) cubic-bezier(0.22, 1, 0.36, 1),
+        opacity   var(--dh-duration, 0.8s) ease;
+}
+
+/* Subtitle gets a stagger delay */
+.mtfe-dual-header--anim-reveal-ltr.mtfe-dual-header--subtitle-after .mtfe-dual-header-subtitle {
+    transition-delay: var(--dh-stagger, 120ms);
+}
+.mtfe-dual-header--anim-reveal-ltr.mtfe-dual-header--subtitle-before .mtfe-dual-header-text {
+    transition-delay: var(--dh-stagger, 120ms);
+}
+
+/* In-view: reveal */
+.mtfe-dual-header--anim-reveal-ltr.mtfe-dual-header--in-view .mtfe-dual-header-text,
+.mtfe-dual-header--anim-reveal-ltr.mtfe-dual-header--in-view .mtfe-dual-header-subtitle,
+.elementor-element-edit-mode .mtfe-dual-header--anim-reveal-ltr .mtfe-dual-header-text,
+.elementor-element-edit-mode .mtfe-dual-header--anim-reveal-ltr .mtfe-dual-header-subtitle {
+    clip-path: inset(0 0% 0 0);
+}
+
+/* ── fade-up: fade + rise ─────────────────────────────────────────────────── */
+
+.mtfe-dual-header--anim-fade-up .mtfe-dual-header-text,
+.mtfe-dual-header--anim-fade-up .mtfe-dual-header-subtitle {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity    var(--dh-duration, 0.7s) cubic-bezier(0.22, 1, 0.36, 1),
+        transform  var(--dh-duration, 0.7s) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mtfe-dual-header--anim-fade-up.mtfe-dual-header--subtitle-after .mtfe-dual-header-subtitle {
+    transition-delay: var(--dh-stagger, 120ms);
+}
+.mtfe-dual-header--anim-fade-up.mtfe-dual-header--subtitle-before .mtfe-dual-header-text {
+    transition-delay: var(--dh-stagger, 120ms);
+}
+
+/* In-view: reveal */
+.mtfe-dual-header--anim-fade-up.mtfe-dual-header--in-view .mtfe-dual-header-text,
+.mtfe-dual-header--anim-fade-up.mtfe-dual-header--in-view .mtfe-dual-header-subtitle,
+.elementor-element-edit-mode .mtfe-dual-header--anim-fade-up .mtfe-dual-header-text,
+.elementor-element-edit-mode .mtfe-dual-header--anim-fade-up .mtfe-dual-header-subtitle {
+    opacity: 1;
+    transform: none;
+}

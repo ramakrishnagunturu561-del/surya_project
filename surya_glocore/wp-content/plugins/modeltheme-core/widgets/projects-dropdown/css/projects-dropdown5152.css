@@ -1,0 +1,395 @@
+/* =============================================================================
+   MT Projects Dropdown Widget — mtfe-pd prefix
+   ============================================================================= */
+
+/* ---------- KEYFRAMES ---------- */
+
+@keyframes mtfe-pd-fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mtfe-pd-expandDown {
+    from { opacity: 0; max-height: 0; transform: translateY(-10px); }
+    to   { opacity: 1; max-height: 800px; transform: translateY(0); }
+}
+
+@keyframes mtfe-pd-pulseRing {
+    0%   { box-shadow: 0 0 0 0 rgba(244,193,61,0.55); }
+    70%  { box-shadow: 0 0 0 18px rgba(244,193,61,0); }
+    100% { box-shadow: 0 0 0 0 rgba(244,193,61,0); }
+}
+
+/* =============================================================================
+   WRAPPER
+   ============================================================================= */
+
+.mtfe-projects-dropdown {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =============================================================================
+   REVEAL ANIMATIONS
+   ============================================================================= */
+
+.mtfe-projects-dropdown .reveal { opacity: 0; }
+
+.mtfe-projects-dropdown .reveal.in-view {
+    opacity: 1;
+    animation: mtfe-pd-fadeUp 0.9s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.mtfe-projects-dropdown .d-1.in-view { animation-delay: 0.10s; }
+.mtfe-projects-dropdown .d-2.in-view { animation-delay: 0.25s; }
+.mtfe-projects-dropdown .d-3.in-view { animation-delay: 0.40s; }
+.mtfe-projects-dropdown .d-4.in-view { animation-delay: 0.55s; }
+
+.elementor-element-edit-mode .mtfe-projects-dropdown .reveal,
+.mtfe-projects-dropdown--no-anim .reveal {
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+/* =============================================================================
+   ROW  — exact match of .row in the HTML
+   ============================================================================= */
+
+.mtfe-pd__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 60px 1fr 1.05fr 80px;
+    gap: 40px;                                        /* both row & column gap */
+    align-items: start;
+    padding: 36px 0;
+    border-bottom: 1px solid rgba(30,57,53,0.12);
+    box-sizing: border-box;
+    overflow: visible;                                /* let preview overflow */
+    transition: padding 0.4s ease;
+}
+
+.mtfe-pd__row:last-child {
+    border-bottom: none;
+}
+
+/* =============================================================================
+   NUMBER
+   ============================================================================= */
+
+.mtfe-pd__num {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1E3935;
+    letter-spacing: 0.02em;
+    padding-top: 4px;
+    line-height: 1;
+}
+
+/* =============================================================================
+   TITLE
+   ============================================================================= */
+
+.mtfe-pd__title {
+    font-size: 36px;
+    line-height: 1.18;
+    font-weight: 600;
+    color: #1E3935;
+    letter-spacing: -0.01em;
+    max-width: 460px;
+    margin: 0;
+    transition: color 0.3s ease, transform 0.4s ease;
+}
+
+.mtfe-pd__row:hover .mtfe-pd__title {
+    color: #2a5a52;
+    transform: translateX(4px);
+}
+
+/* =============================================================================
+   DESCRIPTION
+   ============================================================================= */
+
+.mtfe-pd__desc {
+    font-size: 16px;
+    line-height: 1.55;
+    color: #6b7570;
+    max-width: 460px;
+    margin: 0;
+    padding-top: 8px;
+}
+
+/* =============================================================================
+   ACTION BUTTON
+   ============================================================================= */
+
+.mtfe-pd__action {
+    justify-self: end;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1.5px solid rgba(30,57,53,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #1E3935;
+    transition: transform 0.4s cubic-bezier(.34,1.56,.64,1),
+                background-color 0.3s ease,
+                border-color 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.4s ease;
+}
+
+.mtfe-pd__action svg {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
+    pointer-events: none;
+}
+
+.mtfe-pd__action:hover {
+    background-color: #F4C13D;
+    border-color: #F4C13D;
+    color: #1E3935;
+    transform: scale(1.08);
+    box-shadow: 0 10px 24px rgba(244,193,61,0.35);
+}
+
+.mtfe-pd__action:hover svg {
+    transform: translateY(2px);
+}
+
+/* Open state */
+.mtfe-pd__row.is-open .mtfe-pd__action {
+    background-color: #F4C13D;
+    border-color: #F4C13D;
+    color: #1E3935;
+    animation: mtfe-pd-pulseRing 2.4s ease-out infinite;
+}
+
+.mtfe-pd__row.is-open .mtfe-pd__action svg {
+    transform: rotate(-45deg) translateY(-1px);
+}
+
+.mtfe-pd__row.is-open .mtfe-pd__action:hover svg {
+    transform: rotate(-45deg) translate(2px, -3px);
+}
+
+/* =============================================================================
+   HOVER PREVIEW THUMBNAIL
+   Sits inside the row (position: relative), shown only on hover of closed rows
+   ============================================================================= */
+
+.mtfe-pd__preview {
+    position: absolute;
+    top: 50%;
+    right: 90px;
+    transform: translate(20px, -50%) scale(0.92);
+    width: 180px;
+    height: 110px;
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: #b8d4e8;
+    box-shadow: 0 14px 30px rgba(30,57,53,0.18);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease,
+                transform 0.5s cubic-bezier(.34,1.56,.64,1);
+    z-index: 10;
+}
+
+.mtfe-pd__preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Show only on hover of CLOSED rows */
+.mtfe-pd__row:not(.is-open):hover .mtfe-pd__preview {
+    opacity: 1;
+    transform: translate(0, -50%) scale(1);
+}
+
+/* =============================================================================
+   EXPANDED CONTENT
+   ============================================================================= */
+
+.mtfe-pd__expanded {
+    display: none;
+    grid-column: 1 / -1;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.mtfe-pd__row.is-open .mtfe-pd__expanded {
+    display: block;
+    animation: mtfe-pd-expandDown 0.7s cubic-bezier(.2,.7,.2,1) both;
+}
+
+/* ── Hero image ─────────────────────────────────────────────────────────────── */
+
+.mtfe-pd__hero {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #b8d4e8 0%, #7aa8c8 40%, #4a7a98 100%);
+    transition: transform 0.6s cubic-bezier(.2,.7,.2,1), box-shadow 0.5s ease;
+}
+
+.mtfe-pd__hero:hover {
+    transform: scale(1.005);
+    box-shadow: 0 24px 60px rgba(30,57,53,0.18);
+}
+
+.mtfe-pd__hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ── Tags row (bottom-left of hero) ────────────────────────────────────────── */
+
+.mtfe-pd__hero-footer {
+    position: absolute;
+    left: 36px;
+    bottom: 32px;
+    right: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    z-index: 2;
+}
+
+.mtfe-pd__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.mtfe-pd__tag {
+    background: rgba(255,255,255,0.92);
+    color: #1E3935;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    cursor: default;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mtfe-pd__tag:hover {
+    transform: translateY(-3px);
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(30,57,53,0.15);
+}
+
+/* ── Hero link button ───────────────────────────────────────────────────────── */
+
+.mtfe-pd__hero-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #1E3935;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mtfe-pd__hero-link:hover {
+    transform: translateY(-3px) scale(1.08);
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(30,57,53,0.15);
+}
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+
+@media (max-width: 1024px) {
+    .mtfe-pd__row {
+        grid-template-columns: 60px 1fr 80px;
+        gap: 24px;
+    }
+
+    .mtfe-pd__desc {
+        display: none;
+    }
+
+    .mtfe-pd__preview {
+        display: none;
+    }
+
+    .mtfe-pd__title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mtfe-pd__row {
+        grid-template-columns: 40px 1fr 56px;
+        gap: 16px;
+        padding: 24px 0;
+    }
+
+    .mtfe-pd__title {
+        font-size: 20px !important;
+        line-height: 1.2em !important;
+        max-width: none;
+    }
+
+    .mtfe-pd__action {
+        width: 44px;
+        height: 44px;
+    }
+
+    .mtfe-pd__hero {
+        height: 260px;
+    }
+
+    .mtfe-pd__hero-footer {
+        left: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .mtfe-pd__tag {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+}
+
+/* =============================================================================
+   PREFERS REDUCED MOTION
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .mtfe-projects-dropdown .reveal,
+    .mtfe-pd__action,
+    .mtfe-pd__title,
+    .mtfe-pd__tag,
+    .mtfe-pd__hero,
+    .mtfe-pd__preview {
+        animation: none !important;
+        transition: none !important;
+    }
+    .mtfe-projects-dropdown .reveal {
+        opacity: 1 !important;
+    }
+}

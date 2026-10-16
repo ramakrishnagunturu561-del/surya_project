@@ -1,0 +1,645 @@
+/* =============================================================================
+   MT About Us Widget — mtfe-about-us prefix
+   ============================================================================= */
+
+/* ---------- KEYFRAMES ---------- */
+
+@keyframes mtfe-au-fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mtfe-au-fadeLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes mtfe-au-fadeRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes mtfe-au-popIn {
+    0%   { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+    60%  { transform: scale(1.08) rotate(2deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@keyframes mtfe-au-pulseRing {
+    0%   { box-shadow: 0 0 0 0 rgba(244, 193, 61, 0.55); }
+    70%  { box-shadow: 0 0 0 18px rgba(244, 193, 61, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(244, 193, 61, 0); }
+}
+
+@keyframes mtfe-au-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+@keyframes mtfe-au-shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position:  200% 0; }
+}
+
+/* =============================================================================
+   LAYOUT
+   ============================================================================= */
+
+.mtfe-about-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =============================================================================
+   REVEAL / SCROLL ANIMATIONS
+   ============================================================================= */
+
+.mtfe-about-us .reveal,
+.mtfe-about-us .reveal-badge {
+    opacity: 0;
+}
+
+/* Always visible in Elementor editor */
+.elementor-element-edit-mode .mtfe-about-us .reveal,
+.elementor-element-edit-mode .mtfe-about-us .reveal-badge {
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+/* Triggered by JS: class added to each element individually */
+.mtfe-about-us .reveal.in-view,
+.mtfe-about-us .reveal-badge.in-view {
+    opacity: 1;
+}
+
+.mtfe-about-us .reveal.up.in-view    { animation: mtfe-au-fadeUp    0.9s cubic-bezier(.2,.7,.2,1) both; }
+.mtfe-about-us .reveal.left.in-view  { animation: mtfe-au-fadeLeft  0.9s cubic-bezier(.2,.7,.2,1) both; }
+.mtfe-about-us .reveal.right.in-view { animation: mtfe-au-fadeRight 0.9s cubic-bezier(.2,.7,.2,1) both; }
+
+/* Stagger delays */
+.mtfe-about-us .d-1.in-view { animation-delay: 0.15s; }
+.mtfe-about-us .d-2.in-view { animation-delay: 0.30s; }
+.mtfe-about-us .d-3.in-view { animation-delay: 0.45s; }
+.mtfe-about-us .d-4.in-view { animation-delay: 0.60s; }
+.mtfe-about-us .d-5.in-view { animation-delay: 0.75s; }
+.mtfe-about-us .d-6.in-view { animation-delay: 0.90s; }
+
+/* Badge: pop-in + continuous float */
+.mtfe-about-us__experience-badge.in-view {
+    animation: mtfe-au-popIn  0.8s cubic-bezier(.34, 1.56, .64, 1) both,
+               mtfe-au-float  4s  ease-in-out 1.2s infinite;
+}
+
+/* Disable animations flag */
+.mtfe-about-us--no-anim .reveal,
+.mtfe-about-us--no-anim .reveal-badge {
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+/* =============================================================================
+   LEFT COLUMN — IMAGE STACK
+   ============================================================================= */
+
+.mtfe-about-us__images {
+    position: relative;
+    min-height: 600px;
+}
+.mtfe-about-us__quality-icon svg,
+.mtfe-about-us__badge-icon svg{
+     width: 25px; 
+}
+/* ── Image cards ────────────────────────────────────────────────────────────── */
+
+.mtfe-about-us__img-card {
+    position: absolute;
+    border-radius: 28px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Main tall image — top-left */
+.mtfe-about-us__img-1 {
+    top: 0;
+    left: 0;
+    width: 68%;
+    height: 86%;
+}
+
+/* Overlay image — bottom-right, with border */
+.mtfe-about-us__img-2 {
+    bottom: 0;
+    right: 0;
+    width: 55%;
+    height: 57%;
+    border: 6px solid #FAF8F2;
+    z-index: 1;
+}
+
+/* ── Experience badge ───────────────────────────────────────────────────────── */
+
+.mtfe-about-us__experience-badge {
+    position: absolute;
+    top: 15%;
+    left: 36%;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 18px 28px 18px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    z-index: 3;
+    cursor: default;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    white-space: nowrap;
+}
+
+.mtfe-about-us__experience-badge:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
+}
+
+.mtfe-about-us__badge-icon {
+    width: 56px;
+    height: 56px;
+    background: #F4C13D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 22px;
+    color: #1E3935;
+    animation: mtfe-au-pulseRing 2.4s ease-out infinite;
+    transition: transform 0.5s ease;
+}
+
+.mtfe-about-us__experience-badge:hover .mtfe-about-us__badge-icon {
+    transform: rotate(360deg);
+}
+
+.mtfe-about-us__badge-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.mtfe-about-us__badge-years {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1E3935;
+}
+
+.mtfe-about-us__badge-label {
+    font-size: 14px;
+    color: #4a4a4a;
+    margin-top: 2px;
+}
+
+/* =============================================================================
+   RIGHT COLUMN — CONTENT
+   ============================================================================= */
+
+.mtfe-about-us__content {
+    padding-top: 30px;
+}
+
+/* ── Pill label ─────────────────────────────────────────────────────────────── */
+
+.mtfe-about-us__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    padding: 9px 18px 9px 14px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1E3935;
+    margin-bottom: 26px;
+    cursor: default;
+    transition: transform 0.3s ease;
+}
+
+.mtfe-about-us__pill:hover {
+    transform: translateX(4px);
+}
+
+.mtfe-about-us__pill::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #F4C13D;
+    flex-shrink: 0;
+    animation: mtfe-au-pulseRing 2s ease-out infinite;
+}
+
+/* ── Heading ────────────────────────────────────────────────────────────────── */
+
+.mtfe-about-us__heading {
+    font-size: clamp(26px, 3.6vw, 52px);
+    line-height: 1.12;
+    font-weight: 700;
+    color: #1E3935;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+}
+
+/* ── Intro paragraph ────────────────────────────────────────────────────────── */
+
+.mtfe-about-us__intro {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #6b7570;
+    margin: 0 0 32px;
+}
+
+/* ── Quality card ───────────────────────────────────────────────────────────── */
+
+.mtfe-about-us__quality-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 30px 34px;
+    margin-bottom: 34px;
+    box-sizing: border-box;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mtfe-about-us__quality-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.mtfe-about-us__quality-head {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 18px;
+}
+
+.mtfe-about-us__quality-icon {
+    width: 56px;
+    height: 56px;
+    background: #F4C13D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 22px;
+    color: #1E3935;
+    transition: transform 0.6s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.mtfe-about-us__quality-card:hover .mtfe-about-us__quality-icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.mtfe-about-us__quality-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1E3935;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.mtfe-about-us__quality-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #8a8a8a;
+    margin: 0 0 22px 78px;
+}
+
+.mtfe-about-us__quality-divider {
+    border: none;
+    border-top: 1px solid #ececec;
+    margin: 0 0 18px;
+}
+
+.mtfe-about-us__quality-bullet {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #4a4a4a;
+}
+
+.mtfe-about-us__quality-bullet::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #F4C13D;
+    flex-shrink: 0;
+}
+
+/* ── Bottom row ─────────────────────────────────────────────────────────────── */
+
+.mtfe-about-us__bottom-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: center;
+}
+
+.mtfe-about-us__bottom-left {
+    min-width: 0;
+}
+
+/* ── Features list ──────────────────────────────────────────────────────────── */
+
+.mtfe-about-us__features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.mtfe-about-us__feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1E3935;
+    cursor: default;
+    transition: transform 0.3s ease;
+}
+
+.mtfe-about-us__feature:hover {
+    transform: translateX(6px);
+}
+
+.mtfe-about-us__feature:hover .mtfe-about-us__check {
+    transform: scale(1.2) rotate(360deg);
+    background-color: #ffd166;
+}
+
+.mtfe-about-us__check {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    background: #F4C13D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1E3935;
+    transition: transform 0.5s cubic-bezier(.34, 1.56, .64, 1), background-color 0.3s ease;
+}
+
+.mtfe-about-us__check svg {
+    width: 13px;
+    height: 13px;
+    display: block;
+}
+
+/* ── Button ─────────────────────────────────────────────────────────────────── */
+
+.mtfe-about-us__btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: #F4C13D;
+    color: #1E3935;
+    text-decoration: none;
+    border-radius: 100px;
+    padding: 18px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 22px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Shimmer sweep on hover */
+.mtfe-about-us__btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        110deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.55) 50%,
+        transparent 70%
+    );
+    background-size: 200% 100%;
+    transform: translateX(-100%);
+    transition: transform 0.7s ease;
+}
+
+.mtfe-about-us__btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(244, 193, 61, 0.45);
+}
+
+.mtfe-about-us__btn:hover::before {
+    transform: translateX(100%);
+}
+
+.mtfe-about-us__btn:active {
+    transform: translateY(0);
+}
+
+.mtfe-about-us__btn-arrow {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.mtfe-about-us__btn:hover .mtfe-about-us__btn-arrow {
+    transform: translate(4px, -4px) rotate(45deg);
+}
+
+/* ── Room / bottom image ────────────────────────────────────────────────────── */
+
+.mtfe-about-us__room-img {
+    width: 280px;
+    height: 210px;
+    border-radius: 22px;
+    background-color: #d0d0d0;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    transition: transform 0.6s cubic-bezier(.2,.7,.2,1), box-shadow 0.5s ease;
+}
+
+.mtfe-about-us__room-img:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Room video wrapper ─────────────────────────────────────────────────────── */
+
+.mtfe-about-us__room-video {
+    position: relative;
+    overflow: hidden;
+    background-color: #111;
+}
+
+/* Transparent shield blocks all mouse interaction with the iframe */
+.mtfe-about-us__video-shield {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    cursor: default;
+    pointer-events: all;
+}
+
+/* Self-hosted video fills the box normally */
+.mtfe-about-us__room-video video,
+.mtfe-about-us__bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0;
+    display: block;
+    pointer-events: none;
+}
+
+/* Kill any MediaElement.js / WP player UI injected around the video */
+.mtfe-about-us__room-video .mejs-container,
+.mtfe-about-us__room-video .mejs-controls,
+.mtfe-about-us__room-video .mejs-overlay-play,
+.mtfe-about-us__room-video .mejs-overlay,
+.mtfe-about-us__room-video .mejs-layers,
+.mtfe-about-us__room-video .wp-video-shortcode,
+.mtfe-about-us__room-video .wp-video {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+}
+
+.mtfe-about-us__room-video .mejs-controls,
+.mtfe-about-us__room-video .mejs-overlay-play,
+.mtfe-about-us__room-video .mejs-overlay-button {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* YouTube iframe is oversized so controls/branding at top & bottom are clipped */
+.mtfe-about-us__room-video iframe {
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: calc(100% + 120px);
+    height: calc(100% + 120px);
+    border: 0;
+    display: block;
+    pointer-events: none;
+}
+
+.mtfe-about-us__room-video-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 0.85rem;
+    font-family: monospace;
+    background: #1f2937;
+}
+
+/* =============================================================================
+   RESPONSIVE
+   ============================================================================= */
+
+@media (max-width: 1024px) {
+    .mtfe-about-us {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .mtfe-about-us__images {
+        min-height: 500px;
+    }
+
+    .mtfe-about-us__content {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .mtfe-about-us__images {
+        min-height: 380px;
+    }
+
+    .mtfe-about-us__img-1 {
+        width: 72%;
+        height: 82%;
+    }
+
+    .mtfe-about-us__img-2 {
+        width: 58%;
+        height: 52%;
+    }
+
+    .mtfe-about-us__experience-badge {
+        top: auto;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+
+    .mtfe-about-us__experience-badge:hover {
+        transform: translateX(-50%) translateY(-4px) scale(1.04);
+    }
+
+    .mtfe-about-us__bottom-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .mtfe-about-us__room-img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .mtfe-about-us__quality-desc {
+        margin-left: 0;
+    }
+}
+
+/* =============================================================================
+   PREFERS REDUCED MOTION
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .mtfe-about-us .reveal,
+    .mtfe-about-us .reveal-badge,
+    .mtfe-about-us__experience-badge,
+    .mtfe-about-us__img-card,
+    .mtfe-about-us__feature,
+    .mtfe-about-us__btn,
+    .mtfe-about-us__badge-icon,
+    .mtfe-about-us__pill::before {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .mtfe-about-us .reveal,
+    .mtfe-about-us .reveal-badge {
+        opacity: 1 !important;
+    }
+}

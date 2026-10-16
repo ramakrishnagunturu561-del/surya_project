@@ -1,0 +1,19 @@
+.mt-addons-ticker {
+  width: auto;
+  overflow: hidden;
+}
+.mt-addons-ticker li {
+  display: inline-flex;
+  font-size: 22px;
+  font-weight: 700;
+}
+.mt-addons-ticker .mt-addons-ticker-title {
+  padding:0px 10px;
+}
+.mt-addons-ticker .mt-addons-ticker-description {
+  margin-bottom:unset;
+}
+.mt-addons-ticker-img-wrapper img {
+  width: 300px;
+  height: 300px;
+}

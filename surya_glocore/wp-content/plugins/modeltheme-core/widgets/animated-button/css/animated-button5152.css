@@ -1,0 +1,176 @@
+/* ============================================================
+   MT - Animated Button  (mtfe-animated-btn)
+   ============================================================ */
+
+.mtfe-animated-btn-wrap {
+    display: inline-flex;
+}
+
+.mtfe-animated-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--mtfe-ab-gap, 14px);
+    padding: 0 var(--mtfe-ab-px, 36px);
+    height: var(--mtfe-ab-height, 60px);
+    background: var(--mtfe-ab-bg, #141414);
+    color: var(--mtfe-ab-color, #f0d080);
+    font-size: var(--mtfe-ab-size, 18px);
+    letter-spacing: var(--mtfe-ab-spacing, 3px);
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--mtfe-ab-border, rgba(192, 155, 50, 0.3));
+    border-radius: var(--mtfe-ab-radius, 4px);
+    cursor: pointer;
+    transition: color 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+                border-color 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: inherit;
+    line-height: 1;
+}
+
+/* Bottom accent line */
+.mtfe-animated-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--mtfe-ab-line-h, 2px);
+    background: linear-gradient(90deg, var(--mtfe-ab-accent, #c9a84c), var(--mtfe-ab-accent-light, #f0d080), var(--mtfe-ab-accent, #c9a84c));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+/* Radial glow overlay */
+.mtfe-animated-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, var(--mtfe-ab-glow, rgba(192, 155, 50, 0.08)) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+/* Hover states */
+.mtfe-animated-btn:hover::before {
+    transform: scaleX(1);
+}
+
+.mtfe-animated-btn:hover::after {
+    opacity: 1;
+}
+
+.mtfe-animated-btn:hover {
+    background: #fff !important;
+    color: var(--mtfe-ab-color-hover, #fff8d0);
+    border-color: var(--mtfe-ab-border-hover, rgba(192, 155, 50, 0.7));
+    transform: translateY(var(--mtfe-ab-lift, -3px));
+}
+
+/* Dot + label sit above the pseudo-elements */
+.mtfe-animated-btn .mtfe-animated-btn__dot,
+.mtfe-animated-btn .mtfe-animated-btn__label {
+    position: relative;
+    z-index: 1;
+}
+
+/* Accent dot */
+.mtfe-animated-btn__dot {
+    flex-shrink: 0;
+    width: var(--mtfe-ab-dot-size, 6px);
+    height: var(--mtfe-ab-dot-size, 6px);
+    background: var(--mtfe-ab-accent, #c9a84c);
+    border-radius: 50%;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.mtfe-animated-btn:hover .mtfe-animated-btn__dot {
+    transform: scale(1.5);
+    box-shadow: 0 0 8px var(--mtfe-ab-accent, #c9a84c);
+}
+
+/* ============================================================
+   Solar variant  (mtfe-animated-btn--solar)
+   ============================================================ */
+
+.mtfe-animated-btn--solar {
+    background: #F4C13D;
+    color: #1E3935;
+    border: none;
+    border-radius: 100px;
+    padding: 18px 32px;
+    height: auto;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: normal;
+    text-transform: none;
+    gap: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Shimmer sweep — replaces the default bottom line */
+.mtfe-animated-btn--solar::before {
+    background: linear-gradient(
+        110deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.55) 50%,
+        transparent 70%
+    ) !important;
+    height: 100%;
+    bottom: auto;
+    inset: 0;
+    transform: translateX(-100%);
+    transition: transform 0.7s ease;
+}
+
+/* Disable the radial glow overlay */
+.mtfe-animated-btn--solar::after {
+    display: none;
+}
+
+.mtfe-animated-btn--solar:hover {
+    background: #F4C13D !important;
+    color: #1E3935 !important;
+    border-color: transparent;
+    box-shadow: 0 14px 30px rgba(244, 193, 61, 0.45);
+    transform: translateY(-3px);
+}
+
+.mtfe-animated-btn--solar:hover::before {
+    transform: translateX(100%);
+}
+
+.mtfe-animated-btn--solar:active {
+    transform: translateY(0);
+}
+
+/* Arrow icon */
+.mtfe-animated-btn--solar .mtfe-animated-btn__label,
+.mtfe-animated-btn--solar .mtfe-animated-btn__arrow {
+    position: relative;
+    z-index: 1;
+}
+
+.mtfe-animated-btn__arrow {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mtfe-animated-btn__arrow svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.mtfe-animated-btn--solar:hover .mtfe-animated-btn__arrow {
+    transform: translate(4px, -4px) rotate(45deg);
+}

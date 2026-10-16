@@ -1,0 +1,92 @@
+/* ============================================================
+   MT - Client Carousel  (mtfe-client-carousel)
+   ============================================================ */
+
+.mtfe-client-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+
+/* Track — infinite scroll via CSS animation */
+.mtfe-client-carousel__track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: mtfe-cc-scroll-left var(--mtfe-cc-duration, 30s) linear infinite;
+}
+
+/* Direction variants */
+[data-direction="right"] .mtfe-client-carousel__track {
+    animation-name: mtfe-cc-scroll-right;
+}
+
+/* Pause on hover */
+[data-pause="yes"]:hover .mtfe-client-carousel__track {
+    animation-play-state: paused;
+}
+
+/* Item */
+.mtfe-client-carousel__item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+/* Separator line */
+.mtfe-client-carousel__separator {
+    display: block;
+    flex-shrink: 0;
+    width: 1px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.15);
+    margin-right: inherit; /* spacing comes from item padding */
+    border-radius: 999px;
+}
+
+/* Image wrapper (used for bg, border, radius) */
+.mtfe-client-carousel__img-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* Image */
+.mtfe-client-carousel__img {
+    display: block;
+    height: 48px;
+    max-width: 160px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Grayscale */
+[data-grayscale="yes"] .mtfe-client-carousel__img {
+    filter: grayscale(100%);
+}
+
+.mtfe-client-carousel__item:hover .mtfe-client-carousel__img {
+    opacity: 1;
+    filter: none;
+}
+
+/* ---- Keyframes ---- */
+
+/* --mtfe-cc-translate is set by JS to exactly -(one original set width)px
+   so the animation loops seamlessly regardless of how many logos there are */
+@keyframes mtfe-cc-scroll-left {
+    from { transform: translateX(0); }
+    to   { transform: translateX(var(--mtfe-cc-translate, -50%)); }
+}
+
+@keyframes mtfe-cc-scroll-right {
+    from { transform: translateX(var(--mtfe-cc-translate, -50%)); }
+    to   { transform: translateX(0); }
+}

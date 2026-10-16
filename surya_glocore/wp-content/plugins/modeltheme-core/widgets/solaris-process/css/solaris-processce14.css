@@ -1,0 +1,454 @@
+/* Solaris Process - scoped for Elementor; parity with landing-page process-section.css */
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process-box {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process {
+  --mtfe-proc-ease-soft: cubic-bezier(0.25, 1, 0.5, 1);
+  --mtfe-proc-header-tx: 0px;
+  --mtfe-proc-header-ty: 0px;
+  --mtfe-proc-card-content-text-align: center;
+  --mtfe-proc-card-content-align-items: center;
+  --mtfe-proc-card-visual-height: 50%;
+  --mtfe-proc-image-fit: cover;
+  --mtfe-proc-image-position: center center;
+  --mtfe-proc-image-hover-scale: 1.06;
+  --mtfe-proc-pill-hover-scale: 1.04;
+  --mtfe-proc-yt-width: 100vw;
+  --mtfe-proc-yt-height: 56.25vw;
+  --mtfe-proc-yt-min-width: 177.78vh;
+  --mtfe-proc-yt-min-height: 100%;
+  --mtfe-proc-title-highlight: var(--mtfe-proc-heading, #0f2e28);
+  --mtfe-proc-outer-pad-x: 0;
+  position: relative;
+  width: 100%;
+  color: var(--mtfe-proc-heading, #0f2e28);
+  font-family: inherit;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process *,
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process *::before,
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process *::after {
+  box-sizing: border-box;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__shell {
+  width: 100%;
+  padding-top: 0;
+  padding-right: var(--mtfe-proc-shell-pr, 0);
+  padding-bottom: var(--mtfe-proc-shell-pb, 40px);
+  padding-left: var(--mtfe-proc-shell-pl, 0);
+  background: transparent;
+}
+
+@media (min-width: 1025px) {
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__shell {
+    padding-top: 0;
+    padding-bottom: var(--mtfe-proc-shell-pb, 40px);
+    padding-left: var(--mtfe-proc-shell-pl, var(--mtfe-proc-outer-pad-x, 0));
+    padding-right: var(--mtfe-proc-shell-pr, var(--mtfe-proc-outer-pad-x, 0));
+  }
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__section-wrap {
+  width: 100%;
+  max-width: min(var(--mtfe-proc-max-w, 1880px), 100%);
+  margin: 0 auto;
+  border-radius: var(--mtfe-proc-section-radius, 24px);
+  background: linear-gradient(
+    180deg,
+    var(--mtfe-proc-gradient-1, #faf8f2) 0%,
+    var(--mtfe-proc-gradient-2, rgba(250, 248, 242, 0.94)) 36%,
+    var(--mtfe-proc-gradient-3, rgba(95, 134, 140, 0.18)) 64%,
+    var(--mtfe-proc-gradient-4, rgba(26, 63, 56, 0.34)) 100%
+  );
+}
+
+@media (max-width: 1024px) {
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__section-wrap {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__section-wrap {
+    width: min(
+      var(--mtfe-proc-section-bleed-max, 1920px),
+      calc(
+        100% -
+          (var(--mtfe-proc-outer-pad-x, 0px) * 2) +
+          var(--mtfe-proc-extra-span, clamp(3rem, 5vw, 6.5rem))
+      ),
+      100%
+    );
+    max-width: min(
+      var(--mtfe-proc-section-bleed-max, 1920px),
+      calc(
+        100% -
+          (var(--mtfe-proc-outer-pad-x, 0px) * 2) +
+          var(--mtfe-proc-extra-span, clamp(3rem, 5vw, 6.5rem))
+      ),
+      100%
+    );
+    margin-inline: auto;
+    transform: none;
+    transition:
+      width 0.38s var(--mtfe-proc-ease-soft),
+      max-width 0.38s var(--mtfe-proc-ease-soft);
+  }
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__container {
+  width: 100%;
+  max-width: min(var(--mtfe-proc-steps-max-w, 1770px), 100%);
+  margin: 0 auto;
+  padding-left: var(--mtfe-proc-container-px, clamp(1rem, 1.8vw, 1.7rem));
+  padding-right: var(--mtfe-proc-container-px, clamp(1rem, 1.8vw, 1.7rem));
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__header {
+  text-align: center;
+  margin-bottom: var(--mtfe-proc-header-mb, clamp(2.5rem, 4vw, 4rem));
+  transform: translate(
+    calc(var(--mtfe-proc-header-tx, 0px) + var(--mtfe-solaris-tune-header-ox, 0px)),
+    calc(var(--mtfe-proc-header-ty, 0px) + var(--mtfe-solaris-tune-header-oy, 0px))
+  );
+}
+
+.elementor-widget-mtfe-solaris-process.mtfe-proc-head--left .mtfe-solaris-process__header {
+  text-align: left;
+}
+
+.elementor-widget-mtfe-solaris-process.mtfe-proc-head--left .mtfe-solaris-process__title {
+  justify-content: flex-start;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.elementor-widget-mtfe-solaris-process.mtfe-proc-head--center .mtfe-solaris-process__header {
+  text-align: center;
+}
+
+.elementor-widget-mtfe-solaris-process.mtfe-proc-head--center .mtfe-solaris-process__title {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.elementor-widget-mtfe-solaris-process.mtfe-proc-head--right .mtfe-solaris-process__header {
+  text-align: right;
+}
+
+.elementor-widget-mtfe-solaris-process.mtfe-proc-head--right .mtfe-solaris-process__title {
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__title {
+  margin: 0 auto;
+  max-width: var(--mtfe-proc-title-max-w, 800px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--mtfe-proc-title-col-gap, 0.35em);
+  row-gap: var(--mtfe-proc-title-row-gap, 0.2em);
+  font-size: calc(clamp(2rem, 4vw, 3.5rem) * var(--mtfe-solaris-tune-title-scale, 1));
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--mtfe-proc-heading, #0f2e28);
+  text-transform: capitalize;
+  transform: translate(var(--mtfe-solaris-tune-title-ox, 0px), var(--mtfe-solaris-tune-title-oy, 0px));
+  font-family: inherit;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__title .mtfe-solaris-process__title-chunk {
+  color: inherit;
+  font-weight: 400;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__title .mtfe-solaris-process__title-chunk.mtfe-solaris-process__title-highlight {
+  font-weight: var(--mtfe-proc-title-highlight-weight, 800);
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__title-highlight {
+  color: var(--mtfe-proc-title-highlight, var(--mtfe-proc-heading, #0f2e28));
+  font-weight: var(--mtfe-proc-title-highlight-weight, 800);
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__energy-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.2em;
+  width: 1.2em;
+  margin: 0 0.2em;
+  overflow: visible;
+}
+
+.elementor-widget-mtfe-solaris-process
+  .mtfe-solaris-process[data-enable-energy="yes"]:not(.mtfe-solaris-process--energy-ready)
+  .mtfe-solaris-process__energy-wrap {
+  width: 0;
+  margin: 0;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__energy-circle {
+  position: relative;
+  width: 1.2em;
+  height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-image:
+    linear-gradient(
+      175deg,
+      rgba(26, 63, 56, 0.96) 0%,
+      rgba(15, 20, 23, 0.98) 62%,
+      rgba(15, 20, 23, 1) 100%
+    ),
+    var(--mtfe-proc-energy-bg-image);
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 8px 24px rgba(15, 46, 40, 0.12);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.elementor-widget-mtfe-solaris-process
+  .mtfe-solaris-process[data-enable-energy="yes"]:not(.mtfe-solaris-process--energy-ready)
+  .mtfe-solaris-process__energy-circle {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__energy-circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--mtfe-proc-energy-overlay, rgba(15, 46, 40, 0.65));
+  z-index: 1;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__energy-circle svg {
+  position: relative;
+  z-index: 2;
+  width: 0.55em;
+  height: 0.55em;
+  fill: none;
+  stroke: var(--mtfe-proc-energy-icon, #d4b45f);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: rotate(0deg) scale(1);
+}
+
+.elementor-widget-mtfe-solaris-process
+  .mtfe-solaris-process[data-enable-energy="yes"]:not(.mtfe-solaris-process--energy-ready)
+  .mtfe-solaris-process__energy-circle
+  svg {
+  transform: rotate(-90deg) scale(0);
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__slider-wrap {
+  width: 100%;
+  margin-top: var(--mtfe-proc-slider-mt, 1rem);
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__slider {
+  padding-bottom: var(--mtfe-proc-slider-pb, 2.5rem) !important;
+  overflow: visible !important;
+}
+
+@media (min-width: 1025px) {
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__slider {
+    padding-bottom: max(0px, calc(var(--mtfe-proc-slider-pb, 2.5rem) + 40px)) !important;
+  }
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: var(--mtfe-proc-card-height, 580px);
+  cursor: default;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-visual {
+  width: 100%;
+  height: var(--mtfe-proc-card-visual-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-visual {
+  position: relative;
+  border-radius: var(--mtfe-proc-visual-radius-normal, 1000px) var(--mtfe-proc-visual-radius-normal, 1000px) 0 0;
+  background-color: var(--mtfe-proc-card-visual-bg, #1a3f38);
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: var(--mtfe-proc-image-fit);
+  object-position: var(--mtfe-proc-image-position);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-visual-yt {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-visual-yt-inner {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-visual-yt-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--mtfe-proc-yt-width);
+  max-width: none;
+  height: var(--mtfe-proc-yt-height);
+  min-width: var(--mtfe-proc-yt-min-width);
+  min-height: var(--mtfe-proc-yt-min-height);
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-content {
+  width: 100%;
+  height: calc(100% - var(--mtfe-proc-card-visual-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: var(--mtfe-proc-card-content-text-align, center);
+  align-items: var(--mtfe-proc-card-content-align-items, center);
+  max-width: 100%;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-title {
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: inherit;
+  color: var(--mtfe-proc-card-title, #0f2e28);
+  transition: color 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: var(--mtfe-proc-card-title-max-w, 100%);
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-desc {
+  margin: 0 auto;
+  width: 100%;
+  max-width: min(100%, var(--mtfe-proc-card-desc-max-w, 400px));
+  color: var(--mtfe-proc-card-desc, #3a4a46);
+  font-size: 0.9rem;
+  line-height: 1.62;
+  font-weight: 300;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-pill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--mtfe-proc-pill-size, 50px);
+  height: var(--mtfe-proc-pill-size, 50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: var(--mtfe-proc-pill-border-w, 4px) solid var(--mtfe-proc-pill-border, var(--mtfe-proc-gradient-1, #faf8f2));
+  background-color: var(--mtfe-proc-pill-bg, #0f2e28);
+  color: var(--mtfe-proc-pill-text, #faf8f2);
+  font-size: 1rem;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  transition:
+    background-color 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card--reversed {
+  flex-direction: column-reverse;
+}
+
+.elementor-widget-mtfe-solaris-process
+  .mtfe-solaris-process__card--reversed
+  .mtfe-solaris-process__card-visual {
+  border-radius: 0 0 var(--mtfe-proc-visual-radius-reversed, 1000px)
+    var(--mtfe-proc-visual-radius-reversed, 1000px);
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card:hover .mtfe-solaris-process__card-visual img {
+  transform: scale(var(--mtfe-proc-image-hover-scale));
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card:hover .mtfe-solaris-process__card-pill {
+  background-color: var(--mtfe-proc-pill-hover-bg, #d4b45f);
+  color: var(--mtfe-proc-pill-hover-text, #0f1417);
+  border-color: var(--mtfe-proc-pill-hover-border, #faf8f2);
+  transform: translate(-50%, -50%) scale(var(--mtfe-proc-pill-hover-scale));
+}
+
+.elementor-widget-mtfe-solaris-process .mtfe-solaris-process__pagination {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__header {
+    margin-bottom: var(--mtfe-proc-header-mb, clamp(2.5rem, 4vw, 4rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-visual,
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-content,
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-visual img,
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-visual-yt-inner,
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-title,
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__card-pill,
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__energy-wrap,
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__energy-circle,
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process__energy-circle svg {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process[data-enable-energy="yes"] .mtfe-solaris-process__energy-wrap {
+    width: 1.2em;
+    margin: 0 0.2em;
+  }
+
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process[data-enable-energy="yes"] .mtfe-solaris-process__energy-circle,
+  .elementor-widget-mtfe-solaris-process .mtfe-solaris-process[data-enable-energy="yes"] .mtfe-solaris-process__energy-circle svg {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,56 @@
+/**
+ * Elimină spațiul stânga/dreapta între #viewport și conținutul Elementor
+ * când Tema pune #pristine-site-content / wrapper-e fără clasă + containerul Elementor
+ * adaugă --padding-inline / boxed max-width.
+ * Doar pe body.elementor-page (lăsăm paginile fără Elementor neschimbate).
+ */
+body.elementor-page #page,
+body.elementor-page #pristine-site-content,
+body.elementor-page #pristine-site-content > div,
+body.elementor-page #pristine-site-content > div > div {
+	max-width: none;
+	width: 100%;
+	box-sizing: border-box;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+body.elementor-page .elementor {
+	max-width: none;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Elementor 3+ — secțiunile de nivel 1: direct sub .elementor sau sub .elementor-inner (unele setup-uri) */
+body.elementor-page .elementor > .e-con,
+body.elementor-page .elementor > .e-con--boxed,
+body.elementor-page .elementor > .elementor-inner > .e-con,
+body.elementor-page .elementor > .elementor-section-wrap > .e-con {
+	--padding-inline: 0;
+	--padding-left: 0;
+	--padding-right: 0;
+	--container-default-padding-x: 0;
+}
+
+body.elementor-page .elementor > .elementor-inner,
+body.elementor-page .elementor > .elementor-section-wrap {
+	width: 100%;
+	max-width: none;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+	box-sizing: border-box;
+}
+
+/* Secțiuni Elementor clasic (pre-flex) — boxed inscrie lățimea în ecran */
+body.elementor-page .elementor-section.elementor-section-boxed > .elementor-container {
+	max-width: 100% !important;
+	width: 100% !important;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}

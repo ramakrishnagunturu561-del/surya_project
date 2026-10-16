@@ -1,0 +1,202 @@
+/* ============================================================
+   MT - Brand Showcase  (mtfe-brand-showcase)
+   ============================================================ */
+
+.mtfe-brand-showcase {
+    width: 100%;
+}
+
+/* Grid — overflow visible so popup images can escape card bounds */
+.mtfe-brand-showcase__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    overflow: visible;
+}
+
+/* ── Card ──────────────────────────────────────────────────── */
+.mtfe-brand-showcase__card {
+    position: relative;
+    overflow: visible; /* popup must escape */
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+
+/* ── Background layer (clipped to rounded rect) ────────────── */
+.mtfe-brand-showcase__bg-layer {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--mtfe-bs-radius, 16px);
+    aspect-ratio: var(--mtfe-bs-ratio, 3/4);
+    background: #111;
+    transition: box-shadow 0.4s ease;
+}
+
+.mtfe-brand-showcase__card:hover .mtfe-brand-showcase__bg-layer {
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+}
+
+/* Background image — subtle zoom on hover */
+.mtfe-brand-showcase__bg-img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease, filter 0.5s ease;
+}
+
+.mtfe-brand-showcase__card:hover .mtfe-brand-showcase__bg-img {
+    transform: scale(1.06);
+    filter: brightness(0.75);
+}
+
+/* Dark overlay — becomes solid color on hover */
+.mtfe-brand-showcase__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+    opacity: 0.6;
+    transition: opacity 0.4s ease, background 0.4s ease;
+    pointer-events: none;
+}
+
+.mtfe-brand-showcase__card:hover .mtfe-brand-showcase__overlay {
+    background: var(--mtfe-bs-hover-bg, #000000);
+    opacity: 1;
+}
+
+.mtfe-brand-showcase__icon img.mtfe-brand-showcase__icon-img {
+    width: 100%;
+}
+/* ── Content (icon + title + subtitle) — visible by default ── */
+.mtfe-brand-showcase__hover-content {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 24px;
+    text-align: center;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+}
+
+/* Hide content on hover so popup takes over */
+.mtfe-brand-showcase__card:hover .mtfe-brand-showcase__hover-content {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.mtfe-brand-showcase__name {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.mtfe-brand-showcase__desc {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+/* ── Icon ──────────────────────────────────────────────────── */
+.mtfe-brand-showcase__icon-wrap {
+    position: absolute;
+    z-index: 2;
+    top: var(--mtfe-bs-icon-top, 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--mtfe-bs-icon-box, 64px);
+    height: var(--mtfe-bs-icon-box, 64px);
+    border-radius: var(--mtfe-bs-icon-radius, 50%);
+    background: var(--mtfe-bs-icon-bg, rgba(255,255,255,0.12));
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background 0.35s ease, opacity 0.4s ease;
+}
+
+.mtfe-brand-showcase__card:hover .mtfe-brand-showcase__icon-wrap {
+    opacity: 0;
+}
+
+.mtfe-brand-showcase__icon {
+    color: var(--mtfe-bs-icon-color, #ffffff);
+    font-size: var(--mtfe-bs-icon-size, 22px);
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mtfe-brand-showcase__icon svg {
+    width: var(--mtfe-bs-icon-size, 22px);
+    height: var(--mtfe-bs-icon-size, 22px);
+    fill: var(--mtfe-bs-icon-color, #ffffff);
+}
+
+/* PNG icon image inside the box */
+.mtfe-brand-showcase__icon-img {
+    width: var(--mtfe-bs-icon-size, 22px);
+    height: var(--mtfe-bs-icon-size, 22px);
+    object-fit: contain;
+    display: block;
+}
+
+/* ── Popup PNG ─────────────────────────────────────────────── */
+/*
+ * Positioned absolutely relative to the card (overflow: visible).
+ * Centred horizontally, bottom-anchored so it rises upward.
+ * Width > 100% makes it wider than the card on hover.
+ */
+.mtfe-brand-showcase__popup {
+    position: absolute;
+    bottom: var(--mtfe-bs-popup-bottom, 0px);
+    left: 50%;
+
+    /* start state: hidden, small, centred */
+    transform: translateX(-50%) translateY(12%) scale(var(--mtfe-bs-popup-scale-out, 0.72));
+    opacity: 0;
+    pointer-events: none;
+
+    width: var(--mtfe-bs-popup-width, 130%);
+    max-width: none;
+    object-fit: contain;
+    z-index: 10;
+
+    transform-origin: center bottom;
+    transition:
+        opacity  0.42s ease,
+        transform 0.48s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform, opacity;
+}
+
+.mtfe-brand-showcase__card:hover .mtfe-brand-showcase__popup {
+    opacity: 1;
+    transform: translateX(-50%) translateY(var(--mtfe-bs-popup-rise, -8%)) scale(var(--mtfe-bs-popup-scale-in, 1));
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .mtfe-brand-showcase__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .mtfe-brand-showcase__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

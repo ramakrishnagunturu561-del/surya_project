@@ -1,0 +1,452 @@
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team {
+  --mtfe-team-section-bg: transparent;
+  --mtfe-team-section-pt: clamp(2.25rem, 4.5vw, 4.5rem);
+  --mtfe-team-section-pr: 0;
+  --mtfe-team-section-pb: clamp(2.25rem, 4.5vw, 4.5rem);
+  --mtfe-team-section-pl: 0;
+  --mtfe-team-header-padding-inline: clamp(0.85rem, 2vw, 1.5rem);
+  --mtfe-team-header-gap-after: clamp(1.5rem, 2.7vw, 2.25rem);
+  --mtfe-team-grid-offset-y: 0px;
+  --mtfe-team-grid-gap: clamp(1.25rem, 2vw, 1.75rem);
+  --mtfe-team-cols-mobile: 1;
+  --mtfe-team-cols-tablet: 2;
+  --mtfe-team-cols-desktop: 4;
+  --mtfe-team-card-height: 500px;
+  --mtfe-team-badge-mb: clamp(0.55rem, 1.1vw, 0.85rem);
+  --mtfe-team-heading-mb: clamp(0.2rem, 0.4vw, 0.35rem);
+  --mtfe-team-badge-lh: 1.2;
+  --mtfe-team-heading-lh: 1.1;
+  --mtfe-team-intro-lh: 1.62;
+  --mtfe-team-card-radius: 4rem 1rem 1rem 1rem;
+  --mtfe-team-shape-radius: 4rem 0.75rem 0.75rem 0.75rem;
+  --mtfe-team-shape-height: 80%;
+  --mtfe-team-heading-color: #0f1417;
+  --mtfe-team-title-highlight-color: #0f1417;
+  --mtfe-team-intro-color: #3a4a46;
+  --mtfe-team-intro-max-width: 48rem;
+  --mtfe-team-badge-color: #d4b45f;
+  --mtfe-team-badge-dot-color: #d4b45f;
+  --mtfe-team-shape-bg: #0f2e28;
+  --mtfe-team-shape-bg-hover: #1a3f38;
+  --mtfe-team-name-color: #faf8f2;
+  --mtfe-team-role-color: #d4b45f;
+  --mtfe-team-vertical-color: #faf8f2;
+  --mtfe-team-vertical-opacity: 0.04;
+  --mtfe-team-vertical-hover-opacity: 0.08;
+  --mtfe-team-info-grad-1: #0f2e28;
+  --mtfe-team-info-grad-2: rgba(15, 46, 40, 0.8);
+  --mtfe-team-info-grad-3: transparent;
+  --mtfe-team-overlay-bg: rgba(15, 46, 40, 0.55);
+  --mtfe-team-social-bg: rgba(250, 248, 242, 0.1);
+  --mtfe-team-social-border: rgba(250, 248, 242, 0.2);
+  --mtfe-team-social-icon: #fff;
+  --mtfe-team-social-hover-bg: #d4b45f;
+  --mtfe-team-social-hover-border: #d4b45f;
+  --mtfe-team-social-hover-icon: #0f2e28;
+  --mtfe-team-focus-ring: #d4b45f;
+  --mtfe-team-image-width: 90%;
+  --mtfe-team-image-height: 95%;
+  --mtfe-team-image-fit: contain;
+  --mtfe-team-image-position: center bottom;
+  --mtfe-team-image-mask-start: 0%;
+  --mtfe-team-image-mask-end: 50%;
+  --mtfe-team-image-shadow-y: 15px;
+  --mtfe-team-image-shadow-blur: 15px;
+  --mtfe-team-image-shadow-color: rgba(0, 0, 0, 0.4);
+  --mtfe-team-overlay-padding-bottom: 2.25rem;
+  --mtfe-team-overlay-gap: 1rem;
+  --mtfe-team-social-size: 3.5rem;
+  --mtfe-team-social-icon-size: 1.5rem;
+  --mtfe-team-transition-duration: 600ms;
+  --mtfe-team-transition-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --mtfe-team-image-hover-y: -10px;
+  --mtfe-team-image-hover-scale: 1.04;
+  --mtfe-team-overlay-fade-duration: 400ms;
+  --mtfe-team-social-enter-y: 2.5rem;
+  --mtfe-team-social-enter-duration: 400ms;
+  --mtfe-team-social-delay-1: 100ms;
+  --mtfe-team-social-delay-2: 150ms;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  padding: var(--mtfe-team-section-pt) var(--mtfe-team-section-pr) var(--mtfe-team-section-pb) var(--mtfe-team-section-pl);
+  background: var(--mtfe-team-section-bg);
+  font-family: inherit;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team *,
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team *::before,
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team *::after {
+  box-sizing: border-box;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team a {
+  text-decoration: none;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__header {
+  padding-inline: var(--mtfe-team-header-padding-inline);
+  text-align: center;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__header--align-left {
+  text-align: left;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__header--align-right {
+  text-align: right;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto var(--mtfe-team-badge-mb);
+  color: var(--mtfe-team-badge-color);
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__badge-text {
+  display: inline-block;
+  line-height: var(--mtfe-team-badge-lh);
+  transform: translateY(0.07em);
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__header--align-left .mtfe-solaris-our-team__badge {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__header--align-right .mtfe-solaris-our-team__badge {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__badge-dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  align-self: center;
+  border-radius: 50%;
+  background: var(--mtfe-team-badge-dot-color);
+  opacity: 0.85;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__heading {
+  margin: 0 0 var(--mtfe-team-heading-mb);
+  color: var(--mtfe-team-heading-color);
+  font-family: inherit;
+  font-size: calc(clamp(2rem, 4vw, 3.5rem) * var(--mtfe-solaris-tune-title-scale, 1));
+  line-height: var(--mtfe-team-heading-lh);
+  letter-spacing: -0.02em;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__title-highlight {
+  color: var(--mtfe-team-title-highlight-color);
+  font-weight: 800;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__intro {
+  margin: 0 auto var(--mtfe-team-header-gap-after);
+  max-width: var(--mtfe-team-intro-max-width);
+  color: var(--mtfe-team-intro-color);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: var(--mtfe-team-intro-lh);
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__header--align-left .mtfe-solaris-our-team__intro {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__header--align-right .mtfe-solaris-our-team__intro {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__grid {
+  display: grid;
+  margin-top: var(--mtfe-team-grid-offset-y);
+  grid-template-columns: repeat(var(--mtfe-team-cols-mobile), minmax(0, 1fr));
+  gap: var(--mtfe-team-grid-gap);
+}
+
+@media (min-width: 768px) {
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__grid {
+    grid-template-columns: repeat(var(--mtfe-team-cols-tablet), minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__grid {
+    grid-template-columns: repeat(var(--mtfe-team-cols-desktop), minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card {
+    height: 390px !important;
+  }
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: var(--mtfe-team-card-height);
+  cursor: pointer;
+  border-radius: var(--mtfe-team-card-radius);
+  overflow: hidden;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__shape {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--mtfe-team-shape-height);
+  z-index: 1;
+  overflow: hidden;
+  border-radius: var(--mtfe-team-shape-radius);
+  background: var(--mtfe-team-shape-bg);
+  transition:
+    background-color var(--mtfe-team-transition-duration) var(--mtfe-team-transition-ease),
+    box-shadow var(--mtfe-team-transition-duration) var(--mtfe-team-transition-ease);
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:hover .mtfe-solaris-our-team__shape,
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:focus-within .mtfe-solaris-our-team__shape {
+  background: var(--mtfe-team-shape-bg-hover);
+  box-shadow: 0 25px 50px -12px rgba(15, 46, 40, 0.4);
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__vertical {
+  position: absolute;
+  left: 0.5rem;
+  top: 2rem;
+  transform: rotate(-90deg) translateX(-100%);
+  transform-origin: top left;
+  color: var(--mtfe-team-vertical-color);
+  opacity: var(--mtfe-team-vertical-opacity);
+  font-family: inherit;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: opacity 500ms ease;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:hover .mtfe-solaris-our-team__vertical,
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:focus-within .mtfe-solaris-our-team__vertical {
+  opacity: var(--mtfe-team-vertical-hover-opacity);
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 10;
+  width: var(--mtfe-team-image-width);
+  height: var(--mtfe-team-image-height);
+  object-fit: var(--mtfe-team-image-fit);
+  object-position: var(--mtfe-team-image-position);
+  filter: drop-shadow(0 var(--mtfe-team-image-shadow-y) var(--mtfe-team-image-shadow-blur) var(--mtfe-team-image-shadow-color));
+  transform: translateX(-50%);
+  transition: transform var(--mtfe-team-transition-duration) var(--mtfe-team-transition-ease);
+  mask-image: linear-gradient(to top, transparent var(--mtfe-team-image-mask-start), black var(--mtfe-team-image-mask-end));
+  -webkit-mask-image: linear-gradient(to top, transparent var(--mtfe-team-image-mask-start), black var(--mtfe-team-image-mask-end));
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:hover .mtfe-solaris-our-team__img,
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:focus-within .mtfe-solaris-our-team__img {
+  transform: translate(-50%, var(--mtfe-team-image-hover-y)) scale(var(--mtfe-team-image-hover-scale));
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__info {
+  position: relative;
+  z-index: 20;
+  padding: 1.5rem;
+  padding-top: 5rem;
+  background: linear-gradient(to top, var(--mtfe-team-info-grad-1) 10%, var(--mtfe-team-info-grad-2) 50%, var(--mtfe-team-info-grad-3) 100%);
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__name {
+  margin: 0 0 0.25rem;
+  color: var(--mtfe-team-name-color);
+  font-family: inherit;
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__role {
+  margin: 0;
+  color: var(--mtfe-team-role-color);
+  font-family: inherit;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 30;
+  width: 100%;
+  height: var(--mtfe-team-shape-height);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--mtfe-team-overlay-gap);
+  padding-bottom: var(--mtfe-team-overlay-padding-bottom);
+  border-radius: var(--mtfe-team-shape-radius);
+  background: var(--mtfe-team-overlay-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--mtfe-team-overlay-fade-duration) ease;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:hover .mtfe-solaris-our-team__overlay,
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:focus-within .mtfe-solaris-our-team__overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__social {
+  width: var(--mtfe-team-social-size);
+  height: var(--mtfe-team-social-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--mtfe-team-social-bg);
+  color: var(--mtfe-team-social-icon);
+  border: 1px solid var(--mtfe-team-social-border);
+  transform: translateY(var(--mtfe-team-social-enter-y));
+  opacity: 0;
+  transition:
+    transform var(--mtfe-team-social-enter-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity var(--mtfe-team-social-enter-duration) cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease,
+    color 250ms ease;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__social svg {
+  width: var(--mtfe-team-social-icon-size);
+  height: var(--mtfe-team-social-icon-size);
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:hover .mtfe-solaris-our-team__social,
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:focus-within .mtfe-solaris-our-team__social {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:hover .mtfe-solaris-our-team__social:nth-child(1),
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:focus-within .mtfe-solaris-our-team__social:nth-child(1) {
+  transition-delay: var(--mtfe-team-social-delay-1);
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:hover .mtfe-solaris-our-team__social:nth-child(2),
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:focus-within .mtfe-solaris-our-team__social:nth-child(2) {
+  transition-delay: var(--mtfe-team-social-delay-2);
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__social:hover {
+  background: var(--mtfe-team-social-hover-bg);
+  color: var(--mtfe-team-social-hover-icon);
+  border-color: var(--mtfe-team-social-hover-border);
+  transform: scale(1.1) translateY(0);
+  box-shadow: 0 0 20px rgba(212, 180, 95, 0.4);
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__social:focus-visible {
+  outline: 2px solid var(--mtfe-team-focus-ring);
+  outline-offset: 3px;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-anim-root--in-view .mtfe-solaris-our-team__heading.mtfe-solaris-anim-item {
+  transform: translate3d(var(--mtfe-solaris-tune-title-ox, 0px), var(--mtfe-solaris-tune-title-oy, 0px), 0) scale(1) !important;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-anim-root--in-view .mtfe-solaris-our-team__intro.mtfe-solaris-anim-item {
+  transform: translate3d(var(--mtfe-solaris-tune-lead-ox, 0px), var(--mtfe-solaris-tune-lead-oy, 0px), 0) scale(1) !important;
+}
+
+/* Card profile link — covers the entire card above all layers */
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  border-radius: inherit;
+  display: block;
+  outline: none;
+}
+
+/* Social buttons must sit above the card link so they remain independently clickable */
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__social {
+  position: relative;
+  z-index: 50;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card--linked {
+  cursor: pointer;
+}
+
+.elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card--linked:focus-within .mtfe-solaris-our-team__card-link:focus-visible {
+  outline: 2px solid var(--mtfe-team-focus-ring, #D4B45F);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__shape,
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__vertical,
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__img,
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__overlay,
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__social {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:hover .mtfe-solaris-our-team__img,
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:focus-within .mtfe-solaris-our-team__img {
+    transform: translateX(-50%);
+  }
+
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:hover .mtfe-solaris-our-team__social,
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__card:focus-within .mtfe-solaris-our-team__social {
+    transform: none;
+    opacity: 1;
+    transition-delay: 0s !important;
+  }
+
+  .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team__social:hover {
+    transform: none;
+  }
+}

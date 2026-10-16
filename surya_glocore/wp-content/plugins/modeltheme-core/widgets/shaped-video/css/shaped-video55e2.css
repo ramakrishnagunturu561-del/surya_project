@@ -1,0 +1,13 @@
+.mtfe-shaped-video video,
+.mtfe-shaped-video img {
+  position: absolute;
+  margin: 0;
+  overflow:hidden;
+}
+.mtfe-shaped-video video {
+object-fit: cover;
+}
+
+.mtfe-shaped-video img {
+  background:#F8F4EF;
+  mix-blend-mode: lighten;

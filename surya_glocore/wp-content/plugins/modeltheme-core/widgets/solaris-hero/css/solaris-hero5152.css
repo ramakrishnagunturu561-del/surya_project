@@ -1,0 +1,540 @@
+.mtfe-solaris-hero,
+.mtfe-solaris-hero *,
+.mtfe-solaris-hero *::before,
+.mtfe-solaris-hero *::after {
+  box-sizing: border-box;
+}
+
+.mtfe-solaris-hero {
+  --mtfe-hero-accent:       #F0B429;
+  --mtfe-hero-accent-soft:  #f4c14a;
+  --mtfe-hero-green-deep:   #0F2620;
+  --mtfe-hero-serif:        Georgia, "Times New Roman", serif;
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 60px 64px 0;
+  color: #fff;
+  border-radius: 25px;
+}
+
+/* Video background */
+.mtfe-solaris-hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* iframe variant — YouTube / Vimeo background */
+.mtfe-solaris-hero__video--iframe {
+  pointer-events: none;
+  border: 0;
+  /* Scale to cover regardless of viewport aspect ratio */
+  width: 100vw;
+  height: 56.25vw;   /* 16:9 */
+  min-width: 177.78vh;
+  min-height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Dark overlay for text legibility */
+.mtfe-solaris-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(15,38,32,0.95) 0%, rgba(15,38,32,0.85) 25%, rgba(15,38,32,0.55) 55%, rgba(15,38,32,0.25) 80%, rgba(15,38,32,0.15) 100%),
+    radial-gradient(ellipse at 70% 40%, rgba(240,180,41,0.08) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Soft sun glow */
+.mtfe-solaris-hero::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(240,180,41,0.18) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Big ghosted brand watermark */
+.mtfe-solaris-hero__watermark {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 240px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.06);
+  letter-spacing: -8px;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 2;
+}
+
+.mtfe-solaris-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  min-height: calc(100vh - 60px);
+  padding-bottom: 170px;
+  border-radius: 25px;
+}
+
+/* LEFT column */
+.mtfe-solaris-hero__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mtfe-solaris-hero__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(240,180,41,0.12);
+  border: 0.5px solid rgba(240,180,41,0.4);
+  border-radius: 999px;
+  padding: 6px 14px;
+  width: fit-content;
+  color: var(--mtfe-hero-accent);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 28px;
+}
+
+.mtfe-solaris-hero__pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mtfe-hero-accent);
+  box-shadow: 0 0 8px var(--mtfe-hero-accent);
+  flex-shrink: 0;
+}
+
+.mtfe-solaris-hero__headline {
+  font-size: 80px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -2.5px;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.mtfe-solaris-hero__headline-accent {
+  color: var(--mtfe-hero-accent);
+  font-style: italic;
+  font-family: var(--mtfe-hero-serif);
+  font-weight: 400;
+}
+
+.mtfe-solaris-hero__sub {
+  color: rgba(255,255,255,0.75);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+/* CTA Button — Solar Gold Pill */
+.mtfe-solaris-hero__cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: #F4C13D;
+  color: #1E3935;
+  padding: 18px 32px;
+  border-radius: 100px;
+  height: auto;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+  text-decoration: none;
+  width: fit-content;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.mtfe-solaris-hero__cta:hover {
+  background: #F4C13D;
+}
+/* Shimmer sweep */
+.mtfe-solaris-hero__cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+}
+
+.mtfe-solaris-hero__cta:hover {
+  box-shadow: 0 14px 30px rgba(244, 193, 61, 0.45);
+  transform: translateY(-3px);
+}
+
+.mtfe-solaris-hero__cta:hover::before {
+  transform: translateX(100%);
+}
+
+.mtfe-solaris-hero__cta:active {
+  transform: translateY(0);
+}
+
+.mtfe-solaris-hero__cta__label,
+.mtfe-solaris-hero__cta__arrow {
+  position: relative;
+  z-index: 1;
+}
+
+.mtfe-solaris-hero__cta__arrow {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mtfe-solaris-hero__cta__arrow svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mtfe-solaris-hero__cta:hover .mtfe-solaris-hero__cta__arrow {
+  transform: translate(4px, -4px) rotate(45deg);
+}
+
+/* RIGHT column */
+.mtfe-solaris-hero__right {
+  position: unset;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  align-self: stretch;
+}
+
+.mtfe-solaris-hero__turbine {
+  position: absolute;
+  top: 0%;
+  bottom: 0;
+  right: 0%;
+  width: 176%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5)) drop-shadow(0 0 100px rgba(240,180,41,0.2));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mtfe-solaris-hero__turbine-img {
+  width: 100%;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: contain;
+  object-position: bottom right;
+  display: block;
+}
+
+/* Floating particles */
+.mtfe-solaris-hero__particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.mtfe-solaris-hero__particle--p1 {
+  top: 15%; right: 15%;
+  width: 80px; height: 80px;
+  background: radial-gradient(circle, rgba(240,180,41,0.4) 0%, transparent 70%);
+}
+
+.mtfe-solaris-hero__particle--p2 {
+  bottom: 25%; left: 10%;
+  width: 50px; height: 50px;
+  background: radial-gradient(circle, rgba(240,180,41,0.3) 0%, transparent 70%);
+}
+
+.mtfe-solaris-hero__particle--p3 {
+  top: 40%; left: 5%;
+  width: 30px; height: 30px;
+  background: radial-gradient(circle, rgba(240,180,41,0.5) 0%, transparent 70%);
+}
+
+/* Bottom card row */
+.mtfe-solaris-hero__cards {
+  position: absolute;
+  bottom: 40px;
+  right: 64px;
+  z-index: 4;
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.mtfe-solaris-hero__stat-card {
+  background: rgba(15,38,32,0.85);
+  backdrop-filter: blur(12px);
+  border: 0.5px solid rgba(240,180,41,0.25);
+  border-radius: 20px;
+  padding: 28px 32px;
+  min-width: 280px;
+  position: relative;
+}
+
+.mtfe-solaris-hero__stat-icon {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 28px;
+  height: 28px;
+  color: var(--mtfe-hero-accent);
+}
+
+.mtfe-solaris-hero__stat-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mtfe-solaris-hero__stat-number {
+  font-size: 48px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  margin-bottom: 12px;
+}
+
+.mtfe-solaris-hero__stat-unit {
+  color: var(--mtfe-hero-accent);
+  font-size: 28px;
+}
+
+.mtfe-solaris-hero__stat-label {
+  color: rgba(255,255,255,0.65);
+  font-size: 13px;
+  line-height: 1.4;
+  max-width: 200px;
+}
+
+/* Image card with simulated rooftop */
+.mtfe-solaris-hero__image-card {
+  width: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #87aac0 0%, #c4a574 50%, #6b5d4a 100%);
+  border: 0.5px solid rgba(255,255,255,0.1);
+}
+
+/* When a real image is set, hide the CSS-generated illustration */
+.mtfe-solaris-hero__image-card--has-img::before,
+.mtfe-solaris-hero__image-card--has-img::after {
+  display: none;
+}
+
+.mtfe-solaris-hero__image-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== ENTRANCE ANIMATIONS ===== */
+@keyframes mtfe-hero-fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mtfe-hero-fadeRight {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes mtfe-hero-turbineRise {
+  from { opacity: 0; transform: translateY(80px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes mtfe-hero-watermarkFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes mtfe-hero-glowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+
+@keyframes mtfe-hero-particleFloat {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33%       { transform: translateY(-12px) translateX(8px); }
+  66%       { transform: translateY(8px) translateX(-6px); }
+}
+
+.mtfe-solaris-hero__pill {
+  opacity: 0;
+  animation: mtfe-hero-fadeRight 0.7s ease-out 0.3s forwards;
+}
+
+.mtfe-solaris-hero__pill-dot {
+  animation: mtfe-hero-glowPulse 2s ease-in-out infinite;
+}
+
+.mtfe-solaris-hero__headline {
+  opacity: 0;
+  animation: mtfe-hero-fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+}
+
+.mtfe-solaris-hero__headline-accent {
+  display: inline-block;
+  opacity: 0;
+  animation: mtfe-hero-fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards;
+}
+
+.mtfe-solaris-hero__sub {
+  opacity: 0;
+  animation: mtfe-hero-fadeUp 0.8s ease-out 0.9s forwards;
+}
+
+.mtfe-solaris-hero__cta {
+  opacity: 0;
+  animation: mtfe-hero-fadeUp 0.8s ease-out 1.05s forwards;
+}
+
+.mtfe-solaris-hero__turbine {
+  opacity: 0;
+  animation: mtfe-hero-turbineRise 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+}
+
+.mtfe-solaris-hero__particle--p1 { animation: mtfe-hero-particleFloat 7s ease-in-out infinite; }
+.mtfe-solaris-hero__particle--p2 { animation: mtfe-hero-particleFloat 9s ease-in-out infinite 1s; }
+.mtfe-solaris-hero__particle--p3 { animation: mtfe-hero-particleFloat 6s ease-in-out infinite 0.5s; }
+
+.mtfe-solaris-hero__watermark {
+  opacity: 0;
+  animation: mtfe-hero-watermarkFade 1.5s ease-out 1.2s forwards;
+}
+
+.mtfe-solaris-hero__cards {
+  opacity: 0;
+  animation: mtfe-hero-fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+}
+
+.mtfe-solaris-hero__stat-card {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.mtfe-solaris-hero__stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(240,180,41,0.5);
+}
+
+.mtfe-solaris-hero__image-card {
+  transition: transform 0.3s ease;
+}
+
+.mtfe-solaris-hero__image-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .mtfe-solaris-hero *,
+  .mtfe-solaris-hero *::before,
+  .mtfe-solaris-hero *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 968px) {
+  .mtfe-solaris-hero {
+    padding: 40px 24px 0;
+  }
+
+  .mtfe-solaris-hero__content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-bottom: 0px;
+  }
+
+  .mtfe-solaris-hero__headline {
+    font-size: 48px;
+    letter-spacing: -1.5px;
+  }
+
+  .mtfe-solaris-hero__sub {
+    font-size: 14px;
+  }
+
+  .mtfe-solaris-hero__turbine {
+    top: 0%;
+    bottom: 0;
+    right: 0%;
+    width: 176%;
+    height: auto;
+  }
+
+  .mtfe-solaris-hero__turbine-img {
+    width: 100%;
+    height: 100%;
+    object-position: bottom right;
+    display: none !important;
+  }
+
+  .mtfe-solaris-hero__cards {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 32px;
+    flex-direction: column;
+  }
+
+  .mtfe-solaris-hero__stat-card {
+    min-width: 0;
+  }
+
+  .mtfe-solaris-hero__image-card {
+    width: 100%;
+    height: 140px;
+  }
+
+  .mtfe-solaris-hero__watermark {
+    font-size: 100px;
+  }
+}

@@ -1,0 +1,166 @@
+/**
+ * Site-wide canvas background (Solaris cream). Widgets keep their own section colors.
+ * Token matches Solaris Hero --mtfe-page-bg (#FAF8F2).
+ *
+ * Why white strips between sections (e.g. footer vs calculator)?
+ * - Pristine `styles.css`: `.site-content { background: #fff }` shows in any vertical gap/margin.
+ * - `#pristine-site-content` inner wrappers did not inherit the cream body fill.
+ * - Elementor root `.elementor` often sits above body; gaps between `.e-con` sections reveal its fill.
+ * Sections/widgets with their own background-color still paint on top; this only fixes “empty” canvas.
+ */
+
+/* Also cover common inner wrappers used by secondary/CPT templates */
+.site-main,
+.content-area,
+.site-main > article,
+.site-main > section {
+	background-color: var(--mtfe-solaris-page-canvas) !important;
+}
+
+#pristine-site-content,
+#pristine-site-content > div,
+#pristine-site-content > div > div {
+	background-color: var(--mtfe-solaris-page-canvas) !important;
+}
+
+/* Elementor — strip between footer section and next section uses this layer */
+body.elementor-page .elementor {
+	background-color: var(--mtfe-solaris-page-canvas) !important;
+}
+
+/* Secondary pages can render Elementor widgets without body.elementor-page */
+.elementor {
+	background-color: var(--mtfe-solaris-page-canvas) !important;
+}
+
+/* ═══ No gap below the last block (cream strip under footer / vs. viewport edge) ═══
+ * Theme + Elementor can leave margin/padding-bottom on wrappers; last .e-con may keep default gap.
+ */
+html {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+body.elementor-page {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+body.elementor-page #page {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/* Apply same no-tail-gap policy to non-elementor-page templates as well */
+body #page {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+body.elementor-page #pristine-site-content,
+body.elementor-page #pristine-site-content > div,
+body.elementor-page #pristine-site-content > div > div {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+body.elementor-page .elementor {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.elementor {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/* Last top-level container: remove default section tail spacing */
+body.elementor-page .elementor > .e-con:last-child,
+body.elementor-page .elementor > .elementor-inner > .e-con:last-child {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+body.elementor-page .elementor-element.elementor-widget-mtfe-solaris-footer {
+	margin-bottom: 0 !important;
+}
+
+body.elementor-page .elementor-widget-mtfe-solaris-footer .mtfe-solaris-footer-box {
+	margin-bottom: 0 !important;
+}
+
+/* Classic sections (pre–flex containers) */
+body.elementor-page .elementor-section:last-child {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/* Side inset: footer section flush to viewport left/right when theme leaves a few px */
+body.elementor-page .elementor-widget-mtfe-solaris-footer {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	max-width: none !important;
+}
+
+/* Footer widget should always bleed edge-to-edge (no 5px side/bottom gaps) */
+.elementor-widget-mtfe-solaris-footer,
+.elementor-widget-mtfe-solaris-footer .elementor-widget-container,
+.elementor-widget-mtfe-solaris-footer .mtfe-solaris-footer-box,
+.elementor-widget-mtfe-solaris-footer .mtfe-solaris-footer {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	margin-bottom: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	padding-bottom: 0 !important;
+	width: 100% !important;
+	max-width: 100% !important;
+}
+
+/* Hard viewport bleed: ignore parent container paddings (5px gutters, etc.) */
+.elementor-widget-mtfe-solaris-footer {
+	position: relative !important;
+	left: auto !important;
+	right: auto !important;
+	width: 100vw !important;
+	max-width: 100vw !important;
+	margin-left: calc(50% - 50vw) !important;
+	margin-right: calc(50% - 50vw) !important;
+}
+
+/* Ensure no trailing space under footer itself */
+.elementor-widget-mtfe-solaris-footer .mtfe-solaris-footer {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/* Theme footer wrappers: hard remove any remaining bottom strip */
+footer,
+#colophon,
+.site-footer,
+.elementor-location-footer,
+body #page,
+body .site,
+body .site-content,
+body #pristine-site-content {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+	border-bottom-width: 0 !important;
+}
+
+/* Landing page only: let Elementor control section spacing (Solaris widgets outer shells). */
+body.home .elementor-widget-mtfe-solaris-services-core .mtfe-solaris-services-core,
+body.home .elementor-widget-mtfe-solaris-hero .mtfe-solaris-hero,
+body.home .elementor-widget-mtfe-solaris-process .mtfe-solaris-process,
+body.home .elementor-widget-mtfe-solaris-projects-portfolio .mtfe-solaris-projects-portfolio,
+body.home .elementor-widget-mtfe-solaris-our-team .mtfe-solaris-our-team,
+body.home .elementor-widget-mtfe-solaris-our-story .mtfe-solaris-our-story,
+body.home .elementor-widget-mtfe-solaris-reviews .mtfe-solaris-reviews,
+body.home .elementor-widget-mtfe-solaris-results-showcase .mtfe-solaris-results,
+body.home .elementor-widget-mtfe-solaris-cta-contact .mtfe-solaris-cta-contact,
+body.home .elementor-widget-mtfe-solaris-cta-comparison .mtfe-solaris-cta-comparison,
+body.home .elementor-widget-mtfe-solaris-footer .mtfe-solaris-footer,
+body.home .elementor-widget-mtfe-solaris-calculator .mtfe-solaris-calculator {
+	margin: 0;
+	padding: 0;
+}

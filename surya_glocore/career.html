@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -272,9 +272,27 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 </div>
 </header><div class="glocore_preloader_holder glocore_preloader_holder--classic"><img alt="SPES" class="preloader_image" src="img/logo/spes-logo-transparent.png"/></div> <div id="glocore-site-content">
 <div>
-<div>
 <div class="spes-page"><section class="spes-hero"><div class="spes-wrap"><p class="spes-crumb"><a href="index.html">Home</a> / Career</p><h1>Career</h1><span class="spes-bar"></span></div></section><section class="spes-sec"><div class="spes-wrap"><h2 class="spes-title">Drop Us A Line</h2>
-<form action="contact.php" class="spes-form" method="post"><div class="two"><input name="first_name" placeholder="First Name" required="" type="text"/><input name="last_name" placeholder="Last Name" type="text"/></div><div class="two"><input name="email" placeholder="Email Address" required="" type="email"/><input name="phone" placeholder="Phone Number" type="text"/></div><textarea name="affiliations" placeholder="Affiliations" rows="3"></textarea><textarea name="bio" placeholder="Biography" rows="4"></textarea><textarea name="comments" placeholder="Comments" rows="4"></textarea><div><button type="submit">Submit</button></div></form></div></section></div>
+<form class="spes-form" id="spes-career-form" onsubmit="handleCareerSubmit(event)"><div class="two"><input id="cr_first" name="first_name" placeholder="First Name" required="" type="text"/><input id="cr_last" name="last_name" placeholder="Last Name" type="text"/></div><div class="two"><input id="cr_email" name="email" placeholder="Email Address" required="" type="email"/><input id="cr_phone" name="phone" placeholder="Phone Number" type="text"/></div><textarea id="cr_affil" name="affiliations" placeholder="Affiliations" rows="3"></textarea><textarea id="cr_bio" name="bio" placeholder="Biography" rows="4"></textarea><textarea id="cr_comments" name="comments" placeholder="Comments" rows="4"></textarea><div id="spes-career-feedback" style="display:none; padding:14px 20px; border-radius:6px; margin-bottom:15px; font-weight:600; font-size:14px;"></div><div><button type="submit">Submit</button></div></form>
+<script>
+function handleCareerSubmit(e) {
+  e.preventDefault();
+  var name = (document.getElementById('cr_first').value + ' ' + document.getElementById('cr_last').value).trim();
+  var email = document.getElementById('cr_email').value.trim();
+  var phone = document.getElementById('cr_phone').value.trim();
+  var bio = document.getElementById('cr_bio').value.trim();
+  var comments = document.getElementById('cr_comments').value.trim();
+  var fb = document.getElementById('spes-career-feedback');
+  var mailto = 'mailto:chandu@suryapowereng.in?subject=' + encodeURIComponent('Career Application: ' + name) +
+    '&body=' + encodeURIComponent('Applicant: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\n\nBio:\n' + bio + '\n\nComments:\n' + comments);
+  fb.style.display = 'block';
+  fb.style.background = '#e6f7ec';
+  fb.style.color = '#155724';
+  fb.style.border = '1px solid #c3e6cb';
+  fb.innerHTML = '✓ Thank you, ' + name + '! Opening email to chandu@suryapowereng.in with your details.';
+  window.location.href = mailto;
+}
+</script></div></section></div>
 </div>
 <a class="glocore-back-to-top glocore-is-visible glocore-fade-out" href="#0">
 <i class="fas fa-angle-up"></i>

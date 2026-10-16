@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -280,20 +280,39 @@ var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/
 <div class="spes-contact-dashed-divider"></div>
 <p class="spes-contact-lead">Feel our customer support is not awesome or have some suggestions/feedback for our services or just want to say a Hi, leave us a note here and we will get back to you.</p>
 <p class="spes-contact-helpdesk">For support, please submit a ticket at our <a href="mailto:chandu@suryapowereng.in">Helpdesk</a></p>
-<form action="contact.php" class="spes-exact-form" method="post">
+<form class="spes-exact-form" id="spes-contact-form" onsubmit="handleContactSubmit(event)">
 <div class="spes-form-triplet">
-<input name="cf_name" placeholder="Name" required="" type="text"/>
-<input name="cf_email" placeholder="Email Address" required="" type="email"/>
-<input name="cf_subject" placeholder="Subject" type="text"/>
+<input id="cf_name" name="cf_name" placeholder="Name" required="" type="text"/>
+<input id="cf_email" name="cf_email" placeholder="Email Address" required="" type="email"/>
+<input id="cf_subject" name="cf_subject" placeholder="Subject" type="text"/>
 </div>
 <div class="spes-form-full">
-<textarea name="cf_message" placeholder="Message" required="" rows="7"></textarea>
+<textarea id="cf_message" name="cf_message" placeholder="Message" required="" rows="7"></textarea>
 </div>
+<div id="spes-form-feedback" style="display:none; padding:14px 20px; border-radius:6px; margin-bottom:15px; font-weight:600; font-size:14px;"></div>
 <div class="spes-form-btn-row">
 <button class="spes-blue-btn" type="submit">SEND</button>
 <button class="spes-blue-btn" type="reset">CLEAR</button>
 </div>
 </form>
+<script>
+function handleContactSubmit(e) {
+  e.preventDefault();
+  var name = document.getElementById('cf_name').value.trim();
+  var email = document.getElementById('cf_email').value.trim();
+  var subject = document.getElementById('cf_subject').value.trim() || ('Inquiry from ' + name);
+  var message = document.getElementById('cf_message').value.trim();
+  var fb = document.getElementById('spes-form-feedback');
+  var mailto = 'mailto:chandu@suryapowereng.in?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent('From: ' + name + ' (' + email + ')\n\nMessage:\n' + message);
+  fb.style.display = 'block';
+  fb.style.background = '#e6f7ec';
+  fb.style.color = '#155724';
+  fb.style.border = '1px solid #c3e6cb';
+  fb.innerHTML = '✓ Thank you, ' + name + '! Opening email to chandu@suryapowereng.in. We will respond promptly within 24 hours.';
+  window.location.href = mailto;
+}
+</script>
 </div>
 </section>
 <section class="spes-contact-bottom-area">
